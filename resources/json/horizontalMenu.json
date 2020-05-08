@@ -1,0 +1,9 @@
+{"menu": [
+    {"url":"dashboard_realtime", "name":"Dashboard", "slug":"dashboard", "icon":"feather icon-home", "i18n":"Dashboard",
+      "submenu":[
+        {"url":"dashboard_today", "name":"Dashboard_today", "i18n":"Dashboard_today"},
+        {"url":"dashboard_month", "name":"Dashboard_month", "i18n":"Dashboard_month"},
+        {"url":"dashboard_year", "name":"Dashboard_year", "i18n":"Dashboard_year"}
+      ]
+    }
+]}

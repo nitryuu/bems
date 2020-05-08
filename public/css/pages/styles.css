@@ -1,0 +1,317 @@
+#date{
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+  font-size: 20px;
+}
+
+#clock{
+  height: 100%;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+  font-size: 20px;
+}
+
+#arus {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  margin-left: 20px;
+}
+
+#time{
+  margin: auto;
+}
+
+#sidenav{
+  font-weight: bold;
+}
+
+#sidenav li a{
+  height: 55px;
+}
+
+#sidenav li a:hover, #sidenav li a.active{
+  height: 55px;
+  border-bottom: 3px solid white;
+}
+
+#sidenav li{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.horizontal-layout.full #sidenav li a:hover, .horizontal-layout.full #sidenav li a.active{
+  height: 52px;
+}
+
+.horizontal-layout.full #sidenav li a{
+  height: 52px;
+}
+
+.horizontal-layout .header-navbar{
+  height: 55px;
+}
+
+.horizontal-layout.full{
+  overflow: hidden;
+}
+
+.horizontal-layout.full .horizontal-menu-wrapper{
+  display: none;
+}
+
+.horizontal-layout .app-content .content-wrapper{
+  margin-top: -70px !important;
+}
+
+.horizontal-layout.full .app-content .content-wrapper{
+  margin-top: -100px !important;
+}
+
+.horizontal-layout.full .header-navbar{
+  height: 50px;
+}
+
+.highcharts-title {
+  display: none;
+}
+
+.card .card-header-chart {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: none;
+  padding: 1.5rem 1.5rem 0;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  background: rgba(34, 41, 47, 0.03);
+  margin-bottom: 15px;
+  justify-content: center;
+  border-bottom: 1px solid #dae1e7;
+}
+
+.card .card-content-chart .chart-details{
+  font-weight: 400;
+  padding: 0 46px 20px 100px;
+  position: relative;
+}
+
+.card .card-content-chart{
+  text-align: right;
+  margin-left: 16px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.card {
+  border-radius: 1.5rem;
+}
+
+.card .card-header-chart h4{
+  margin-top: -12px;
+  padding: 5px;
+}
+
+.horizontal-layout.full .login-item{
+  font-size: 16px;
+}
+
+.header-navbar .login-item{
+  color: #fff;
+  position: relative;
+  margin: auto;
+  padding: 18px;
+  font-size: 18px;
+  justify-content: center;
+}
+
+.header-navbar .login-item:hover{
+  height: 54px;
+  border-bottom: 3px solid white;
+}
+
+.horizontal-layout.full .header-navbar .login-item:hover{
+  height: 49px;
+}
+
+.modal-dialog .modal-content .modal-body {
+  text-align: center;
+}
+
+.modal-dialog .modal-content .modal-body input{
+  text-align: center;
+}
+
+.modal-dialog .modal-content .modal-body label{
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.button-wrapper{
+  padding: 5px 5px 0 5px;
+  margin: 0;
+  margin-bottom: 20px !important;
+}
+
+.button-wrapper li{
+  background-color: rgba(34, 41, 47, 0.07);
+  padding: 5px 12px;
+  cursor: pointer;
+  float: left;
+  list-style: none;
+}
+
+.button-wrapper ul{
+  float:right;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.button-wrapper:after{
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.button-wrapper li:first-child{
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+
+.button-wrapper li:last-child{
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+
+.button-wrapper li:hover{
+  background-color: #7367f0;
+}
+
+.button-wrapper li a{
+  color: #b0aeb3 !important;
+}
+
+.button-wrapper li:hover a{
+  color: white !important;
+  font-weight: bold !important;
+}
+
+.button-wrapper li.act{
+  color: white !important;
+  background-color: #7367f0 !important;
+}
+
+.button-wrapper li a.active{
+  color: white !important;
+  font-weight: bold !important;
+}
+
+.card .card-img {
+  padding-left: 70px;
+}
+
+.card .card-img img{
+  width: 200px;
+  height: 200px;
+}
+
+.card .card-value {
+  margin-bottom: 0;
+}
+
+.row-card{
+  display: flex;
+  flex-wrap: wrap;
+  height: 200px;
+}
+
+.card-body{
+  align-self: center;
+}
+
+.toggle.ios, .toggle-on.ios, .toggle-off.ios{
+  border-radius: 20px;
+}
+
+.toggle.ios, .toggle-handle {
+  border-radius: 20px;
+}
+
+.footerbutton{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn{
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.profile_name{
+  color: #fff;
+  position: relative;
+  margin: auto;
+  padding: 13px 0 13px 0;
+  font-size: 18px;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.profile_name:hover{
+  color: white !important;
+}
+
+.navbar-collapse img{
+  width: 43px;
+}
+
+.separator{
+  color: white;
+  align-self: center;
+}
+
+.row-header{
+  text-align: center;
+  font-weight: bold;
+}
+
+#l1ruang1, #l1ruang2, #l1ruang3, #l2ruang1, #l2ruang2, #l2ruang3{
+  margin-bottom: -20px;
+}
+
+footer{
+  background-color: blue !important;
+  color: white;
+}
+
+.footer-text{
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+.row-tcost{
+  margin-top: 35px;
+  text-transform: uppercase;
+}
+
+#tcost-value{
+  font-size: 20px;
+}
+
+#tcost-text{
+  font-weight: bold;
+  font-size: 12px;
+}
