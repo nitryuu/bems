@@ -30,7 +30,6 @@ $(document).ready(function() {
     chart: {
       renderTo: lantai1,
       defaultSeriesType: 'bar',
-      width: 185,
       height: 100,
       events: {
         load: requestDataLantai1
@@ -69,6 +68,11 @@ $(document).ready(function() {
       max: 100,
       tickAmount: 2,
     },
+    responsive: [{
+      rules: {
+        maxWidth: 500
+      }
+    }],
     exporting: {
         enabled: false,
       },
@@ -94,8 +98,8 @@ $(document).ready(function() {
           y2: 1
         },
       stops: [
-        [0, '#3583b8'],
-        [1, 'blue']
+        [0, 'blue'],
+        [1, '#3583b8']
       ]},
       data: [0,0,0],
     }]

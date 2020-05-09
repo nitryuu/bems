@@ -45,7 +45,6 @@ $(document).ready(function() {
     chart: {
       renderTo: tcost,
       defaultSeriesType: 'column',
-      width: 230,
       height: 200,
       events: {
         load: requestDataTcost
@@ -60,6 +59,14 @@ $(document).ready(function() {
     xAxis: {
       categories: ['April','May']
     },
+    responsive: {
+    rules: [{
+      condition: {
+        maxWidth: 500,
+        minWidth: 100
+      }
+    }]
+  },
     tooltip: {
       formatter: function() {
         return ''+

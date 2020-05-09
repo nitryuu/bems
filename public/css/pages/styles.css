@@ -65,14 +65,6 @@
   display: none;
 }
 
-.horizontal-layout .app-content .content-wrapper{
-  margin-top: -70px !important;
-}
-
-.horizontal-layout.full .app-content .content-wrapper{
-  margin-top: -100px !important;
-}
-
 .horizontal-layout.full .header-navbar{
   height: 50px;
 }
@@ -228,7 +220,9 @@
 .row-card{
   display: flex;
   flex-wrap: wrap;
-  height: 200px;
+  min-height: 200px;
+  height: 100%;
+  margin-bottom: 1rem;
 }
 
 .card-body{
@@ -289,7 +283,7 @@
 }
 
 footer{
-  background-color: blue !important;
+  background-color: royalblue !important;
   color: white;
 }
 
@@ -314,4 +308,31 @@ footer{
 #tcost-text{
   font-weight: bold;
   font-size: 12px;
+}
+
+@media (max-width: 768px){
+  .horizontal-layout .app-content .content-wrapper{
+    margin-top: calc(100vh - 200%) !important;
+    margin-bottom: calc(100vh - 168%) !important;
+  }
+
+  #timeseparator{
+    display: none;
+  }
+
+  #navbar-menu{
+    display: none !important;
+  }
+
+  .login-item{
+    display: none;
+  }
+
+  #br-time{
+    display: block;
+  }
+
+  .footer-text{
+    font-size: 7px;
+  }
 }

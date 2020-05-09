@@ -20,7 +20,6 @@ $(document).ready(function() {
   chart_daya = new Highcharts.Chart({
     chart: {
       renderTo: 'daya',
-      width: 383.13,
       height: 200,
       events: {
         load: requestDataDaya
@@ -50,6 +49,13 @@ $(document).ready(function() {
         y: 16
       }
     },
+    responsive: {
+        rules: [{
+          condition: {
+            maxWidth: 1000
+          }
+        }]
+      },
     plotOptions: {
       solidgauge: {
         dataLabels: {

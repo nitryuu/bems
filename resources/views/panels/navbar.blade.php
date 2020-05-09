@@ -1,5 +1,5 @@
 @if($configData["mainLayoutType"] == 'horizontal')
-  <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu {{ $configData['navbarColor'] }} navbar-fixed" style="background-color: blue !important; box-shadow: 0px 2px 12px 3px rgba(0, 0, 0, 0.15);
+  <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu {{ $configData['navbarColor'] }} navbar-fixed" style="background-color: royalblue !important; box-shadow: 0px 2px 12px 3px rgba(0, 0, 0, 0.15);
 ">
   @else
     <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu {{ $configData['navbarClass'] }} navbar-light {{ $configData['navbarColor'] }}">
@@ -20,7 +20,7 @@
                 </div>
 
               </div>
-                <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center" style="padding-left: 10px;">
+                <div id="navbar-menu" class="mr-auto float-left bookmark-wrapper d-flex align-items-center" style="padding-left: 10px;">
                   <ul class="nav navbar-nav float-right" id="sidenav">
 
                       <li class="nav-item d-none d-lg-block"><a class="nav-link" href="http://localhost/vuexy/public/" data-toggle="tooltip" title="Building Energy Management System">BEMS</a></li>

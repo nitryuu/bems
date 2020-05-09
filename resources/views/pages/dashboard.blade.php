@@ -29,7 +29,7 @@
       <div id="guts">
         <div class="col-lg-12" id="time">
             <span id='date'></span>
-            <span style="color:white">|</span>
+            <span id="timeseparator" style="color:white">|</span><br id="br-time" style="display: none">
             <span id='clock'></span>
         </div>
         <br />
@@ -59,10 +59,10 @@
               <div class="row-card">
               <div class="col-lg-12">
                 <div class="row">
-                  <div class="col-lg-7">
+                  <div class="col-lg-7 col-sm-4 col-8">
                     <div id="tcost"></div>
                   </div>
-                  <div class="col-lg-5">
+                  <div class="col-lg-5 col-sm-2 col-4">
                     <div class="row-tcost">
                       <span id="tcost-value"></span>
                       <br />
@@ -85,7 +85,7 @@
                 <h4>ACTIVE APPLIANCES</h4>
               </div>
               <div class="row-card">
-              <div class="col-lg-6" style="border-right: 1px dotted; margin-bottom: 20px; z-index: 2">
+              <div class="col-lg-6 col-sm-6 col-md-6 col-12" style="border-right: 1px dotted; margin-bottom: 20px; z-index: 2">
                 <div class="row-header" style="border-bottom: 1px solid">
                   <p>
                     Lantai 1
@@ -95,7 +95,7 @@
                   <div id="lantai1"></div>
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="col-lg-6 col-sm-6 col-md-6 col-12">
                 <div class="row-header" style="border-bottom: 1px solid">
                   <p>
                     Lantai 2

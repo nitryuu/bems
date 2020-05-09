@@ -36,7 +36,6 @@ $(document).ready(function() {
     chart: {
       renderTo: lantai2,
       defaultSeriesType: 'bar',
-      width: 185,
       height: 150,
       events: {
         load: requestDatalantai2
@@ -64,6 +63,11 @@ $(document).ready(function() {
       },
       borderRadius: 3
     },
+    responsive: [{
+      rules: {
+        maxWidth: 500
+      }
+    }],
     yAxis: {
       reversed: true,
       gridLineColor: '#fff',
@@ -102,8 +106,8 @@ $(document).ready(function() {
           y2: 1
         },
       stops: [
-        [0, 'blue'],
-        [1, '#3583b8']
+        [0, '#3583b8'],
+        [1, 'blue']
       ]},
       data: [0,0,0,0,0],
     }]
