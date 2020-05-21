@@ -21,26 +21,23 @@
 
               </div>
                 <div id="navbar-menu" class="mr-auto float-left bookmark-wrapper d-flex align-items-center" style="padding-left: 10px;">
-                  <ul class="nav navbar-nav float-right" id="sidenav">
+                  <ul class="nav navbar-nav float-right" id="sidenav_bems">
+                      <li class="nav-item d-none d-lg-block" data-toggle="tooltip" title="Building Energy Management System">
+                        <a class="nav-link" data-toggle="modal" data-target="#bems-modal">BEMS</a>
+                      </li>
+                    </ul>
 
-                      <li class="nav-item d-none d-lg-block"><a class="nav-link" href="http://localhost/vuexy/public/" data-toggle="tooltip" title="Building Energy Management System">BEMS</a></li>
-                      <li class="separator">||</li>
+                    <ul class="nav navbar-nav float-right" id="sidenav">
                       <li class="nav-item d-none d-lg-block"><a class="nav-link" href="http://localhost/vuexy/public/dashboard">Dashboard</a></li>
-                      <li class="separator">|</li>
                       <li class="nav-item d-none d-lg-block"><a class="nav-link" href="http://localhost/vuexy/public/usages">Usages</a></li>
-                      <li class="separator">|</li>
+
 
                       @if(Auth::user())
                         <li class="nav-item d-none d-lg-block"><a class="nav-link" href="http://localhost/vuexy/public/control">Control</a></li>
-                        <li class="separator">|</li>
                       @endif
 
                       <li class="nav-item d-none d-lg-block"><a class="nav-link" href="http://localhost/vuexy/public/cost">Cost</a></li>
-                      <li class="separator">|</li>
-                      <li class="nav-item d-none d-lg-block"><a class="nav-link" href="http://localhost/vuexy/public/appliances">Appliances</a></li>
-                      <li class="separator">|</li>
                       <li class="nav-item d-none d-lg-block"><a class="nav-link" href="http://localhost/vuexy/public/statistic">Statistic</a></li>
-                      <li class="separator">||</li>
                   </ul>
                 </div>
                 <ul class="nav navbar-nav float-right">
@@ -68,7 +65,7 @@
 </nav>
 
 
-<!-- MODAL -->
+<!-- MODAL LOGIN -->
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered" role="document">
   <div class="modal-content">
@@ -95,6 +92,26 @@
           <button type="submit" class="btn btn-primary">Login</button>
         </div>
     </form>
+  </div>
+</div>
+</div>
+
+<!-- MODAL BEMS -->
+<div class="modal fade" id="bems-modal" tabindex="-1" role="dialog" aria-labelledby="bems-modal" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="bems-modal-title">Building Energy Management System</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque totam aut similique minima voluptatem, explicabo nobis voluptate distinctio tempore modi id unde dolores vero, suscipit ipsum ab deserunt veritatis molestias.
+        </div>
+        <div class="modal-footer">
+
+        </div>
   </div>
 </div>
 </div>

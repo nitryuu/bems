@@ -18,12 +18,18 @@ Route::get('/', function() {
 
 // Route Monitoring
 Route::get('dashboard', 'MoController@dashboard')->name('dashboard');
+Route::get('dashboard2', 'MoController@dashboard2')->name('dashboard2');
+
+//Route Usages
+Route::get('usages','UsController@usages')->name('usages');
 
 //Route Control
 Route::get('control','CoController@control')->middleware('auth');
 
 //Route Statistic
 Route::get('statistic','StatController@stat');
+
+
 
 //Route Login
 Route::get('login','LoginController@index');

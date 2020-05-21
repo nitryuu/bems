@@ -29,6 +29,7 @@
 
 .horizontal-menu.navbar-floating:not(.blank-page) .app-content {
   padding-top: 9.75rem;
+
 }
 
 .horizontal-menu.navbar-floating .horizontal-menu-wrapper {
@@ -484,4 +485,3 @@
     bottom: 0px;
   }
 }
-

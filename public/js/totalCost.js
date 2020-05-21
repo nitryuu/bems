@@ -70,7 +70,7 @@ $(document).ready(function() {
     tooltip: {
       formatter: function() {
         return ''+
-        this.series.name +': Rp'+ this.y +'.000,-';
+        this.series.name +': <b>Rp'+ this.y +'.000,- </b>';
       },
       shadow: false,
       style: {
@@ -107,7 +107,7 @@ $(document).ready(function() {
         }
       },
     series: [{
-      name: 'Power',
+      name: 'Cost',
       color: {
         linearGradient: {
           x1: 0,

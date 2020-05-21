@@ -19,4 +19,14 @@ class MoController extends Controller
             'pageConfigs' => $pageConfigs
         ]);
     }
+
+    public function dashboard2(){
+        $pageConfigs = [
+            'pageHeader' => false
+        ];
+
+        return view('pages.dashboard2', [
+            'pageConfigs' => $pageConfigs
+        ]);
+    }
 }

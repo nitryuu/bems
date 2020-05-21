@@ -47,7 +47,7 @@ $(document).ready(function() {
     tooltip: {
       formatter: function() {
         return ''+
-        this.series.name +': '+ this.y +' kWh';
+        this.series.name +': <b>'+ this.y +' kWh </b>';
       },
       shadow: false,
       style: {

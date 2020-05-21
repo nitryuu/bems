@@ -73,4 +73,131 @@ $(document).ready(function(){
     }
   });
 
+  $('#statdev5').bootstrapToggle({
+    on: 'ON',
+    off: 'OFF',
+    onstyle: 'success',
+    offstyle: 'danger'
+  });
+
+  $('#statdev5').change(function(){
+    if($(this).prop('checked'))
+    {
+      $('#hidden_statdev5').val('on');
+    }
+    else
+    {
+      $('#hidden_statdev5').val('off');
+    }
+  });
+
+  $('#statdev6').bootstrapToggle({
+    on: 'ON',
+    off: 'OFF',
+    onstyle: 'success',
+    offstyle: 'danger'
+  });
+
+  $('#statdev6').change(function(){
+    if($(this).prop('checked'))
+    {
+      $('#hidden_statdev6').val('on');
+    }
+    else
+    {
+      $('#hidden_statdev6').val('off');
+    }
+  });
+
+  $('#statdev7').bootstrapToggle({
+    on: 'ON',
+    off: 'OFF',
+    onstyle: 'success',
+    offstyle: 'danger'
+  });
+
+  $('#statdev7').change(function(){
+    if($(this).prop('checked'))
+    {
+      $('#hidden_statdev7').val('on');
+    }
+    else
+    {
+      $('#hidden_statdev7').val('off');
+    }
+  });
+
+  $('#statdev8').bootstrapToggle({
+    on: 'ON',
+    off: 'OFF',
+    onstyle: 'success',
+    offstyle: 'danger'
+  });
+
+  $('#statdev8').change(function(){
+    if($(this).prop('checked'))
+    {
+      $('#hidden_statdev8').val('on');
+    }
+    else
+    {
+      $('#hidden_statdev8').val('off');
+    }
+  });
+
+  $('#statdev9').bootstrapToggle({
+    on: 'ON',
+    off: 'OFF',
+    onstyle: 'success',
+    offstyle: 'danger'
+  });
+
+  $('#statdev9').change(function(){
+    if($(this).prop('checked'))
+    {
+      $('#hidden_statdev9').val('on');
+    }
+    else
+    {
+      $('#hidden_statdev9').val('off');
+    }
+  });
+
+  $('#statdev10').bootstrapToggle({
+    on: 'ON',
+    off: 'OFF',
+    onstyle: 'success',
+    offstyle: 'danger'
+  });
+
+  $('#statdev10').change(function(){
+    if($(this).prop('checked'))
+    {
+      $('#hidden_statdev10').val('on');
+    }
+    else
+    {
+      $('#hidden_statdev10').val('off');
+    }
+  });
+
+  $('#statdev11').bootstrapToggle({
+    on: 'ON',
+    off: 'OFF',
+    onstyle: 'success',
+    offstyle: 'danger'
+  });
+
+  $('#statdev11').change(function(){
+    if($(this).prop('checked'))
+    {
+      $('#hidden_statdev11').val('on');
+    }
+    else
+    {
+      $('#hidden_statdev11').val('off');
+    }
+  });
+
+
 })

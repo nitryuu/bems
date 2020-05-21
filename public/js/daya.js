@@ -1,50 +1,80 @@
 var chart_daya;
+var chart_daya_details
 /**
  * Request data from the server, add it to the graph and set a timeout to request again
  */
 function requestDataDaya() {
   $.ajax({
-    url: 'http://localhost/vuexy/public/api/random',
-    success: function(point) {
+    url: 'http://localhost/vuexy/public/api/random2',
+    success: function(value) {
       var series_daya = chart_daya.series[0],
-        shift_daya = series_daya.data.length > 20; // shift if the series is longer than 20
+        shift_daya = series_daya.data.length > 7 * 24 * 36 * 1000;
 
-      // add the point
-      chart_daya.series[0].addPoint(eval(point), true, shift_daya);
+        chart_daya.series[0].addPoint(eval(value), true, shift_daya);
 
-      // call it again after one second
-      setTimeout(requestDataDaya, 1000);
+        $( "#guts" ).data( "tenergy", { first : value.y } );
+        $( "#tenergy-value" ).first().html( '<b>' + $( "#guts" ).data( "tenergy" ).first + " kWh </b>" );
+
+      setTimeout(requestDataDaya, 300000);
     },
-    cache: false
+  });
+}
+
+function requestDataDaya_details() {
+  $.ajax({
+    url: 'http://localhost/vuexy/public/api/random2',
+    success: function(point) {
+      var series_daya_details = chart_daya_details.series[0],
+        shift_daya_details = series_daya_details.data.length > 20; // shift if the series is longer than 20
+
+        chart_daya_details.series[0].addPoint(eval(point), true, shift_daya_details);
+
+      setTimeout(requestDataDaya_details, 1000);
+    },
   });
 }
 
 $(document).ready(function() {
   chart_daya = new Highcharts.Chart({
+    time: {
+      useUTC: false
+    },
     chart: {
-      renderTo: daya,
+      zoomType: 'x',
+      resetZoomButton: {
+        position: {
+          x: 0,
+          y: -10
+        }
+      },
+      renderTo: 'daya',
+      panning: true,
+      panKey: 'shift',
       defaultSeriesType: 'area',
-      width: 1200,
-      height: 300,
+      height: 75,
       events: {
         load: requestDataDaya
+      }
+    },
+    navigation: {
+      buttonOptions: {
+        enabled: false
       }
     },
     credits:{
       enabled: false
     },
-    lang: {
-      contextButtonTitle: 'Export Menu',
-    },
-    legend:{
-      itemStyle:{
-        color: '#131f8b',
-        fontweight: 'bold'
+    responsive: {
+    rules: [{
+      condition: {
+        maxWidth: 500,
+        minWidth: 100
       }
-    },
+    }]
+  },
     plotOptions: {
         area: {
-            lineColor: '#131f8b',
+            lineColor: 'red',
             fillColor: {
                 linearGradient: {
                     x1: 1,
@@ -53,14 +83,14 @@ $(document).ready(function() {
                     y2: 1
                 },
                 stops: [
-                  [0, '#131f8b'],
-                  [1, '#2a2f57'],
+                  [0, '#6f2121'],
+                  [1, '#c84a4a'],
                 ]
             },
             marker: {
-                radius: 2,
+                radius: 0,
             },
-            lineWidth: 1,
+            lineWidth: 0,
             states: {
                 hover: {
                     lineWidth: 1
@@ -70,39 +100,121 @@ $(document).ready(function() {
         },
     },
     title: {
-      text: 'Power Usage'
+      text: null
     },
     xAxis: {
       type: 'datetime',
-      tickPixelInterval: 150,
-      maxZoom: 20 * 1000
+        pointInterval: 150,
+        minRange: 20 * 1000
     },
     yAxis: {
-      minPadding: 0.2,
-      maxPadding: 0.2,
+      gridLineColor: '#fff',
+      min: 0,
       title: {
         offset: 50,
-        text: 'Watt',
+        text: 'kWh',
         margin: 80
       }
     },
-    exporting: {
-        enabled: false,
-      }
-    ,
-    navigation: {
-      buttonOptions: {
-        symbolX: 23,
-        symbolY: 21,
-        height: 40,
-        width: 48,
-        symbolSize: 12,
-        symbolStrokeWidth: 2
-      }
+    legend:{
+      enabled: false,
     },
     series: [{
-      name: 'Power',
-      color: '#131f8b',
+      name: 'Energy',
+      pointStart: Date.now(),
+      color: '#6f2121',
+      data: []
+    }]
+  });
+});
+
+$(document).ready(function() {
+  chart_daya_details = new Highcharts.Chart({
+    time: {
+      useUTC: false
+    },
+    chart: {
+      zoomType: 'x',
+      resetZoomButton: {
+        position: {
+          x: 0,
+          y: -10
+        }
+      },
+      renderTo: 'daya-details',
+      defaultSeriesType: 'area',
+      height: 75,
+      events: {
+        load: requestDataDaya_details
+      }
+    },
+    navigation: {
+      buttonOptions: {
+        enabled: false
+      }
+    },
+    credits:{
+      enabled: false
+    },
+    responsive: {
+    rules: [{
+      condition: {
+        maxWidth: 500,
+        minWidth: 100
+      }
+    }]
+  },
+    plotOptions: {
+        area: {
+            lineColor: 'red',
+            fillColor: {
+                linearGradient: {
+                    x1: 1,
+                    y1: 0,
+                    x2: 1,
+                    y2: 1
+                },
+                stops: [
+                  [0, '#6f2121'],
+                  [1, '#c84a4a'],
+                ]
+            },
+            marker: {
+                radius: 0,
+            },
+            lineWidth: 0,
+            states: {
+                hover: {
+                    lineWidth: 1
+                }
+            },
+            threshold: null
+        },
+    },
+    title: {
+      text: null
+    },
+    xAxis: {
+      type: 'datetime',
+      pointInterval: 150,
+      maxZoom: 20 * 1000
+    },
+    yAxis: {
+      gridLineColor: '#fff',
+      min: 0,
+      title: {
+        offset: 50,
+        text: 'kWh',
+        margin: 80
+      }
+    },
+    legend:{
+      enabled: false,
+    },
+    series: [{
+      name: 'Energy',
+      pointStart: Date.now(),
+      color: '#6f2121',
       data: []
     }]
   });

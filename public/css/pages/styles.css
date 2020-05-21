@@ -32,15 +32,34 @@
 }
 
 #sidenav li a{
-  height: 55px;
+  padding: 13px;
 }
 
 #sidenav li a:hover, #sidenav li a.active{
-  height: 55px;
-  border-bottom: 3px solid white;
+  border-radius: 1.5rem;
+  background-color: #190658;
+  width: 120px;
+  text-align: center;
 }
 
 #sidenav li{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#sidenav_bems{
+  font-weight: bold;
+}
+
+#sidenav_bems li a{
+  padding: 13px;
+}
+
+#sidenav_bems li a:hover{
+  background-color: transparent !important;
+}
+
+#sidenav_bems li{
   margin-left: 5px;
   margin-right: 5px;
 }
@@ -74,6 +93,7 @@
 }
 
 .card .card-header-chart {
+  text-align: center;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -143,65 +163,6 @@
 .modal-dialog .modal-content .modal-body label{
   font-size: 15px;
   margin-bottom: 12px;
-}
-
-.button-wrapper{
-  padding: 5px 5px 0 5px;
-  margin: 0;
-  margin-bottom: 20px !important;
-}
-
-.button-wrapper li{
-  background-color: rgba(34, 41, 47, 0.07);
-  padding: 5px 12px;
-  cursor: pointer;
-  float: left;
-  list-style: none;
-}
-
-.button-wrapper ul{
-  float:right;
-  padding-left: 0;
-  margin-bottom: 20px;
-}
-
-.button-wrapper:after{
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.button-wrapper li:first-child{
-  border-top-left-radius: 1.5rem;
-  border-bottom-left-radius: 1.5rem;
-}
-
-.button-wrapper li:last-child{
-  border-top-right-radius: 1.5rem;
-  border-bottom-right-radius: 1.5rem;
-}
-
-.button-wrapper li:hover{
-  background-color: #7367f0;
-}
-
-.button-wrapper li a{
-  color: #b0aeb3 !important;
-}
-
-.button-wrapper li:hover a{
-  color: white !important;
-  font-weight: bold !important;
-}
-
-.button-wrapper li.act{
-  color: white !important;
-  background-color: #7367f0 !important;
-}
-
-.button-wrapper li a.active{
-  color: white !important;
-  font-weight: bold !important;
 }
 
 .card .card-img {
@@ -310,10 +271,314 @@ footer{
   font-size: 12px;
 }
 
+#tenergy-text{
+  font-size: 14px;
+  margin-left: 20%;
+  color: green;
+}
+
+#tenergy-value{
+  font-size: 14px;
+  color: green;
+}
+
+#daya{
+  margin-top: 1rem;
+}
+
+.content-wrapper{
+  user-select: none;
+}
+
+#timeseparator{
+  color: white;
+}
+
+#list-tab{
+  display: inline-flex;
+  flex-direction: row;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+  background-color: hsla(0,0%,100%,.13);
+  padding: 5px;
+  border-radius: 2.5rem;
+  list-style: none;
+  width: auto;
+}
+
+#list-tab .list-group-item.active{
+  background-color: midnightblue !important;
+  color: white;
+  font-weight: bold;
+  border-radius: 1.5rem;
+}
+
+#list-tab .list-group-item-action{
+  color: navajowhite;
+}
+
+#list-tab .list-group-item:hover{
+  background-color: #7367f0;
+  color: white;
+  font-weight: bold;
+  border-radius: 1.5rem;
+}
+
+#list-tab .list-group-item:first-child{
+  text-decoration: none;
+}
+
+#list-tab .list-group-item{
+  background-color: transparent !important;
+  border: none !important;
+  margin: 0 5px 0 5px;
+  width: 85px;
+  text-align: center;
+}
+
+#list-tab .list-group-item:first-child{
+  margin-left: 0;
+}
+
+#list-tab .list-group-item:last-child{
+  margin-right: 0;
+}
+
+.tab-content{
+  margin-top: 0.2rem;
+}
+
+#elantai1T, #elantai2T{
+  margin: 2rem 1rem 1rem 0.5rem;
+}
+
+#elantai1M, #elantai2M{
+  margin: 2rem 1rem 1rem 0.5rem;
+}
+
+#elantai1Y, #elantai2Y{
+  margin: 2rem 1rem 1rem 0.5rem;
+}
+
+#etlantai1T{
+  border: none;
+  font-size: 12px;
+  box-shadow: 0px 0px 6px 1px #ad8fff;
+}
+
+#etlantai1T thead tr th{
+  border-bottom: 1px solid #d0caca;
+}
+
+#etlantai1T thead{
+  color: blue;
+}
+
+#etlantai1T tbody tr:not(:last-child) td{
+  border-bottom: 1px solid #c7c7d9;
+}
+
+#etlantai1T tbody tr td:first-child{
+  border-right: 1px solid #c7c7d9;
+}
+
+#etlantai1T_wrapper{
+  margin: -2rem 1rem 1.5rem 0.75rem;
+}
+
+#etlantai1T_filter, #etlantai1T_length, #etlantai1T_info, #etlantai1T_paginate{
+  display: none;
+}
+
+#etlantai1Y{
+  border: none;
+  font-size: 12px;
+  box-shadow: 0px 0px 6px 1px #ad8fff;
+}
+
+#etlantai1Y thead tr th{
+  border-bottom: 1px solid #d0caca;
+}
+
+#etlantai1Y thead{
+  color: blue;
+}
+
+#etlantai1Y tbody tr:not(:last-child) td{
+  border-bottom: 1px solid #c7c7d9;
+}
+
+#etlantai1Y tbody tr td:first-child{
+  border-right: 1px solid #c7c7d9;
+}
+
+#etlantai1Y_wrapper{
+  margin: -2rem 1rem 1.5rem 0.75rem;
+}
+
+#etlantai1Y_filter, #etlantai1Y_length, #etlantai1Y_info, #etlantai1Y_paginate{
+  display: none;
+}
+
+
+#etlantai2Y{
+  border: none;
+  font-size: 12px;
+  box-shadow: 0px 0px 6px 1px #ea8484;
+}
+
+#etlantai2Y thead tr th{
+  border-bottom: 1px solid #d0caca;
+}
+
+#etlantai2Y thead{
+  color: red;
+}
+
+#etlantai2Y tbody tr:not(:last-child) td{
+  border-bottom: 1px solid #c7c7d9;
+}
+
+#etlantai2Y tbody tr td:first-child{
+  border-right: 1px solid #c7c7d9;
+}
+
+#etlantai2Y_wrapper{
+  margin: -2rem 1rem 1.5rem 0.75rem;
+}
+
+#etlantai2Y_filter, #etlantai2Y_length, #etlantai2Y_info, #etlantai2Y_paginate{
+  display: none;
+}
+
+
+#etlantai2T{
+  border: none;
+  font-size: 12px;
+  box-shadow: 0px 0px 6px 1px #ea8484;
+}
+
+#etlantai2T thead tr th{
+  border-bottom: 1px solid #d0caca;
+}
+
+#etlantai2T thead{
+  color: red;
+}
+
+#etlantai2T tbody tr:not(:last-child) td{
+  border-bottom: 1px solid #c7c7d9;
+}
+
+#etlantai2T tbody tr td:first-child{
+  border-right: 1px solid #c7c7d9;
+}
+
+#etlantai2T_wrapper{
+  margin: -2rem 1rem 1.5rem 0.75rem;
+}
+
+#etlantai2T_filter, #etlantai2T_length, #etlantai2T_info, #etlantai2T_paginate{
+  display: none;
+}
+
+#etlantai2M{
+  border: none;
+  font-size: 12px;
+  box-shadow: 0px 0px 6px 1px #ea8484;
+}
+
+#etlantai2M thead tr th{
+  border-bottom: 1px solid #d0caca;
+}
+
+#etlantai2M thead{
+  color: red;
+}
+
+#etlantai2M tbody tr:not(:last-child) td{
+  border-bottom: 1px solid #c7c7d9;
+}
+
+#etlantai2M tbody tr td:first-child{
+  border-right: 1px solid #c7c7d9;
+}
+
+#etlantai2M_wrapper{
+  margin: -2rem 1rem 1.5rem 0.75rem;
+}
+
+#etlantai2M_filter, #etlantai2M_length, #etlantai2M_info, #etlantai2M_paginate{
+  display: none;
+}
+
+#etlantai1M{
+  border: none;
+  font-size: 12px;
+  box-shadow: 0px 0px 6px 1px #ad8fff;
+}
+
+#etlantai1M thead tr th{
+  border-bottom: 1px solid #d0caca;
+}
+
+#etlantai1M thead{
+  color: blue;
+}
+
+#etlantai1M tbody tr:not(:last-child) td{
+  border-bottom: 1px solid #c7c7d9;
+}
+
+#etlantai1M tbody tr td:first-child{
+  border-right: 1px solid #c7c7d9;
+}
+
+#etlantai1M_wrapper{
+  margin: -2rem 1rem 1.5rem 0.75rem;
+}
+
+#etlantai1M_filter, #etlantai1M_length, #etlantai1M_info, #etlantai1M_paginate{
+  display: none;
+}
+
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.card-body-header{
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-card-control{
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+#control{
+  margin-top: calc(100vh - 53%);
+}
+
+.horizontal-layout.full #control{
+  margin-top: calc(100vh - 60%);
+}
+
+
 @media (max-width: 768px){
-  .horizontal-layout .app-content .content-wrapper{
-    margin-top: calc(100vh - 200%) !important;
-    margin-bottom: calc(100vh - 168%) !important;
+  #usages{
+    margin-top: calc(100vh - 220%) !important;
+    margin-bottom: calc(100vh - 185%) !important;
+  }
+
+  #control{
+    margin-top: -5.5rem;
+    margin-bottom: 1.5rem;
   }
 
   #timeseparator{
@@ -335,4 +600,16 @@ footer{
   .footer-text{
     font-size: 7px;
   }
+}
+
+@media (max-width: 1366px){
+  #usages{
+    margin-top: calc(100vh - 58%);
+    margin-bottom: calc(100vh - 48%);
+  }
+
+  .horizontal-layout.full #usages{
+    margin-top: calc(100vh - 65%);
+  }
+
 }

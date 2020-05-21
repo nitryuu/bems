@@ -13,7 +13,7 @@
 @endsection
 @section('page-style')
         <!-- Page css files -->
-        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap2-toggle.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset(mix('css/pages/dashboard-analytics.css')) }}">
         <link rel="stylesheet" href="{{ asset(mix('css/pages/card-analytics.css')) }}">
         <link rel="stylesheet" href="{{ asset('css/pages/styles.css') }}">
@@ -39,7 +39,7 @@
       <div id="guts">
         <div class="col-lg-12" id="time">
             <span id='date'></span>
-            <span style="color:black">|</span>
+            <span id="timeseparator">|</span>
             <span id='clock'></span>
         </div>
         <br />
@@ -47,39 +47,103 @@
         <div class="row">
 
           <!-- DEVICE 1 -->
-          <div class="col-lg-3">
+          <div class="col-lg-2">
             <div class="card">
               <div class="card-header-chart">
-                <h4>DEVICE 1</h4>
+                <h4>MASTER</h4>
               </div>
-              <div class="card-body">
-                <div class="form-group">
-
-                  <div class="checkbox">
-                    <input type="checkbox" name="statdev1" id="statdev1" data-style="ios">
-                    <input type="hidden" name="hidden_statdev1" id="hidden_statdev1" value="on">
+              <div class="row-card-control">
+                <div class="col-lg-12">
+                  <div class="card" style="margin-bottom: 0 !important">
+                    <div class="card-body-header">
+                      <h6>Lantai 1</h4>
+                    </div>
+                    <div class="card-body">
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <input type="checkbox" name="statdev1" id="statdev1" data-style="ios">
+                        <input type="hidden" name="hidden_statdev1" id="hidden_statdev1" value="on">
+                      </div>
                   </div>
-
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="row-card-control">
+                <div class="col-lg-12">
+                  <div class="card" style="margin-bottom: 0 !important">
+                    <div class="card-body-header">
+                      <h6>Lantai 2</h4>
+                    </div>
+                    <div class="card-body">
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <input type="checkbox" name="statdev6" id="statdev6" data-style="ios">
+                        <input type="hidden" name="hidden_statdev6" id="hidden_statdev6" value="on">
+                      </div>
+                  </div>
+                  </div>
+                </div>
                 </div>
               </div>
             </div>
           </div>
+
           <!-- END DEVICE 1 -->
 
           <!-- DEVICE 2 -->
-          <div class="col-lg-3">
+          <div class="col-lg-5">
             <div class="card">
               <div class="card-header-chart">
-                <h4>DEVICE 2</h4>
+                <h4>LANTAI 1</h4>
               </div>
-              <div class="card-body">
-                <div class="form-group">
-
-                  <div class="checkbox">
-                    <input type="checkbox" name="statdev2" id="statdev2" checked data-style="ios">
-                    <input type="hidden" name="hidden_statdev2" id="hidden_statdev2" value="on">
+              <div class="row-card-control">
+                <div class="col-lg-6">
+                  <div class="card" style="margin-bottom: 0 !important">
+                    <div class="card-body-header">
+                      <h6>Ruang 1</h4>
+                    </div>
+                    <div class="card-body">
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <input type="checkbox" name="statdev2" id="statdev2" data-style="ios">
+                        <input type="hidden" name="hidden_statdev2" id="hidden_statdev2" value="on">
+                      </div>
                   </div>
-
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="card" style="margin-bottom: 0 !important">
+                    <div class="card-body-header">
+                      <h6>Ruang 2</h4>
+                    </div>
+                    <div class="card-body">
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <input type="checkbox" name="statdev4" id="statdev4" data-style="ios">
+                        <input type="hidden" name="hidden_statdev4" id="hidden_statdev4" value="on">
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="row-card-control">
+                <div class="col-lg-12">
+                  <div class="card" style="margin-bottom: 0 !important">
+                    <div class="card-body-header">
+                      <h6>Ruang 3</h4>
+                    </div>
+                    <div class="card-body">
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <input type="checkbox" name="statdev5" id="statdev5" data-style="ios">
+                        <input type="hidden" name="hidden_statdev5" id="hidden_statdev5" value="on">
+                      </div>
+                  </div>
+                  </div>
+                </div>
                 </div>
               </div>
             </div>
@@ -88,45 +152,93 @@
         <!-- END DEVICE 2-->
 
           <!-- DEVICE 3 -->
-          <div class="col-lg-3">
+          <div class="col-lg-5">
             <div class="card">
               <div class="card-header-chart">
-                <h4>DEVICE 3</h4>
+                <h4>LANTAI 2</h4>
               </div>
-              <div class="card-body">
-                <div class="form-group">
-
-                  <div class="checkbox">
-                    <input type="checkbox" name="statdev3" id="statdev3" data-style="ios">
-                    <input type="hidden" name="hidden_statdev3" id="hidden_statdev3" value="on">
+              <div class="row-card-control">
+                <div class="col-lg-4">
+                  <div class="card" style="margin-bottom: 0 !important">
+                    <div class="card-body-header">
+                      <h6>Ruang 1</h4>
+                    </div>
+                    <div class="card-body">
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <input type="checkbox" name="statdev7" id="statdev7" data-style="ios">
+                        <input type="hidden" name="hidden_statdev7" id="hidden_statdev7" value="on">
+                      </div>
                   </div>
-
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card" style="margin-bottom: 0 !important">
+                    <div class="card-body-header">
+                      <h6>Ruang 2</h4>
+                    </div>
+                    <div class="card-body">
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <input type="checkbox" name="statdev8" id="statdev8" data-style="ios">
+                        <input type="hidden" name="hidden_statdev8" id="hidden_statdev8" value="on">
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card" style="margin-bottom: 0 !important">
+                    <div class="card-body-header">
+                      <h6>Ruang 3</h4>
+                    </div>
+                    <div class="card-body">
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <input type="checkbox" name="statdev9" id="statdev9" data-style="ios">
+                        <input type="hidden" name="hidden_statdev9" id="hidden_statdev9" value="on">
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="row-card-control">
+                <div class="col-lg-6">
+                  <div class="card" style="margin-bottom: 0 !important">
+                    <div class="card-body-header">
+                      <h6>Ruang 4</h4>
+                    </div>
+                    <div class="card-body">
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <input type="checkbox" name="statdev10" id="statdev10" data-style="ios">
+                        <input type="hidden" name="hidden_statdev10" id="hidden_statdev10" value="on">
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="card" style="margin-bottom: 0 !important">
+                    <div class="card-body-header">
+                      <h6>Ruang 5</h4>
+                    </div>
+                    <div class="card-body">
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <input type="checkbox" name="statdev11" id="statdev11" data-style="ios">
+                        <input type="hidden" name="hidden_statdev11" id="hidden_statdev11" value="on">
+                      </div>
+                  </div>
+                  </div>
+                </div>
                 </div>
               </div>
             </div>
           </div>
           <!-- END DEVICE 3-->
-
-          <!-- DEVICE 4 -->
-          <div class="col-lg-3">
-            <div class="card">
-              <div class="card-header-chart">
-                <h4>DEVICE 4</h4>
-              </div>
-              <div class="card-body">
-                <div class="form-group">
-
-                  <div class="checkbox">
-                    <input type="checkbox" name="statdev4" id="statdev4" checked data-style="ios">
-                    <input type="hidden" name="hidden_statdev4" id="hidden_statdev4" value="on">
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- END DEVICE 4 -->
-
 
         </div>
         <!-- END row -->
