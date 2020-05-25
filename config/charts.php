@@ -118,8 +118,8 @@ return [
                 // 'https://cdnjs.cloudflare.com/ajax/libs/highcharts/5.0.7/css/highcharts.css',
             ],
             'scripts' => [
-                'https://code.highcharts.com/highcharts.js',
-                'https://code.highcharts.com/highcharts-more.js'
+                'https://code.highcharts.com/stock/highstock.js',
+                'https://code.highcharts.com/stock/modules/data.js'
             ],
         ],
 

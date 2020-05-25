@@ -13,18 +13,21 @@ function requestDatalantai2() {
       point3 = chart_lantai2.series[0].points[2],
       point4 = chart_lantai2.series[0].points[3],
       point5 = chart_lantai2.series[0].points[4],
+      point6 = chart_lantai2.series[0].points[5],
 
       newVal1 = value.y[0],
       newVal2 = value.y[1],
       newVal3 = value.y[2];
       newVal4 = value.y[3];
       newVal5 = value.y[4];
+      newVal6 = value.y[5];
 
       point1.update(newVal1);
       point2.update(newVal2);
       point3.update(newVal3);
       point4.update(newVal4);
       point5.update(newVal5);
+      point6.update(newVal6);
 
       setTimeout(requestDatalantai2, 1000);
     },
@@ -36,7 +39,7 @@ $(document).ready(function() {
     chart: {
       renderTo: lantai2,
       defaultSeriesType: 'bar',
-      height: 150,
+      height: 155,
       events: {
         load: requestDatalantai2
       }
@@ -48,7 +51,7 @@ $(document).ready(function() {
       enabled: false
     },
     xAxis: {
-      categories: ['Ruang 1','Ruang 2','Ruang 3','Ruang 4','Ruang 5'],
+      categories: ['Ruang 1','Ruang 2','Ruang 3','Ruang 4','Ruang 5','Ruang 6'],
       opposite: true
     },
     tooltip: {
@@ -109,7 +112,7 @@ $(document).ready(function() {
         [0, '#3583b8'],
         [1, 'blue']
       ]},
-      data: [0,0,0,0,0],
+      data: [0,0,0,0,0,0],
     }]
   });
 });

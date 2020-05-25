@@ -24,7 +24,10 @@ Route::get('dashboard2', 'MoController@dashboard2')->name('dashboard2');
 Route::get('usages','UsController@usages')->name('usages');
 
 //Route Control
-Route::get('control','CoController@control')->middleware('auth');
+Route::get('control','CoController@control')->middleware('auth')->name('control');
+
+//Route cost
+Route::get('cost','CostController@cost')->name('cost');
 
 //Route Statistic
 Route::get('statistic','StatController@stat');

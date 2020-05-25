@@ -22,17 +22,6 @@
 
   @endsection
 
-  @section('button')
-    <div class="button-wrapper" id="button-wrapper">
-      <ul>
-        <li class="button-list"><a href="dashboard_today">Today</a></li>
-        <li class="button-list"><a href="dashboard_month">Month</a></li>
-        <li class="button-list"><a href="dashboard_year">Year</a></li>
-        <li class="button-list active"><a href="dashboard_realtime">Realtime</a></li>
-      </ul>
-    </div>
-  @endsection
-
   @section('content')
 
     <section id="control">
@@ -43,26 +32,25 @@
             <span id='clock'></span>
         </div>
         <br />
-        <form method="post"></form>
         <div class="row">
 
           <!-- DEVICE 1 -->
           <div class="col-lg-2">
-            <div class="card">
-              <div class="card-header-chart">
-                <h4>MASTER</h4>
+            <div class="card" style="background-color: #531616;">
+              <div class="card-header-chart" style="border-bottom: 1px solid darkred">
+                <h4 style="color:white;">MASTER</h4>
               </div>
               <div class="row-card-control">
                 <div class="col-lg-12">
-                  <div class="card" style="margin-bottom: 0 !important">
+                  <div class="card" style="margin-bottom: 0 !important; background-color: #531616;">
                     <div class="card-body-header">
-                      <h6>Lantai 1</h4>
+                      <h6 style="color:white;">1ST FLOOR</h4>
                     </div>
                     <div class="card-body">
                     <div class="form-group">
                       <div class="checkbox">
-                        <input type="checkbox" name="statdev1" id="statdev1" data-style="ios">
-                        <input type="hidden" name="hidden_statdev1" id="hidden_statdev1" value="on">
+                        <input type="checkbox" name="mlantai1" id="mlantai1" data-style="ios">
+                        <input type="hidden" name="hidden_mlantai1" id="hidden_mlantai1" value="on">
                       </div>
                   </div>
                   </div>
@@ -71,15 +59,15 @@
               </div>
               <div class="row-card-control">
                 <div class="col-lg-12">
-                  <div class="card" style="margin-bottom: 0 !important">
+                  <div class="card" style="margin-bottom: 0 !important; background-color: #531616;">
                     <div class="card-body-header">
-                      <h6>Lantai 2</h4>
+                      <h6 style="color:white;">2ND FLOOR</h4>
                     </div>
                     <div class="card-body">
                     <div class="form-group">
                       <div class="checkbox">
-                        <input type="checkbox" name="statdev6" id="statdev6" data-style="ios">
-                        <input type="hidden" name="hidden_statdev6" id="hidden_statdev6" value="on">
+                        <input type="checkbox" name="mlantai2" id="mlantai2" data-style="ios">
+                        <input type="hidden" name="hidden_mlantai2" id="hidden_mlantai2" value="on">
                       </div>
                   </div>
                   </div>
@@ -95,34 +83,49 @@
           <div class="col-lg-5">
             <div class="card">
               <div class="card-header-chart">
-                <h4>LANTAI 1</h4>
+                <h4>1ST FLOOR</h4>
               </div>
               <div class="row-card-control">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                   <div class="card" style="margin-bottom: 0 !important">
                     <div class="card-body-header">
-                      <h6>Ruang 1</h4>
+                      <h6>1st Room</h4>
                     </div>
                     <div class="card-body">
                     <div class="form-group">
                       <div class="checkbox">
-                        <input type="checkbox" name="statdev2" id="statdev2" data-style="ios">
-                        <input type="hidden" name="hidden_statdev2" id="hidden_statdev2" value="on">
+                        <input type="checkbox" name="l1r1" id="l1r1" data-style="ios">
+                        <input type="hidden" name="hidden_l1r1" id="hidden_l1r1" value="on">
                       </div>
                   </div>
                   </div>
                 </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                   <div class="card" style="margin-bottom: 0 !important">
                     <div class="card-body-header">
-                      <h6>Ruang 2</h4>
+                      <h6>2nd Room</h4>
                     </div>
                     <div class="card-body">
                     <div class="form-group">
                       <div class="checkbox">
-                        <input type="checkbox" name="statdev4" id="statdev4" data-style="ios">
-                        <input type="hidden" name="hidden_statdev4" id="hidden_statdev4" value="on">
+                        <input type="checkbox" name="l1r2" id="l1r2" data-style="ios">
+                        <input type="hidden" name="hidden_l1r2" id="hidden_l1r2" value="on">
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card" style="margin-bottom: 0 !important">
+                    <div class="card-body-header">
+                      <h6>3rd Room</h4>
+                    </div>
+                    <div class="card-body">
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <input type="checkbox" name="l1r3" id="l1r3" data-style="ios">
+                        <input type="hidden" name="hidden_l1r3" id="hidden_l1r3" value="on">
                       </div>
                   </div>
                   </div>
@@ -130,16 +133,46 @@
                 </div>
               </div>
               <div class="row-card-control">
-                <div class="col-lg-12">
+                <div class="col-lg-4">
                   <div class="card" style="margin-bottom: 0 !important">
                     <div class="card-body-header">
-                      <h6>Ruang 3</h4>
+                      <h6>4th Room</h4>
                     </div>
                     <div class="card-body">
                     <div class="form-group">
                       <div class="checkbox">
-                        <input type="checkbox" name="statdev5" id="statdev5" data-style="ios">
-                        <input type="hidden" name="hidden_statdev5" id="hidden_statdev5" value="on">
+                        <input type="checkbox" name="l1r4" id="l1r4" data-style="ios">
+                        <input type="hidden" name="hidden_l1r4" id="hidden_l1r4" value="on">
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card" style="margin-bottom: 0 !important">
+                    <div class="card-body-header">
+                      <h6>5th Room</h4>
+                    </div>
+                    <div class="card-body">
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <input type="checkbox" name="l1r5" id="l1r5" data-style="ios">
+                        <input type="hidden" name="hidden_l1r5" id="hidden_l1r5" value="on">
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card" style="margin-bottom: 0 !important">
+                    <div class="card-body-header">
+                      <h6>6th Room</h4>
+                    </div>
+                    <div class="card-body">
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <input type="checkbox" name="l1r6" id="l1r6" data-style="ios">
+                        <input type="hidden" name="hidden_l1r6" id="hidden_l1r6" value="on">
                       </div>
                   </div>
                   </div>
@@ -155,19 +188,19 @@
           <div class="col-lg-5">
             <div class="card">
               <div class="card-header-chart">
-                <h4>LANTAI 2</h4>
+                <h4>2ND FLOOR</h4>
               </div>
               <div class="row-card-control">
                 <div class="col-lg-4">
                   <div class="card" style="margin-bottom: 0 !important">
                     <div class="card-body-header">
-                      <h6>Ruang 1</h4>
+                      <h6>1st Room</h4>
                     </div>
                     <div class="card-body">
                     <div class="form-group">
                       <div class="checkbox">
-                        <input type="checkbox" name="statdev7" id="statdev7" data-style="ios">
-                        <input type="hidden" name="hidden_statdev7" id="hidden_statdev7" value="on">
+                        <input type="checkbox" name="l2r1" id="l2r1" data-style="ios">
+                        <input type="hidden" name="hidden_l2r1" id="hidden_l2r1" value="on">
                       </div>
                   </div>
                   </div>
@@ -176,13 +209,13 @@
                 <div class="col-lg-4">
                   <div class="card" style="margin-bottom: 0 !important">
                     <div class="card-body-header">
-                      <h6>Ruang 2</h4>
+                      <h6>2nd Room</h4>
                     </div>
                     <div class="card-body">
                     <div class="form-group">
                       <div class="checkbox">
-                        <input type="checkbox" name="statdev8" id="statdev8" data-style="ios">
-                        <input type="hidden" name="hidden_statdev8" id="hidden_statdev8" value="on">
+                        <input type="checkbox" name="l2r2" id="l2r2" data-style="ios">
+                        <input type="hidden" name="hidden_l2r2" id="hidden_l2r2" value="on">
                       </div>
                   </div>
                   </div>
@@ -191,13 +224,13 @@
                 <div class="col-lg-4">
                   <div class="card" style="margin-bottom: 0 !important">
                     <div class="card-body-header">
-                      <h6>Ruang 3</h4>
+                      <h6>3rd Room</h4>
                     </div>
                     <div class="card-body">
                     <div class="form-group">
                       <div class="checkbox">
-                        <input type="checkbox" name="statdev9" id="statdev9" data-style="ios">
-                        <input type="hidden" name="hidden_statdev9" id="hidden_statdev9" value="on">
+                        <input type="checkbox" name="l2r3" id="l2r3" data-style="ios">
+                        <input type="hidden" name="hidden_l2r3" id="hidden_l2r3" value="on">
                       </div>
                   </div>
                   </div>
@@ -205,31 +238,46 @@
                 </div>
               </div>
               <div class="row-card-control">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                   <div class="card" style="margin-bottom: 0 !important">
                     <div class="card-body-header">
-                      <h6>Ruang 4</h4>
+                      <h6>4th Room</h4>
                     </div>
                     <div class="card-body">
                     <div class="form-group">
                       <div class="checkbox">
-                        <input type="checkbox" name="statdev10" id="statdev10" data-style="ios">
-                        <input type="hidden" name="hidden_statdev10" id="hidden_statdev10" value="on">
+                        <input type="checkbox" name="l2r4" id="l2r4" data-style="ios">
+                        <input type="hidden" name="hidden_l2r4" id="hidden_l2r4" value="on">
                       </div>
                   </div>
                   </div>
                 </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                   <div class="card" style="margin-bottom: 0 !important">
                     <div class="card-body-header">
-                      <h6>Ruang 5</h4>
+                      <h6>5th Room</h4>
                     </div>
                     <div class="card-body">
                     <div class="form-group">
                       <div class="checkbox">
-                        <input type="checkbox" name="statdev11" id="statdev11" data-style="ios">
-                        <input type="hidden" name="hidden_statdev11" id="hidden_statdev11" value="on">
+                        <input type="checkbox" name="l2r5" id="l2r5" data-style="ios">
+                        <input type="hidden" name="hidden_l2r5" id="hidden_l2r5" value="on">
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="card" style="margin-bottom: 0 !important">
+                    <div class="card-body-header">
+                      <h6>6th Room</h4>
+                    </div>
+                    <div class="card-body">
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <input type="checkbox" name="l2r6" id="l2r6" data-style="ios">
+                        <input type="hidden" name="hidden_l2r6" id="hidden_l2r6" value="on">
                       </div>
                   </div>
                   </div>

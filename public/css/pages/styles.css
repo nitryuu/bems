@@ -64,14 +64,6 @@
   margin-right: 5px;
 }
 
-.horizontal-layout.full #sidenav li a:hover, .horizontal-layout.full #sidenav li a.active{
-  height: 52px;
-}
-
-.horizontal-layout.full #sidenav li a{
-  height: 52px;
-}
-
 .horizontal-layout .header-navbar{
   height: 55px;
 }
@@ -569,6 +561,196 @@ footer{
   margin-top: calc(100vh - 60%);
 }
 
+.btn-warning, .btn-secondary{
+  color: white !important;
+}
+
+.btn-secondary{
+  border-color: #9ba1a8 !important;
+  background-color: #9ba1a8 !important;
+  color: white;
+}
+
+
+.btn-customR6-on{
+  background-color: #c68d0e !important;
+  border-color: #c68d0e !important;
+  color: white;
+}
+
+.btn-customR6-on:hover{
+  box-shadow: 0 8px 25px -8px #c68d0e;
+  color: white;
+}
+
+
+.btn-customR6-off{
+  background-color: #3d1c7d !important;
+  border-color: #3d1c7d !important;
+  color: white;
+}
+
+.btn-customR6-off:hover{
+  box-shadow: 0 8px 25px -8px #3d1c7d;
+  color: white;
+}
+
+.btn-customR2-on{
+  background-color: #f368e0 !important;
+  border-color: #f368e0 !important;
+  color: white;
+}
+
+.btn-customR2-on:hover{
+  box-shadow: 0 8px 25px -8px #f368e0;
+  color: white;
+}
+
+.btn-customR2-off{
+  background-color: #a208b9 !important;
+  border-color: #a208b9 !important;
+  color: white;
+}
+
+.btn-customR2-off:hover{
+  box-shadow: 0 8px 25px -8px #a208b9;
+  color: white;
+}
+
+.btn-customR3-on{
+  background-color: #1de9b6 !important;
+  border-color: #1de9b6 !important;
+  color: white;
+}
+
+.btn-customR3-on:hover{
+  box-shadow: 0 8px 25px -8px #1de9b6;
+  color: white;
+}
+
+.btn-customR3-off{
+  background-color: #108c9b !important;
+  border-color: #108c9b !important;
+  color: white;
+}
+
+.btn-customR3-off:hover{
+  box-shadow: 0 8px 25px -8px #108c9b;
+  color: white;
+}
+
+.btn-customR4-on{
+  background-color: #ffd600 !important;
+  border-color: #ffd600 !important;
+  color: white;
+}
+
+.btn-customR4-on:hover{
+  box-shadow: 0 8px 25px -8px #ffd600;
+  color: white;
+}
+
+.btn-customR4-off{
+  background-color: #ff6d00 !important;
+  border-color: #ff6d00 !important;
+  color: white;
+}
+
+.btn-customR4-off:hover{
+  box-shadow: 0 8px 25px -8px #ff6d00;
+  color: white;
+}
+
+.btn-customR5-on{
+  background-color: #b7978c !important;
+  border-color: #b7978c !important;
+  color: white;
+}
+
+.btn-customR5-on:hover{
+  box-shadow: 0 8px 25px -8px #b7978c;
+  color: white;
+}
+
+.btn-customR5-off{
+  background-color: #3e2723 !important;
+  border-color: #3e2723 !important;
+  color: white;
+}
+
+.btn-customR5-off:hover{
+  box-shadow: 0 8px 25px -8px #3e2723;
+  color: white;
+}
+
+.horizontal-layout.full #usages{
+  margin-top: -7rem;
+}
+
+.horizontal-layout.full footer{
+  height: 4.5rem;
+}
+
+#usages{
+  margin-top: calc(100vh - 58%);
+  margin-bottom: calc(100vh - 48%);
+}
+
+#cost{
+  margin-top: calc(100vh - 58%);
+}
+
+.horizontal-layout.full #cost{
+  margin-top: -2rem;
+}
+
+#ccost{
+  margin: 2rem 1rem 1rem 0.5rem;
+}
+
+.ui-datepicker-header{
+  background-color: transparent !important;
+  border: none;
+  padding: 0 !important;
+}
+
+.ui-state-default {
+  border: none !important;
+  background-color: transparent !important;
+  text-align: center !important;
+  color: black !important;
+  border-radius: 5px;
+  width: 30px;
+}
+
+.ui-state-active{
+  background-color: #8094cc !important;
+  color: white !important;
+  border-radius: 5px;
+}
+
+.ui-state-hover{
+  background-color: #8094cc !important;
+  color: white !important;
+  border-radius: 5px;
+}
+
+.ui-datepicker-prev-hover, .ui-datepicker-next-hover{
+  background-color: #b8dadf !important;
+}
+
+tbody tr td:first-child a, thead tr th:first-child span{
+  color: #900 !important;
+}
+
+#ui-datepicker-div{
+  box-shadow: 0 1px 5px -1px #5353b0;
+  margin-top: 10px;
+}
+
+.ui-datepicker-month, .ui-datepicker-year{
+  width: unset !important;
+}
 
 @media (max-width: 768px){
   #usages{
@@ -600,16 +782,4 @@ footer{
   .footer-text{
     font-size: 7px;
   }
-}
-
-@media (max-width: 1366px){
-  #usages{
-    margin-top: calc(100vh - 58%);
-    margin-bottom: calc(100vh - 48%);
-  }
-
-  .horizontal-layout.full #usages{
-    margin-top: calc(100vh - 65%);
-  }
-
 }

@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('random',function() {
-  return ['x' => "A", 'y' => [rand(0,99),rand(0,99),rand(0,99),rand(0,99),rand(0,99)]];
+  return ['x' => "A", 'y' => [rand(0,99),rand(0,99),rand(0,99),rand(0,99),rand(0,99),rand(0,99)]];
 })->name('random');
 
 Route::get('random2',function() {
@@ -37,11 +37,11 @@ Route::get('today',function(){
 })->name('today');
 
 Route::get('today2',function(){
-  return [ 'x' => [['Ruang 1',rand(0,99)],['Ruang 2',rand(0,99)],['Ruang 3',rand(0,99)]]];
+  return [ 'x' => [['1st Room',rand(0,99)],['2nd Room',rand(0,99)],['3rd Room',rand(0,99)],['4th Room',rand(0,99)],['5th Room',rand(0,99)],['6th Room',rand(0,99)]]];
 });
 
 Route::get('today3',function(){
-  return [ 'x' => [['Ruang 1',rand(0,99)],['Ruang 2',rand(0,99)],['Ruang 3',rand(0,99)],['Ruang 4',rand(0,99)],['Ruang 5',rand(0,99)]]];
+  return [ 'x' => [['1st Room',rand(0,99)],['2nd Room',rand(0,99)],['3rd Room',rand(0,99)],['4th Room',rand(0,99)],['5th Room',rand(0,99)],['6th Room',rand(0,99)]]];
 });
 
 Route::get('month',function(){
@@ -52,11 +52,11 @@ Route::get('month',function(){
 })->name('month');
 
 Route::get('month2',function(){
-  return [ 'x' => [['Ruang 1',rand(0,99)],['Ruang 2',rand(0,99)],['Ruang 3',rand(0,99)]]];
+  return [ 'x' => [['1st Room',rand(0,99)],['2nd Room',rand(0,99)],['3rd Room',rand(0,99)],['4th Room',rand(0,99)],['5th Room',rand(0,99)],['6th Room',rand(0,99)]]];
 });
 
 Route::get('month3',function(){
-  return [ 'x' => [['Ruang 1',rand(0,99)],['Ruang 2',rand(0,99)],['Ruang 3',rand(0,99)],['Ruang 4',rand(0,99)],['Ruang 5',rand(0,99)]]];
+  return [ 'x' => [['1st Room',rand(0,99)],['2nd Room',rand(0,99)],['3rd Room',rand(0,99)],['4th Room',rand(0,99)],['5th Room',rand(0,99)],['6th Room',rand(0,99)]]];
 });
 
 Route::get('year',function(){
@@ -67,11 +67,11 @@ Route::get('year',function(){
 })->name('year');
 
 Route::get('year2',function(){
-  return [ 'x' => [['Ruang 1',rand(0,99)],['Ruang 2',rand(0,99)],['Ruang 3',rand(0,99)]]];
+  return [ 'x' => [['1st Room',rand(0,99)],['2nd Room',rand(0,99)],['3rd Room',rand(0,99)],['4th Room',rand(0,99)],['5th Room',rand(0,99)],['6th Room',rand(0,99)]]];
 });
 
 Route::get('year3',function(){
-  return [ 'x' => [['Ruang 1',rand(0,99)],['Ruang 2',rand(0,99)],['Ruang 3',rand(0,99)],['Ruang 4',rand(0,99)],['Ruang 5',rand(0,99)]]];
+  return [ 'x' => [['1st Room',rand(0,99)],['2nd Room',rand(0,99)],['3rd Room',rand(0,99)],['4th Room',rand(0,99)],['5th Room',rand(0,99)],['6th Room',rand(0,99)]]];
 });
 
 

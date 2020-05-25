@@ -1,203 +1,258 @@
 $(document).ready(function(){
 
-  $('#statdev1').bootstrapToggle({
+  $('#mlantai1').bootstrapToggle({
     on: 'ON',
     off: 'OFF',
     onstyle: 'success',
     offstyle: 'danger'
   });
 
-  $('#statdev1').change(function(){
+  $('#mlantai1').change(function(){
     if($(this).prop('checked'))
     {
-      $('#hidden_statdev1').val('on');
+      $('#hidden_mlantai1').val('on');
     }
     else
     {
-      $('#hidden_statdev1').val('off');
+      $('#hidden_mlantai1').val('off');
     }
   });
 
 
-  $('#statdev2').bootstrapToggle({
+  $('#mlantai2').bootstrapToggle({
     on: 'ON',
     off: 'OFF',
-    onstyle: 'success',
-    offstyle: 'danger'
+    onstyle: 'info',
+    offstyle: 'warning'
   });
 
-  $('#statdev2').change(function(){
+  $('#mlantai2').change(function(){
     if($(this).prop('checked'))
     {
-      $('#hidden_statdev2').val('on');
+      $('#hidden_mlantai2').val('on');
     }
     else
     {
-      $('#hidden_statdev2').val('off');
+      $('#hidden_mlantai2').val('off');
     }
   });
 
-  $('#statdev3').bootstrapToggle({
+  $('#l1r1').bootstrapToggle({
     on: 'ON',
     off: 'OFF',
-    onstyle: 'success',
-    offstyle: 'danger'
+    onstyle: 'primary',
+    offstyle: 'secondary'
   });
 
-  $('#statdev3').change(function(){
+  $('#l1r1').change(function(){
     if($(this).prop('checked'))
     {
-      $('#hidden_statdev3').val('on');
+      $('#hidden_l1r1').val('on');
     }
     else
     {
-      $('#hidden_statdev3').val('off');
+      $('#hidden_l1r1').val('off');
     }
   });
 
-  $('#statdev4').bootstrapToggle({
+  $('#l1r2').bootstrapToggle({
     on: 'ON',
     off: 'OFF',
-    onstyle: 'success',
-    offstyle: 'danger'
+    onstyle: 'customR2-on',
+    offstyle: 'customR2-off'
   });
 
-  $('#statdev4').change(function(){
+  $('#l1r2').change(function(){
     if($(this).prop('checked'))
     {
-      $('#hidden_statdev4').val('on');
+      $('#hidden_l1r2').val('on');
     }
     else
     {
-      $('#hidden_statdev4').val('off');
+      $('#hidden_l1r2').val('off');
     }
   });
 
-  $('#statdev5').bootstrapToggle({
+  $('#l1r3').bootstrapToggle({
     on: 'ON',
     off: 'OFF',
-    onstyle: 'success',
-    offstyle: 'danger'
+    onstyle: 'customR3-on',
+    offstyle: 'customR3-off'
   });
 
-  $('#statdev5').change(function(){
+  $('#l1r3').change(function(){
     if($(this).prop('checked'))
     {
-      $('#hidden_statdev5').val('on');
+      $('#hidden_l1r3').val('on');
     }
     else
     {
-      $('#hidden_statdev5').val('off');
+      $('#hidden_l1r3').val('off');
     }
   });
 
-  $('#statdev6').bootstrapToggle({
+  $('#l1r4').bootstrapToggle({
     on: 'ON',
     off: 'OFF',
-    onstyle: 'success',
-    offstyle: 'danger'
+    onstyle: 'customR4-on',
+    offstyle: 'customR4-off'
   });
 
-  $('#statdev6').change(function(){
+  $('#l1r4').change(function(){
     if($(this).prop('checked'))
     {
-      $('#hidden_statdev6').val('on');
+      $('#hidden_l1r4').val('on');
     }
     else
     {
-      $('#hidden_statdev6').val('off');
+      $('#hidden_l1r4').val('off');
     }
   });
 
-  $('#statdev7').bootstrapToggle({
+  $('#l1r5').bootstrapToggle({
     on: 'ON',
     off: 'OFF',
-    onstyle: 'success',
-    offstyle: 'danger'
+    onstyle: 'customR5-on',
+    offstyle: 'customR5-off'
   });
 
-  $('#statdev7').change(function(){
+  $('#l1r5').change(function(){
     if($(this).prop('checked'))
     {
-      $('#hidden_statdev7').val('on');
+      $('#hidden_l1r5').val('on');
     }
     else
     {
-      $('#hidden_statdev7').val('off');
+      $('#hidden_l1r5').val('off');
     }
   });
 
-  $('#statdev8').bootstrapToggle({
+  $('#l1r6').bootstrapToggle({
     on: 'ON',
     off: 'OFF',
-    onstyle: 'success',
-    offstyle: 'danger'
+    onstyle: 'customR6-on',
+    offstyle: 'customR6-off'
   });
 
-  $('#statdev8').change(function(){
+  $('#l1r6').change(function(){
     if($(this).prop('checked'))
     {
-      $('#hidden_statdev8').val('on');
+      $('#hidden_l1r6').val('on');
     }
     else
     {
-      $('#hidden_statdev8').val('off');
+      $('#hidden_l1r6').val('off');
     }
   });
 
-  $('#statdev9').bootstrapToggle({
+  $('#l2r1').bootstrapToggle({
     on: 'ON',
     off: 'OFF',
-    onstyle: 'success',
-    offstyle: 'danger'
+    onstyle: 'primary',
+    offstyle: 'secondary'
   });
 
-  $('#statdev9').change(function(){
+  $('#l2r1').change(function(){
     if($(this).prop('checked'))
     {
-      $('#hidden_statdev9').val('on');
+      $('#hidden_l2r1').val('on');
     }
     else
     {
-      $('#hidden_statdev9').val('off');
+      $('#hidden_l2r1').val('off');
     }
   });
 
-  $('#statdev10').bootstrapToggle({
+  $('#l2r2').bootstrapToggle({
     on: 'ON',
     off: 'OFF',
-    onstyle: 'success',
-    offstyle: 'danger'
+    onstyle: 'customR2-on',
+    offstyle: 'customR2-off'
   });
 
-  $('#statdev10').change(function(){
+  $('#l2r2').change(function(){
     if($(this).prop('checked'))
     {
-      $('#hidden_statdev10').val('on');
+      $('#hidden_l2r2').val('on');
     }
     else
     {
-      $('#hidden_statdev10').val('off');
+      $('#hidden_l2r2').val('off');
     }
   });
 
-  $('#statdev11').bootstrapToggle({
+  $('#l2r3').bootstrapToggle({
     on: 'ON',
     off: 'OFF',
-    onstyle: 'success',
-    offstyle: 'danger'
+    onstyle: 'customR3-on',
+    offstyle: 'customR3-off'
   });
 
-  $('#statdev11').change(function(){
+  $('#l2r3').change(function(){
     if($(this).prop('checked'))
     {
-      $('#hidden_statdev11').val('on');
+      $('#hidden_l2r3').val('on');
     }
     else
     {
-      $('#hidden_statdev11').val('off');
+      $('#hidden_l2r3').val('off');
     }
   });
+
+  $('#l2r4').bootstrapToggle({
+    on: 'ON',
+    off: 'OFF',
+    onstyle: 'customR4-on',
+    offstyle: 'customR4-off'
+  });
+
+  $('#l2r4').change(function(){
+    if($(this).prop('checked'))
+    {
+      $('#hidden_l2r4').val('on');
+    }
+    else
+    {
+      $('#hidden_l2r4').val('off');
+    }
+  });
+
+  $('#l2r5').bootstrapToggle({
+    on: 'ON',
+    off: 'OFF',
+    onstyle: 'customR5-on',
+    offstyle: 'customR5-off'
+  });
+
+  $('#l2r5').change(function(){
+    if($(this).prop('checked'))
+    {
+      $('#hidden_l2r5').val('on');
+    }
+    else
+    {
+      $('#hidden_l2r5').val('off');
+    }
+  });
+
+  $('#l2r6').bootstrapToggle({
+    on: 'ON',
+    off: 'OFF',
+    onstyle: 'customR6-on',
+    offstyle: 'customR6-off'
+  });
+
+  $('#l2r6').change(function(){
+    if($(this).prop('checked'))
+    {
+      $('#hidden_l2r6').val('on');
+    }
+    else
+    {
+      $('#hidden_l2r6').val('off');
+    }
+  });
+
 
 
 })

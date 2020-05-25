@@ -8,17 +8,26 @@ function requestDataLantai1() {
   $.ajax({
     url: 'http://localhost/vuexy/public/api/random',
     success: function(value) {
-      var point = chart_lantai1.series[0].points[0],
+      var point1 = chart_lantai1.series[0].points[0],
       point2 = chart_lantai1.series[0].points[1],
       point3 = chart_lantai1.series[0].points[2],
+      point4 = chart_lantai1.series[0].points[3],
+      point5 = chart_lantai1.series[0].points[4],
+      point6 = chart_lantai1.series[0].points[5],
 
-      newVal = value.y[0],
+      newVal1 = value.y[0],
       newVal2 = value.y[1],
       newVal3 = value.y[2];
+      newVal4 = value.y[3];
+      newVal5 = value.y[4];
+      newVal6 = value.y[5];
 
-      point.update(newVal);
+      point1.update(newVal1);
       point2.update(newVal2);
       point3.update(newVal3);
+      point4.update(newVal4);
+      point5.update(newVal5);
+      point6.update(newVal6);
 
       setTimeout(requestDataLantai1, 1000);
     },
@@ -30,7 +39,7 @@ $(document).ready(function() {
     chart: {
       renderTo: lantai1,
       defaultSeriesType: 'bar',
-      height: 100,
+      height: 155,
       events: {
         load: requestDataLantai1
       }
@@ -42,7 +51,7 @@ $(document).ready(function() {
       enabled: false
     },
     xAxis: {
-      categories: ['Ruang 1','Ruang 2','Ruang 3']
+      categories: ['Ruang 1','Ruang 2','Ruang 3','Ruang 4','Ruang 5','Ruang 6']
     },
     tooltip: {
       formatter: function() {
@@ -56,6 +65,11 @@ $(document).ready(function() {
       },
       borderRadius: 3
     },
+    responsive: [{
+      rules: {
+        maxWidth: 500
+      }
+    }],
     yAxis: {
       gridLineColor: '#fff',
       labels: {
@@ -68,11 +82,6 @@ $(document).ready(function() {
       max: 100,
       tickAmount: 2,
     },
-    responsive: [{
-      rules: {
-        maxWidth: 500
-      }
-    }],
     exporting: {
         enabled: false,
       },
@@ -98,10 +107,10 @@ $(document).ready(function() {
           y2: 1
         },
       stops: [
-        [0, 'blue'],
-        [1, '#3583b8']
+        [0, '#3583b8'],
+        [1, 'blue']
       ]},
-      data: [0,0,0],
+      data: [0,0,0,0,0,0],
     }]
   });
 });

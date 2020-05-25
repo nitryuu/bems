@@ -57,7 +57,7 @@
               <div class="col-lg-6 col-12">
                 <div class="card">
                   <div class="card-header-chart">
-                    <h4>LANTAI 1</h4>
+                    <h4>1ST FLOOR</h4>
                   </div>
                   <div class="row-card">
                   <div class="col-lg-12">
@@ -68,7 +68,7 @@
                       <table id="etlantai1T">
                         <thead>
                           <tr>
-                            <th>Ruang</th>
+                            <th>Room</th>
                             <th>Energy (kWh)</th>
                           </tr>
 
@@ -81,7 +81,7 @@
               <div class="col-lg-6 col-12">
                 <div class="card">
                   <div class="card-header-chart">
-                    <h4>LANTAI 2</h4>
+                    <h4>2ND FLOOR</h4>
                   </div>
                   <div class="row-card">
                   <div class="col-lg-12">
@@ -92,7 +92,7 @@
                       <table id="etlantai2T">
                         <thead>
                           <tr>
-                            <th>Ruang</th>
+                            <th>Room</th>
                             <th>Energy (kWh)</th>
                           </tr>
 
@@ -113,7 +113,7 @@
               <div class="col-lg-6">
                 <div class="card">
                   <div class="card-header-chart">
-                    <h4>LANTAI 1</h4>
+                    <h4>1ST FLOOR</h4>
                   </div>
                   <div class="row-card">
                   <div class="col-lg-12">
@@ -124,7 +124,7 @@
                       <table id="etlantai1M">
                         <thead>
                           <tr>
-                            <th>Ruang</th>
+                            <th>Room</th>
                             <th>Energy (kWh)</th>
                           </tr>
 
@@ -137,7 +137,7 @@
               <div class="col-lg-6">
                 <div class="card">
                   <div class="card-header-chart">
-                    <h4>LANTAI 2</h4>
+                    <h4>2ND FLOOR</h4>
                   </div>
                   <div class="row-card">
                   <div class="col-lg-12">
@@ -148,7 +148,7 @@
                       <table id="etlantai2M">
                         <thead>
                           <tr>
-                            <th>Ruang</th>
+                            <th>Room</th>
                             <th>Energy (kWh)</th>
                           </tr>
 
@@ -167,7 +167,7 @@
               <div class="col-lg-6">
                 <div class="card">
                   <div class="card-header-chart">
-                    <h4>LANTAI 1</h4>
+                    <h4>1ST FLOOR</h4>
                   </div>
                   <div class="row-card">
                   <div class="col-lg-12">
@@ -178,7 +178,7 @@
                       <table id="etlantai1Y">
                         <thead>
                           <tr>
-                            <th>Ruang</th>
+                            <th>Room</th>
                             <th>Energy (kWh)</th>
                           </tr>
 
@@ -191,7 +191,7 @@
               <div class="col-lg-6">
                 <div class="card">
                   <div class="card-header-chart">
-                    <h4>LANTAI 2</h4>
+                    <h4>2ND FLOOR</h4>
                   </div>
                   <div class="row-card">
                   <div class="col-lg-12">
@@ -202,7 +202,7 @@
                       <table id="etlantai2Y">
                         <thead>
                           <tr>
-                            <th>Ruang</th>
+                            <th>Room</th>
                             <th>Energy (kWh)</th>
                           </tr>
 
