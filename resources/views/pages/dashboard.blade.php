@@ -29,7 +29,7 @@
       <div id="guts">
         <div class="col-lg-12" id="time">
             <span id='date'></span>
-            <span id="timeseparator">|</span><br id="br-time" style="display: none">
+            <span id="timeseparator" style="color:white">|</span><br id="br-time" style="display: none">
             <span id='clock'></span>
         </div>
         <br />
@@ -42,16 +42,26 @@
                 <h4>TOTAL ENERGY USAGES</h4>
               </div>
               <div class="row-card">
-                <div class="col-lg-12">
-
-                    <span id="tenergy-text">Till now: </span>
-                    <span id="tenergy-value"></span> <br />
-                    <div id="daya-details"></div>
-                    <div id="daya"></div>
+                <div class="col-lg-6" style="border-right: 1px dotted; margin-bottom: 0.5rem">
+                  <div class="row-header" style="border-bottom: 1px solid">
+                    <p>
+                      TODAY
+                    </p>
+                  </div>
+                    <div id="daya" style="margin-top: 10px"></div>
+                </div>
+                  <div class="col-lg-6">
+                    <div class="row-header" style="border-bottom: 1px solid">
+                      <p>
+                        TILL NOW
+                      </p>
+                    </div>
+                    <div id="daya2" style="margin-top: 10px"></div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+
           <!-- END LOAD 1 -->
 
           <!-- LOAD 2 -->
@@ -63,10 +73,10 @@
               <div class="row-card">
               <div class="col-lg-12">
                 <div class="row">
-                  <div class="col-lg-7 col-md-8 col-sm-4 col-8">
+                  <div class="col-lg-8 col-sm-4 col-8">
                     <div id="tcost"></div>
                   </div>
-                  <div class="col-lg-5 col-md-4 col-sm-2 col-4">
+                  <div class="col-lg-4 col-sm-2 col-4">
                     <div class="row-tcost">
                       <span id="tcost-value"></span>
                       <br />
@@ -92,7 +102,7 @@
               <div class="col-lg-6 col-sm-6 col-md-6 col-12" style="border-right: 1px dotted; margin-bottom: 20px; z-index: 2">
                 <div class="row-header" style="border-bottom: 1px solid">
                   <p>
-                    Lantai 1
+                    1ST FLOOR
                   </p>
                 </div>
                 <div class="row-chart">
@@ -102,7 +112,7 @@
               <div class="col-lg-6 col-sm-6 col-md-6 col-12">
                 <div class="row-header" style="border-bottom: 1px solid">
                   <p>
-                    Lantai 2
+                    2ND FLOOR
                   </p>
                 </div>
                 <div class="row-chart" style="margin-left: -8px;">
@@ -118,7 +128,7 @@
 
         </div>
         <!-- END guts -->
-
+</div>
 </div>
 
 
@@ -165,7 +175,8 @@
           })
           @endif
         </script>
-        <script src="{{ asset('js/daya.js') }}"></script>
+        <script src="{{ asset('js/totalDaya.js') }}"></script>
+        <script src="{{ asset('js/totalDaya2.js') }}"></script>
         <script src="{{ asset('js/totalCost.js') }}"></script>
         <script src="{{ asset('js/lantai1.js') }}"></script>
         <script src="{{ asset('js/lantai2.js') }}"></script>

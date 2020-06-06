@@ -1,28 +1,28 @@
-var chart_daya;
+var chart_daya2;
 /**
  * Request data from the server, add it to the graph and set a timeout to request again
  */
-function requestDataDaya() {
+function requestDataDaya2() {
   $.ajax({
     url: 'http://localhost/vuexy/public/api/random',
-    success: function(points) {
-      var point = chart_daya.series[0].points[0],
-      newVal = points.y[0];
+    success: function(value) {
+      var point = chart_daya2.series[0].points[0],
+      newVal = value.y[0];
 
       point.update(newVal);
 
-      setTimeout(requestDataDaya, 1000);
+      setTimeout(requestDataDaya2, 1000);
     },
   });
 }
 
 $(document).ready(function() {
-  chart_daya = new Highcharts.Chart({
+  chart_daya2 = new Highcharts.Chart({
     chart: {
-      renderTo: 'daya',
+      renderTo: 'daya2',
       height: 145,
       events: {
-        load: requestDataDaya
+        load: requestDataDaya2
       }
     },
     navigation: {

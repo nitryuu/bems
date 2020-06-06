@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class DataController extends Controller
 {
-    // Dashboard - Analytics
+    /**
     public function store(Request $request){
       $data = new Data;
       $data->id_device = $request->get('id_device',"n/a");
@@ -32,6 +32,20 @@ class DataController extends Controller
     public function show(){
       $data = Data::all()->sortByDesc('time')->first();
       return $data->toJson(JSON_PRETTY_PRINT);
+    }
+    **/
+
+    public function thingspeak(Request $request){
+      $data = new Data;
+      $data->power = $request->get('power');
+      $data->cost = $request->get('cost');
+
+      $data->save();
+    }
+
+    public function show(){
+      $data = Data::select('power')->get();
+      return ['x' => $data];
     }
 
 }

@@ -32,8 +32,6 @@ Route::get('cost','CostController@cost')->name('cost');
 //Route Statistic
 Route::get('statistic','StatController@stat');
 
-
-
 //Route Login
 Route::get('login','LoginController@index');
 Route::post('login','LoginController@login')->name('login');

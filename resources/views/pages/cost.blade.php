@@ -13,7 +13,6 @@
 @endsection
 @section('page-style')
         <!-- Page css files -->
-        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap2-toggle.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset(mix('css/pages/dashboard-analytics.css')) }}">
         <link rel="stylesheet" href="{{ asset(mix('css/pages/card-analytics.css')) }}">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -92,9 +91,11 @@
         <!-- vendor files -->
         <!--<script src="{{ asset('vendors/js/tables/ag-grid/ag-grid-community.min.noStyle.js') }}"></script>-->
         <script src="{{ asset(mix('vendors/js/charts/apexcharts.min.js')) }}"></script>
-        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
         <script src="https://momentjs.com/downloads/moment.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 
 @endsection
 @section('page-script')

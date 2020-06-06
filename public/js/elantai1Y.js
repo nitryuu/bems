@@ -43,6 +43,13 @@ $(document).ready(function() {
             },
             borderRadius: 3
           },
+          plotOptions: {
+            column: {
+              dataLabels: {
+                enabled: true
+              }
+            }
+          },
           legend:{
             enabled: false
           },

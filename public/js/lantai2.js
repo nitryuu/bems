@@ -39,7 +39,7 @@ $(document).ready(function() {
     chart: {
       renderTo: lantai2,
       defaultSeriesType: 'bar',
-      height: 155,
+      height: 140,
       events: {
         load: requestDatalantai2
       }

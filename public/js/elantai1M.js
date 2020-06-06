@@ -44,6 +44,18 @@ $(document).ready(function() {
           legend:{
             enabled: false
           },
+          plotOptions: {
+            column: {
+              dataLabels: {
+                enabled: true
+              },
+              borderColor: '#fff',
+              borderWidth: 0,
+              shadow: false,
+              groupPadding: 0.15,
+              pointPadding: 0
+            }
+          },
           responsive: {
           rules: [{
             condition: {

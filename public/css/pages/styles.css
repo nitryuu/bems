@@ -80,7 +80,7 @@
   height: 50px;
 }
 
-.highcharts-title {
+.highcharts-title ,.highcharts-axis-title{
   display: none;
 }
 
@@ -350,6 +350,10 @@ footer{
 
 #elantai1Y, #elantai2Y{
   margin: 2rem 1rem 1rem 0.5rem;
+}
+
+#etlantai1M, #etlantai1T, #etlantai1Y, #etlantai2M, #etlantai2T, #etlantai2Y{
+  font-weight: bold;
 }
 
 #etlantai1T{
@@ -751,6 +755,14 @@ tbody tr td:first-child a, thead tr th:first-child span{
 .ui-datepicker-month, .ui-datepicker-year{
   width: unset !important;
 }
+
+#statistic{
+  margin-top: -6rem;
+}
+.horizontal-layout.full #statistic{
+  margin-top: -6rem;
+}
+
 
 @media (max-width: 768px){
   #usages{

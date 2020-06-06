@@ -52,7 +52,10 @@ $(document).ready(function() {
         },
         plotOptions: {
            column: {
-             pointPlacement: 0
+             pointPlacement: 0,
+             dataLabels: {
+               enabled: true
+             }
            }
          },
           exporting: {

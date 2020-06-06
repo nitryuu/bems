@@ -12,9 +12,6 @@ function requestDataDaya() {
 
         chart_daya.series[0].addPoint(eval(value), true, shift_daya);
 
-        $( "#guts" ).data( "tenergy", { first : value.y } );
-        $( "#tenergy-value" ).first().html( '<b>' + $( "#guts" ).data( "tenergy" ).first + " kWh </b>" );
-
       setTimeout(requestDataDaya, 300000);
     },
   });
@@ -28,6 +25,9 @@ function requestDataDaya_details() {
         shift_daya_details = series_daya_details.data.length > 20; // shift if the series is longer than 20
 
         chart_daya_details.series[0].addPoint(eval(point), true, shift_daya_details);
+
+        $( "#guts" ).data( "tenergy", { first : point.y } );
+        $( "#tenergy-value" ).first().html( '<b>' + $( "#guts" ).data( "tenergy" ).first + " kWh </b>" );
 
       setTimeout(requestDataDaya_details, 1000);
     },

@@ -44,6 +44,13 @@ $(document).ready(function() {
           legend:{
             enabled: false
           },
+          plotOptions:{
+            column: {
+              dataLabels: {
+                enabled: true
+              }
+            }
+          },
           responsive: {
           rules: [{
             condition: {

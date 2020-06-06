@@ -77,3 +77,4 @@ Route::get('year3',function(){
 
 Route::post('data', 'DataController@store');
 Route::get('data', 'DataController@show');
+Route::post('thingspeak','DataController@thingspeak');

@@ -3,6 +3,56 @@
 Highcharts.stockChart('ccost', {
       chart: {
         height: 400,
+        events : {
+          load : function() {
+            var x,
+            points = this.series[0].points,
+            y = this.series[0].points.length;
+
+            async function theloop() {
+
+              for (x = 0 ; x < y ; x++){
+                (function(x) {
+                  setTimeout(async function(){
+                    points[x].update({
+                      marker:{
+                        enabled : true
+                      },
+                      dataLabels: {
+                        enabled : true,
+                        formatter : function(){
+                          if(this.series.xAxis.userOptions.id == "navigator-x-axis"){
+                            return '';
+                          }
+                          return 'Cost: ' + this.y + 'k';
+                        }
+                      },
+                    })
+                    await sleep(1000);
+                    points[x].update({
+                      marker: {
+                        enabled: false
+                      },
+                      dataLabels: {
+                        enabled : false
+                      },
+                    })
+
+                  }, 2000 * x)
+                  function sleep(ms){
+                    return new Promise(resolve => setTimeout(resolve, ms));
+                  }
+                })(x);
+              }
+              console.log(x);
+              console.log(y);
+              console.log(points);
+
+              setTimeout(theloop,2000 * x);
+            }
+            theloop();
+          }
+        }
       },
       responsive: {
       rules: [{
@@ -12,9 +62,6 @@ Highcharts.stockChart('ccost', {
         }
       }]
     },
-    exporting: {
-        enabled: false,
-      },
         rangeSelector: {
             selected: 0,
             inputPosition: {
@@ -56,10 +103,7 @@ Highcharts.stockChart('ccost', {
         },
         plotOptions: {
           area: {
-            dataLabels:{
-              enabled: true
-            },
-              lineColor: '#116f9e',
+              lineColor: 'red',
               fillColor: {
                   linearGradient: {
                       x1: 1,
@@ -68,8 +112,8 @@ Highcharts.stockChart('ccost', {
                       y2: 1
                   },
                   stops: [
-                    [0, '#116f9e'],
-                    [1, '#2a179f'],
+                    [0, 'blue'],
+                    [1, '#3583b8'],
                   ]
               },
               marker: {
@@ -108,7 +152,7 @@ Highcharts.stockChart('ccost', {
         },
         series: [{
             name: 'Cost',
-            color: '#116f9e',
+            color: 'blue',
             type: 'area',
             data: data,
             tooltip: {
@@ -118,7 +162,7 @@ Highcharts.stockChart('ccost', {
         tooltip: {
           formatter: function() {
             return ''+
-            'Cost: <b>'+ this.y +'k </b>';
+            'Cost' +': <b>'+ this.y +'k </b>';
           },
         },
     } ,
