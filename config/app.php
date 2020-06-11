@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         ConsoleTVs\Charts\ChartsServiceProvider::class,
+        Salman\Mqtt\MqttServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -229,6 +230,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Helper' => App\Helpers\Helper::class,
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
+        'Mqtt' => \Salman\Mqtt\Facades\Mqtt::class,
     ],
 
 ];

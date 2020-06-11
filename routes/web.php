@@ -36,3 +36,6 @@ Route::get('statistic','StatController@stat');
 Route::get('login','LoginController@index');
 Route::post('login','LoginController@login')->name('login');
 Route::get('logout','LoginController@logout')->name('logout');
+
+Route::get('/mqtt/publish/{topic1}/{topic2}/{topic3}/{topic4}/{topic5}','DataController@SubscribetoTopic');
+Route::post('storeData','DataController@storeData');

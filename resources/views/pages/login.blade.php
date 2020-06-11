@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/iofrm-style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/iofrm-theme4.css')}}">
 </head>
+
 <body>
     <div class="form-body" class="container-fluid">
         <div class="row">
@@ -38,9 +40,10 @@
             </div>
         </div>
     </div>
-<script type="text/javascript" src="{{ asset('vendors/js/ui/jquery.min.js')}}"></script>
-<script type="text/javascript" src="{{ asset('vendors/js/ui/popper.min.js')}}"></script>
-<script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
-<script type="text/javascript" src="{{ asset('js/main.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('vendors/js/ui/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('vendors/js/ui/popper.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/main.js')}}"></script>
 </body>
+
 </html>
