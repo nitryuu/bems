@@ -16,9 +16,10 @@ Route::get('/', function() {
   return redirect('dashboard');
 });
 
-// Route Monitoring
-Route::get('dashboard', 'MoController@dashboard')->name('dashboard');
-Route::get('dashboard2', 'MoController@dashboard2')->name('dashboard2');
+// Route Dashboard
+Route::get('dashboard', 'DaController@dashboard')->name('dashboard');
+
+Route::get('dashboard2', 'DaController@dashboard2')->name('dashboard2');
 
 //Route Usages
 Route::get('usages','UsController@usages')->name('usages');

@@ -25,10 +25,6 @@ Route::get('random2',function() {
   return [ 'x' => time() * 1000 , 'y' => rand(0,99)];
 })->name('random2');
 
-Route::get('totalcost',function(){
-  return ['x' => "A", 'y' => [300,rand(0,550)]];
-})->name('tcost');
-
 Route::get('today',function(){
    return [ 'x' => [[ strtotime('2020-05-16 11:00:40') * 1000, rand(0,99) ], [strtotime('2020-05-16 12:00:40') * 1000, rand(0,99)],
    [strtotime('2020-05-16 13:00:40') * 1000, rand(0,99)], [strtotime('2020-05-16 14:00:40') * 1000, rand(0,99)],
@@ -74,7 +70,10 @@ Route::get('year3',function(){
   return [ 'x' => [['1st Room',rand(0,99)],['2nd Room',rand(0,99)],['3rd Room',rand(0,99)],['4th Room',rand(0,99)],['5th Room',rand(0,99)],['6th Room',rand(0,99)]]];
 });
 
-
 Route::post('data', 'DataController@store');
 Route::get('data', 'DataController@show');
 Route::post('thingspeak','DataController@thingspeak');
+
+Route::get('valueToday','DataController@valueToday')->name('valueToday');
+Route::get('tillNow','DataController@tillNow')->name('tillNow');
+Route::get('totalCost','DataController@totalCost')->name('totalCost');

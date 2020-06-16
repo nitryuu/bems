@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Salman\Mqtt\MqttClass\Mqtt;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
 
 class DataController extends Controller
 {
@@ -72,7 +74,7 @@ class DataController extends Controller
       $pesan = json_decode($msg, true);
       $power = $pesan['field6'];
       $cost = $pesan['field2'];
-
+      dd($topic,$pesan);
       $this->p = $power;
       $this->c = $cost;
 
@@ -91,4 +93,51 @@ class DataController extends Controller
     $execution_time = ($this->f - $this->s);
     //dd($execution_time);
   }
+
+  public function valueToday(){
+    $data = DB::table('kwh')
+    ->selectRaw('IFNULL(sum(power),0)/1000 p')
+    ->whereDate('created_at', Carbon::today())
+    ->get();
+
+    // $data = Data::whereDate('created_at', Carbon::today())->get();
+    return $data;
+  }
+
+  public function tillNow(){
+    $data = DB::table('kwh')
+    ->selectRaw('IFNULL(sum(power),0)/1000 p')
+    ->whereMonth('created_at', Carbon::today())
+    ->get();
+
+    // $data = Data::whereDate('created_at', Carbon::today())->get();
+    return $data;
+  }
+
+  public function totalCost(){
+    $thisMonth = DB::table('kwh')
+    ->selectRaw('IFNULL(sum(cost),0) c')
+    ->whereMonth('created_at',Carbon::today())
+    ->get();
+
+    $previousMonth = DB::table('kwh')
+    ->selectRaw('IFNULL(sum(cost),0) c')
+    ->whereMonth('created_at',Carbon::now()->subMonth())
+    ->get();
+
+    $month = Carbon::now()->format('F');
+    $pmonth = Carbon::now()->subMonth()->format('F');
+
+    $data = collect($previousMonth)->merge($thisMonth);
+
+    $datas = new Collection();
+    foreach($data as $items){
+      foreach($items as $item){
+        $datas->push($item);
+      }
+    }
+
+    return [ 'month'=> [ $pmonth,$month ],'cost' => $datas ];
+  }
+
 }

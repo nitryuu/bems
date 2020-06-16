@@ -6,15 +6,19 @@ var chart_tcost;
 
 function requestDataTcost() {
   $.ajax({
-    url: 'http://localhost/vuexy/public/api/totalcost',
+    url: 'http://localhost/vuexy/public/api/totalCostt',
     success: function(value) {
       //chart
       var point1 = chart_tcost.series[0].points[0],
       point2 = chart_tcost.series[0].points[1],
 
-      newVal1 = value.y[0],
-      newVal2 = value.y[1];
+      thisMonth=value.month[0],
+      prevMonth=value.month[1],
 
+      newVal1 = value.cost[0],
+      newVal2 = value.cost[1];
+
+      chart_tcost.xAxis[0].setCategories([thisMonth,prevMonth]);
       point1.update(newVal1);
       point2.update(newVal2);
 
@@ -57,7 +61,7 @@ $(document).ready(function() {
       enabled: false
     },
     xAxis: {
-      categories: ['April','May']
+      type: 'categories'
     },
     responsive: {
     rules: [{
@@ -70,7 +74,7 @@ $(document).ready(function() {
     tooltip: {
       formatter: function() {
         return ''+
-        this.series.name +': <b>Rp'+ this.y +'.000,- </b>';
+        this.series.name +': <b>Rp'+ Highcharts.numberFormat(this.y,2) +'</b>';
       },
       shadow: false,
       style: {
@@ -88,7 +92,7 @@ $(document).ready(function() {
         text: null
       },
       min: 0,
-      max: 600,
+      max: 1000,
       tickAmount: 2,
     },
     exporting: {
@@ -97,7 +101,10 @@ $(document).ready(function() {
       plotOptions: {
         column : {
           dataLabels: {
-            enabled: true
+            enabled: true,
+            formatter: function () {
+                return Highcharts.numberFormat(this.y,2);
+            }
           },
           borderColor: '#fff',
           borderWidth: 0,

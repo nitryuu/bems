@@ -109,8 +109,8 @@ $(document).ready(function() {
           y2: 1
         },
       stops: [
-        [0, '#3583b8'],
-        [1, 'blue']
+        [0, 'blue'],
+        [1, '#3583b8']
       ]},
       data: [0,0,0,0,0,0],
     }]

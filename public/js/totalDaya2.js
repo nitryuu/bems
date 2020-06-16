@@ -4,10 +4,10 @@ var chart_daya2;
  */
 function requestDataDaya2() {
   $.ajax({
-    url: 'http://localhost/vuexy/public/api/random',
+    url: 'http://localhost/vuexy/public/api/tillNow',
     success: function(value) {
       var point = chart_daya2.series[0].points[0],
-      newVal = value.y[0];
+      newVal = value[0].p;
 
       point.update(newVal);
 
@@ -91,7 +91,7 @@ $(document).ready(function() {
         dataLabels: {
           format:
             '<div style="text-align:center">' +
-            '<span style="font-size:15px">{y}</span><br/>' +
+            '<span style="font-size:15px">{y:.2f}</span><br/>' +
             '<span style="font-size:12px;opacity:0.4">KWH</span>' +
             '</div>'
         },

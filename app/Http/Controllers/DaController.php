@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Charts;
 use App\User;
 
-class MoController extends Controller
+class DaController extends Controller
 {
     // Dashboard - Analytics
     public function dashboard(){
@@ -29,4 +29,5 @@ class MoController extends Controller
             'pageConfigs' => $pageConfigs
         ]);
     }
+
 }
