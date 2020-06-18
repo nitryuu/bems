@@ -6,7 +6,7 @@ var chart_lantai2;
 
 function requestDatalantai2() {
   $.ajax({
-    url: 'http://localhost/vuexy/public/api/random',
+    url: 'http://localhost/vuexy/public/api/lantai2',
     success: function(value) {
       var point1 = chart_lantai2.series[0].points[0],
       point2 = chart_lantai2.series[0].points[1],
@@ -15,12 +15,12 @@ function requestDatalantai2() {
       point5 = chart_lantai2.series[0].points[4],
       point6 = chart_lantai2.series[0].points[5],
 
-      newVal1 = value.y[0],
-      newVal2 = value.y[1],
-      newVal3 = value.y[2];
-      newVal4 = value.y[3];
-      newVal5 = value.y[4];
-      newVal6 = value.y[5];
+      newVal1 = value.power[0],
+      newVal2 = value.power[1],
+      newVal3 = value.power[2];
+      newVal4 = value.power[3];
+      newVal5 = value.power[4];
+      newVal6 = value.power[5];
 
       point1.update(newVal1);
       point2.update(newVal2);
@@ -51,6 +51,11 @@ $(document).ready(function() {
       enabled: false
     },
     xAxis: {
+      labels: {
+        style:{
+          fontSize: 9.5
+        },
+      },
       categories: ['Ruang 1','Ruang 2','Ruang 3','Ruang 4','Ruang 5','Ruang 6'],
       opposite: true
     },
@@ -90,7 +95,8 @@ $(document).ready(function() {
       plotOptions: {
         bar: {
           dataLabels: {
-            enabled: true
+            enabled: true,
+            color: '#000'
           },
           borderColor: '#fff',
           borderWidth: 0,
@@ -103,10 +109,10 @@ $(document).ready(function() {
       name: 'Power',
       color: {
         linearGradient: {
-          x1: 0,
+          x1: 1,
           x2: 0,
           y1: 0,
-          y2: 1
+          y2: 0
         },
       stops: [
         [0, 'blue'],

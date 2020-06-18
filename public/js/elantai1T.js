@@ -2,9 +2,13 @@ var chart_elantai1T;
 
 $(document).ready(function() {
   $.ajax({
-    url: 'http://localhost/vuexy/public/api/today',
+    url: 'http://localhost/vuexy/public/api/usageToday1',
     success: function(value) {
         chart_elantai1T = new Highcharts.Chart({
+          global: {
+            useUTC: true,
+            timezoneOffset: (-1)*(-180) 
+          },
           chart: {
             renderTo: elantai1T,
             defaultSeriesType: 'column',
@@ -28,10 +32,7 @@ $(document).ready(function() {
             }
           },
           tooltip: {
-            formatter: function() {
-              return ''+
-              this.series.name +': <b>'+ this.y +' kWh </b>';
-            },
+
             shadow: false,
             style: {
               color: '#4c4c4c',
@@ -63,7 +64,7 @@ $(document).ready(function() {
             },
             series: [{
               name: 'Energy',
-              data : value.x,
+              data : value.power,
               color: {
                 linearGradient: {
                   x1: 0,

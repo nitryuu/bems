@@ -2,8 +2,8 @@ $(document).ready( function () {
   var etlantai1M = $('#etlantai1M').DataTable({
 
     ajax: {
-    url: "http://localhost/vuexy/public/api/month2",
-    dataSrc: "x"
+    url: "http://localhost/vuexy/public/api/tableMonth1",
+    dataSrc: "energy"
 }});
 
 $('a[data-toggle="list"]').on('shown.bs.tab', function(e) {

@@ -70,10 +70,19 @@ Route::get('year3',function(){
   return [ 'x' => [['1st Room',rand(0,99)],['2nd Room',rand(0,99)],['3rd Room',rand(0,99)],['4th Room',rand(0,99)],['5th Room',rand(0,99)],['6th Room',rand(0,99)]]];
 });
 
-Route::post('data', 'DataController@store');
-Route::get('data', 'DataController@show');
-Route::post('thingspeak','DataController@thingspeak');
+Route::post('data', 'DashDataController@store');
+Route::get('data', 'DashDataController@show');
+Route::post('thingspeak','DashDataController@thingspeak');
 
-Route::get('valueToday','DataController@valueToday')->name('valueToday');
-Route::get('tillNow','DataController@tillNow')->name('tillNow');
-Route::get('totalCost','DataController@totalCost')->name('totalCost');
+Route::get('valueToday','DashDataController@valueToday')->name('valueToday');
+Route::get('tillNow','DashDataController@tillNow')->name('tillNow');
+Route::get('totalCost','DashDataController@totalCost')->name('totalCost');
+Route::get('lantai1','DashDataController@lantai1')->name('lantai1');
+Route::get('lantai2','DashDataController@lantai2')->name('lantai2');
+Route::get('tableToday1','TableController@tableToday1')->name('tableToday1');
+Route::get('tableToday2','TableController@tableToday2')->name('tableToday2');
+Route::get('tableMonth1','TableController@tableMonth1')->name('tableMonth1');
+Route::get('tableMonth2','TableController@tableMonth2')->name('tableMonth2');
+Route::get('tableYear1','TableController@tableYear1')->name('tableYear1');
+Route::get('tableYear2','TableController@tableYear2')->name('tableYear2');
+Route::get('usageToday1','UsDataController@usageToday1')->name('usageToday1');

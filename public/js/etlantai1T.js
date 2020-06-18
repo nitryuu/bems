@@ -1,8 +1,8 @@
 $(document).ready( function () {
   var etlantai1T = $('#etlantai1T').DataTable({
     ajax: {
-    url: "http://localhost/vuexy/public/api/today2",
-    dataSrc: "x"
+    url: "http://localhost/vuexy/public/api/tableToday1",
+    dataSrc: "energy"
 }});
 $('a[data-toggle="list"]').on('shown.bs.tab', function(e) {
   if (e.target.hash == '#list-today') {
