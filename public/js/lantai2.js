@@ -85,8 +85,6 @@ $(document).ready(function() {
         title: {
         text: null
       },
-      min: 0,
-      max: 100,
       tickAmount: 2,
     },
     exporting: {

@@ -1,4 +1,4 @@
-  $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
+  $.getJSON('http://localhost/vuexy/public/api/cost', function (data) {
     // Create the chart
 Highcharts.stockChart('ccost', {
       chart: {
@@ -26,6 +26,7 @@ Highcharts.stockChart('ccost', {
             },
         },
         yAxis: {
+          opposite: false,
           gridLineColor: '#fff',
           endOfTick: false,
           minPadding: 0.2,
@@ -36,7 +37,7 @@ Highcharts.stockChart('ccost', {
           labels: {
             style: {
               color: 'black',
-              fontSize: 15
+              fontSize: 10
             }
           }
         },
@@ -56,7 +57,7 @@ Highcharts.stockChart('ccost', {
         },
         plotOptions: {
           area: {
-            dataLabels:{
+            dataLabels: {
               enabled: true
             },
               lineColor: '#116f9e',
@@ -85,11 +86,13 @@ Highcharts.stockChart('ccost', {
           },
           series: {
             dataLabels:{
-              borderRadius: 5,
-              backgroundColor: 'rgba(252, 255, 197, 0.7)',
-              borderWidth: 1,
-              borderColor: 'blue',
-              y: -15
+              shape: 'connector',
+              backgroundColor: 'rgba(0, 0, 0, 0.70)',
+              style: {
+                 color: '#FFFFFF',
+                 textOutline: 'none'
+              },
+              y: -10
             },
             marker: {
               fillColor: '#fff',

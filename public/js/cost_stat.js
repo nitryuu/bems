@@ -258,7 +258,7 @@
       return dataRows;
     };
 
-  $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
+  $.getJSON('http://localhost/vuexy/public/api/cost', function (data) {
     // Create the chart
 Highcharts.stockChart('cost_stat', {
       chart: {
@@ -275,18 +275,29 @@ Highcharts.stockChart('cost_stat', {
     lang :{
       thekey: 'Download Data'
     },
+    navigation: {
+    buttonOptions: {
+        x: -5,
+        y: 0,
+        theme: {
+            style: {
+                fontSize: 10,
+                color: '#039'
+                }
+            }
+        }
+    },
     exporting: {
       filename: 'Cost Statistic',
-        buttons: {
-            contextButton: {
-                titleKey: 'thekey',
-                symbol: 'triangle-down',
-                symbolStrokeWidth: 1,
-                symbolFill: '#1f92d1',
-                symbolStroke: 'green',
-                menuItems: ['downloadCSV','downloadXLS']
-            }
-        },
+      buttons: {
+          contextButton: {
+            enabled: false
+          },
+          exportButton: {
+              text: 'Download',
+              menuItems: ['downloadCSV','downloadXLS']
+          },
+      },
         csv: {
           dateFormat: '%Y-%m-%d'
         }
@@ -295,14 +306,15 @@ Highcharts.stockChart('cost_stat', {
             selected: 0,
             inputPosition: {
               align: 'left',
-              x: -10
+              x: -40
             },
             buttonPosition: {
               align: 'right',
-              x: -20
+              x: -35
             },
         },
         yAxis: {
+          opposite: false,
           gridLineColor: '#fff',
           endOfTick: false,
           minPadding: 0.2,
@@ -313,7 +325,7 @@ Highcharts.stockChart('cost_stat', {
           labels: {
             style: {
               color: 'black',
-              fontSize: 15
+              fontSize: 10
             }
           }
         },

@@ -23,7 +23,7 @@
                 <div id="navbar-menu" class="mr-auto float-left bookmark-wrapper d-flex align-items-center" style="padding-left: 10px;">
                   <ul class="nav navbar-nav float-right" id="sidenav_bems">
                       <li class="nav-item d-none d-lg-block" data-toggle="tooltip" title="Building Energy Management System">
-                        <a class="nav-link" data-toggle="modal" data-target="#bems-modal">BEMS</a>
+                        <a class="nav-link" data-toggle="modal" data-target=".bems-modal">BEMS</a>
                       </li>
                     </ul>
 
@@ -47,6 +47,7 @@
                         <div class="user-nav d-sm-flex d-none"><span class="profile_name">{{ Auth()->user()->name }}</span></div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item" href="{{ route('setting') }}"><i class="feather icon-settings"></i>Settings</a> 
                           <a class="dropdown-item" href="{{ route('logout') }}"><i class="feather icon-power"></i> Logout</a>
                         </div>
                     </li>
@@ -97,21 +98,76 @@
 </div>
 
 <!-- MODAL BEMS -->
-<div class="modal fade" id="bems-modal" tabindex="-1" role="dialog" aria-labelledby="bems-modal" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="bems-modal-title">Building Energy Management System</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque totam aut similique minima voluptatem, explicabo nobis voluptate distinctio tempore modi id unde dolores vero, suscipit ipsum ab deserunt veritatis molestias.
+<div class="modal fade bd-example-modal-lg bems-modal" tabindex="-1" role="dialog" aria-labelledby="bems-modal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Building Energy Management System</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: justify; line-height: 2">
+        <div style="text-align:center">
+        Building Energy Management Systems (BEMS) are integrated and computerised systems
+        for monitoring and controlling energy-related on the building such as lighting,
+        power systems, air conditioning system, and so on. Real time remote monitoring
+        and controlling  as two key pillars to achieve the energy efficiency goals.
+        We use several types of IoT communication protocols such as LoRa and WiFi.
         </div>
-        <div class="modal-footer">
 
-        </div>
+        BEMS is one of the excellent researches in the field of IoT developed
+         by the Electrical Engineering Study Program, Faculty of Engineering,
+         Universitas Sebelas Maret. This research was sponsored by the Program
+         of Penelitian Unggulan (PU PNBP UNS) 2019-2020. Researchers and students
+          involved in this research include:
+          <br />
+          <br />
+          <div style="text-align: center">
+          <strong>Researchers:</strong>
+              <br />
+            <a href="https://www.linkedin.com/in/feri-adriyanto-%E9%A3%9B%E7%91%9E-236a3178/?originalSubdomain=id" target="_blank" data-toggle="tooltip" title="Click to see Linkedin Profile">
+              Feri Adriyanto, Ph.D.</a>
+              <br />
+            <a href="https://www.linkedin.com/in/agus-ramelan/" target="_blank" data-toggle="tooltip" title="Click to see Linkedin Profile">
+              Agus Ramelan, S.Pd., MT. </a>
+              <br />
+            <a href="https://www.linkedin.com/in/muhammad-hamka-ibrahim-14703b2a/" target="_blank" data-toggle="tooltip" title="Click to see Linkedin Profile">
+              Muhammad Hamka Ibrahim, ST., M.Eng. </a>
+              <br />
+            <a href="https://forlap.ristekdikti.go.id/dosen/detail/NERFRTlCOEItODFGMy00NzVDLUE2NUYtOTNBREUyQjNCNzdB/0" target="_blank" data-toggle="tooltip" title="Click to see Linkedin Profile">
+              Chico Hermanu B.A., ST., M. Eng., </a>
+              <br />
+              <br />
+          <strong>Students:</strong>
+              <br />
+              <a href="#" target="_blank">Kevin Sebastian Arief</a>
+              <br />
+            <a href="#" target="_blank">Oki Setiawan</a>
+              <br />
+            <a href="#" target="_blank">Muhammad Rizqi Subeno</a>
+              <br />
+            <a href="#" target="_blank">Nanda Hafidz Rivanda</a>
+              <br />
+            <a href="#" target="_blank">Sony Adyatama</a>
+              <br />
+            <a href="#" target="_blank">Gilang Satria Ajie</a>
+              <br />
+            <a href="#" target="_blank">Hisbullah Ahmad Fathoni</a>
+              <br />
+          </div>
+          <br />
+          <div style="text-align: center">
+          <strong>Contact Us:</strong>
+          <br>
+          Laboratorium Internet of Things (IoT) <br />
+          Gedung III Lantai 2 Fakultas Teknik UNS <br />
+          Jl. Ir. Sutami 36A Kentingan Surakarta Jawa Tengah <br />
+          Email : iotlab@ft.uns.ac.id
+          </div>
+          <br />
+      </div>
+    </div>
   </div>
 </div>
 </div>

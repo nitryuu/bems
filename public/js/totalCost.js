@@ -91,8 +91,6 @@ $(document).ready(function() {
         title: {
         text: null
       },
-      min: 0,
-      max: 1000,
       tickAmount: 2,
     },
     exporting: {

@@ -2,7 +2,7 @@ var chart_elantai2M;
 
 $(document).ready(function() {
   $.ajax({
-    url: 'http://localhost/vuexy/public/api/month',
+    url: 'http://localhost/vuexy/public/api/usageMonth2',
     success: function(value) {
 
         chart_elantai2M = new Highcharts.Chart({
@@ -25,8 +25,6 @@ $(document).ready(function() {
             endOfTick: false,
             minPadding: 0.2,
             maxPadding: 0.2,
-            min: 0,
-            max: 150,
             title: {
               text: null,
             }
@@ -46,11 +44,16 @@ $(document).ready(function() {
           legend:{
             enabled: false
           },
-          plotOptions:{
+          plotOptions: {
             column: {
               dataLabels: {
                 enabled: true
-              }
+              },
+              borderColor: '#fff',
+              borderWidth: 0,
+              shadow: false,
+              groupPadding: 0.15,
+              pointPadding: 0
             }
           },
           responsive: {
@@ -66,7 +69,7 @@ $(document).ready(function() {
             },
             series: [{
               name: 'Energy',
-              data : value.x,
+              data : value.power,
               color: {
                 linearGradient: {
                   x1: 0,

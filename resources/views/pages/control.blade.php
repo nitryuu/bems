@@ -23,7 +23,6 @@
   @endsection
 
   @section('content')
-
     <section id="control">
       <div id="guts">
         <div class="col-lg-12" id="time">
@@ -50,7 +49,7 @@
                     <div class="form-group">
                       <div class="checkbox">
                         <input type="checkbox" name="mlantai1" id="mlantai1" data-style="ios">
-                        <input type="hidden" name="hidden_mlantai1" id="hidden_mlantai1" value="on">
+                        <input type="hidden" name="hidden_mlantai1" id="hidden_mlantai1" value="{{$data[0]['status']}}">
                       </div>
                   </div>
                   </div>
@@ -67,7 +66,7 @@
                     <div class="form-group">
                       <div class="checkbox">
                         <input type="checkbox" name="mlantai2" id="mlantai2" data-style="ios">
-                        <input type="hidden" name="hidden_mlantai2" id="hidden_mlantai2" value="on">
+                        <input type="hidden" name="hidden_mlantai2" id="hidden_mlantai2" value="{{$data[1]['status']}}">
                       </div>
                   </div>
                   </div>
@@ -95,7 +94,8 @@
                     <div class="form-group">
                       <div class="checkbox">
                         <input type="checkbox" name="l1r1" id="l1r1" data-style="ios">
-                        <input type="hidden" name="hidden_l1r1" id="hidden_l1r1" value="on">
+                        <input type="hidden" name="hidden_l1r1" id="hidden_l1r1"
+                        value="on">
                       </div>
                   </div>
                   </div>
@@ -339,6 +339,8 @@
 @endsection
 @section('page-script')
         <!-- Page js files -->
+        <script src="{{ asset('js/checkMasterStatus.js') }}"></script>
+        <script src="{{ asset('js/checkStatus.js') }}"></script>
         <script src="{{ asset('js/checkbox.js') }}"></script>
         <script src="{{ asset('js/sidenav.js') }}"></script>
         <script src="{{ asset('js/date.js') }}"></script>

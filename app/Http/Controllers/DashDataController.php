@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Data;
+use App\Settings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Salman\Mqtt\MqttClass\Mqtt;
@@ -21,7 +22,7 @@ class DashDataController extends Controller
             $p6, $c6,
             $p7, $c7,
             $p8, $c8;
-    private $topic2;
+    private $topic2,$cost;
     public $s, $f;
     public $m, $a;
 
@@ -48,43 +49,51 @@ class DashDataController extends Controller
 
   public function SubscribetoTopic1($topic1,$topic2,$topic3,$topic4,$topic5)
   {
-    $this->s = microtime(true);
+    //$this->s = microtime(true);
     $mqtt = new Mqtt();
     $topic = $topic1."/".$topic2."/".$topic3."/".$topic4."/".$topic5;
     $this->topic2 = $topic2;
+
+    $cost = Settings::getCost();
+    $this->cost = $cost[0];
+
     $mqtt->ConnectAndSubscribe($topic, function ($topic, $msg) {
 
+      $thecost = $this->cost;
       $pesan = json_decode($msg, true);
 
       $power1 = $pesan['field1'];
-      $cost1 = $pesan['field2'];
-      $power2 = $pesan['field3'];
-      $cost2 = $pesan['field4'];
-      $power3 = $pesan['field5'];
-      $cost3 = $pesan['field6'];
-      $power4 = $pesan['field7'];
-      $cost4 = $pesan['field8'];
+      $power2 = $pesan['field2'];
+      $power3 = $pesan['field3'];
+      $power4 = $pesan['field4'];
+      $power5 = $pesan['field5'];
+      $power6 = $pesan['field6'];
+      $power7 = $pesan['field7'];
+      $power8 = $pesan['field8'];
 
       $this->p1 = $power1;
-      $this->c1 = $cost1;
+      $this->c1 = $power1 * $thecost;
       $this->p2 = $power2;
-      $this->c2 = $cost2;
+      $this->c2 = $power2 * $thecost;
       $this->p3 = $power3;
-      $this->c3 = $cost3;
+      $this->c3 = $power3 * $thecost;
       $this->p4 = $power4;
-      $this->c4 = $cost4;
+      $this->c4 = $power4 * $thecost;
+      $this->p5 = $power5;
+      $this->c5 = $power5 * $thecost;
+      $this->p6 = $power6;
+      $this->c6 = $power6 * $thecost;
+      $this->p7 = $power7;
+      $this->c7 = $power7 * $thecost;
+      $this->p8 = $power8;
+      $this->c8 = $power8 * $thecost;
 
-      if($this->topic2 = '1058452')
-      {
-        $this->storeData1();
-      }elseif($this->topic2 = '1083024')
-      {
-        $this->storeData2();
-      }
+      $this->storeData();
+
     }, '');
   }
 
-  public function storeData1()
+  public function storeData()
   {
     $data1 = new Data;
     $data1->id_device = '1';
@@ -110,42 +119,34 @@ class DashDataController extends Controller
     $data4->cost = $this->c4;
     $data4->save();
 
-    $this->f = microtime(true);
-    $execution_time = ($this->f - $this->s);
+    $data5 = new Data();
+    $data5->id_device = '5';
+    $data5->power = $this->p5;
+    $data5->cost = $this->c5;
+    $data5->save();
+
+    $data6 = new Data();
+    $data6->id_device = '6';
+    $data6->power = $this->p6;
+    $data6->cost = $this->c6;
+    $data6->save();
+
+    $data7 = new Data();
+    $data7->id_device = '7';
+    $data7->power = $this->p7;
+    $data7->cost = $this->c7;
+    $data7->save();
+
+    $data8 = new Data();
+    $data8->id_device = '8';
+    $data8->power = $this->p8;
+    $data8->cost = $this->c8;
+    $data8->save();
+
+    //$this->f = microtime(true);
+    //$execution_time = ($this->f - $this->s);
     //dd($execution_time);
   }
-
-  public function storeData2()
-  {
-    $data1 = new Data;
-    $data1->id_device = '5';
-    $data1->power = $this->p1;
-    $data1->cost = $this->c1;
-    $data1->save();
-
-    $data2 = new Data();
-    $data2->id_device = '6';
-    $data2->power = $this->p2;
-    $data2->cost = $this->c2;
-    $data2->save();
-
-    $data3 = new Data();
-    $data3->id_device = '7';
-    $data3->power = $this->p3;
-    $data3->cost = $this->c3;
-    $data3->save();
-
-    $data4 = new Data();
-    $data4->id_device = '8';
-    $data4->power = $this->p4;
-    $data4->cost = $this->c4;
-    $data4->save();
-
-    $this->f = microtime(true);
-    $execution_time = ($this->f - $this->s);
-    //dd($execution_time);
-  }
-
 
   public function valueToday(){
     $data = DB::table('kwh')

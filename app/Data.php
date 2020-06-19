@@ -286,5 +286,15 @@ class Data extends Model
 		->orderByDesc('created_at');
 	}
 
+	public function scopeUsageToday2($query){
+		return $query->join('device','kwh.id_device','=','device.id')
+		->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')
+		->join('ref_lantai','ref_ruang.id_ref_lantai','=','ref_lantai.id')
+		->select('power','created_at')
+		->where('ref_lantai.lantai','2')
+		->where('device.status','on')
+		->orderByDesc('created_at');
+	}
+
 }
 ?>

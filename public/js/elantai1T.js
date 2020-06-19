@@ -5,10 +5,6 @@ $(document).ready(function() {
     url: 'http://localhost/vuexy/public/api/usageToday1',
     success: function(value) {
         chart_elantai1T = new Highcharts.Chart({
-          global: {
-            useUTC: true,
-            timezoneOffset: (-1)*(-180) 
-          },
           chart: {
             renderTo: elantai1T,
             defaultSeriesType: 'column',
@@ -18,21 +14,25 @@ $(document).ready(function() {
             enabled: false
           },
           xAxis:{
-            type: 'datetime'
+            type: 'datetime',
+            dateTimeLabelFormats: {
+              day: '%H:%H'
+            }
           },
           yAxis: {
             gridLineColor: '#fff',
             endOfTick: false,
             minPadding: 0.2,
             maxPadding: 0.2,
-            min: 0,
-            max: 150,
             title: {
               text: null,
             }
           },
           tooltip: {
-
+            formatter: function() {
+              return ''+
+              this.series.name +': <b>'+ this.y +' kWh </b>';
+            },
             shadow: false,
             style: {
               color: '#4c4c4c',
@@ -52,13 +52,17 @@ $(document).ready(function() {
           }]
         },
         plotOptions: {
-           column: {
-             pointPlacement: 0,
-             dataLabels: {
-               enabled: true
-             }
-           }
-         },
+          column: {
+            dataLabels: {
+              enabled: true
+            },
+            borderColor: '#fff',
+            borderWidth: 0,
+            shadow: false,
+            groupPadding: 0.15,
+            pointPadding: 0
+          }
+        },
           exporting: {
               enabled: false,
             },

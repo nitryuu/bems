@@ -804,6 +804,16 @@ thead tr th:first-child span {
   margin-top: -6rem;
 }
 
+.btn-default:not(:disabled):not(.disabled):active, .btn-default:not(:disabled):not(.disabled).active, .show > .btn-default.dropdown-toggle {
+    color: #fff;
+    background-color: #ea5455 !important;;
+    border-color: #e21c1d;
+}
+
+.card-settings{
+  box-sizing: border-box;
+  padding: 2rem 5rem 1rem 5rem;
+}
 
 @media (max-width: 768px) {
   #usages {

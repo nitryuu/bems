@@ -40,3 +40,6 @@ Route::get('logout','LoginController@logout')->name('logout');
 
 Route::get('/mqtt/publish/{topic1}/{topic2}/{topic3}/{topic4}/{topic5}','DashDataController@SubscribetoTopic1');
 Route::post('storeData','DashDataController@storeData');
+
+Route::get('setting','SettingController@index')->name('setting');
+Route::post('storeSettings','SettingController@storeSettings')->name('storeSettings');

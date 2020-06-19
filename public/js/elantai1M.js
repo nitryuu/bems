@@ -2,7 +2,7 @@ var chart_elantai1M;
 
 $(document).ready(function() {
   $.ajax({
-    url: 'http://localhost/vuexy/public/api/month',
+    url: 'http://localhost/vuexy/public/api/usageMonth1',
     success: function(value) {
 
         chart_elantai1M = new Highcharts.Chart({
@@ -69,7 +69,7 @@ $(document).ready(function() {
             },
             series: [{
               name: 'Energy',
-              data : value.x,
+              data : value.power,
               color: {
                 linearGradient: {
                   x1: 0,

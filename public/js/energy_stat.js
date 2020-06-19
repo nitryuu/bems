@@ -259,7 +259,7 @@
     };
 
 
-  $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function (data) {
+  $.getJSON('http://localhost/vuexy/public/api/statistic', function (data) {
 
 Highcharts.stockChart('energy_stat', {
       chart: {
@@ -276,37 +276,46 @@ Highcharts.stockChart('energy_stat', {
         }
       }]
     },
-    lang :{
-      thekey: 'Download Data'
+    navigation: {
+    buttonOptions: {
+        x: 5,
+        y: 0,
+        theme: {
+            style: {
+                fontSize: 10,
+                color: '#039'
+                }
+            }
+        }
     },
     exporting: {
         filename: 'Energy Usages Statistic',
         buttons: {
             contextButton: {
-                titleKey: 'thekey',
-                symbol: 'triangle-down',
-                symbolStrokeWidth: 1,
-                symbolFill: '#5f23de',
-                symbolStroke: 'blue',
+              enabled: false
+            },
+            exportButton: {
+                text: 'Download',
                 menuItems: ['downloadCSV','downloadXLS']
-            }
+            },
         },
         csv: {
           dateFormat: '%Y-%m-%d'
         }
       },
         rangeSelector: {
-            selected: 1,
+            selected: 0,
             inputPosition: {
               align: 'left',
-              x: -10
+              x: -40
             },
             buttonPosition: {
               align: 'right',
-              x: -20
+              x: -30
             },
         },
         yAxis: {
+          opposite: false,
           gridLineColor: '#fff',
           endOfTick: false,
           minPadding: 0.2,
@@ -317,7 +326,7 @@ Highcharts.stockChart('energy_stat', {
           labels: {
             style: {
               color: 'black',
-              fontSize: 15
+              fontSize: 10
             }
           }
         },
