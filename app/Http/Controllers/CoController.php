@@ -22,8 +22,8 @@ class CoController extends Controller
     }
 
     public function postMasterValue(Request $request){
-      $id = $request->id;
-      $value = $request->value;
+      $id = $request->idm;
+      $value = $request->valuem;
       $data = MasterControl::where('id',$id)->update(array('status' => $value));
     }
 

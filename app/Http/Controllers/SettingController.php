@@ -25,8 +25,11 @@ class SettingController extends Controller
       $feature = 'off';
     }
     $value = Settings::where('id',$id)
-    ->update(array('status' => $feature));
-    return redirect()->route('setting');
+    ->update(array(
+      'status' => $feature,
+      'cost' => $bill
+    ));
+    return redirect()->route('settings');
   }
 }
 

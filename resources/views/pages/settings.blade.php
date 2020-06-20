@@ -51,14 +51,15 @@
                 </div>
                 <div class="form-group row">
                   <label for="feature" class="col-sm-3 col-form-label" data-toggle="tooltip" title="Restore Previous Values on each Control after Master Control ON">Feature on Control</label>
-                  <div class="col-sm-1">
-                      <input class="form-control" name="feature" type="checkbox" id="gridCheck" @if($data[0][0] == 'on' )checked @endif >
+                  <div class="form-check">
+                      <input name="feature" type="checkbox" id="gridCheck" @if($data[0][0] == 'on' )checked @endif style="vertical-align: -webkit-baseline-middle;
+                      margin-top: 0.5rem;">
                   </div>
                 </div>
-                <div class="form-group row" style="text-align: right; display: block; margin-right: 7rem;">
+                <div class="form-group row" style="text-align: right; display: block; margin-right: 3.5rem;">
                     <button type="submit" class="btn btn-primary">Save Changes</button>
                 </div>
-            </form>
+            </form>            
           </div>
         </div>
       </div>

@@ -47,7 +47,7 @@
                         <div class="user-nav d-sm-flex d-none"><span class="profile_name">{{ Auth()->user()->name }}</span></div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                          <a class="dropdown-item" href="{{ route('setting') }}"><i class="feather icon-settings"></i>Settings</a> 
+                          <a class="dropdown-item" href="{{ route('settings') }}"><i class="feather icon-settings"></i>Settings</a>
                           <a class="dropdown-item" href="{{ route('logout') }}"><i class="feather icon-power"></i> Logout</a>
                         </div>
                     </li>
@@ -135,7 +135,7 @@
             <a href="https://www.linkedin.com/in/muhammad-hamka-ibrahim-14703b2a/" target="_blank" data-toggle="tooltip" title="Click to see Linkedin Profile">
               Muhammad Hamka Ibrahim, ST., M.Eng. </a>
               <br />
-            <a href="https://forlap.ristekdikti.go.id/dosen/detail/NERFRTlCOEItODFGMy00NzVDLUE2NUYtOTNBREUyQjNCNzdB/0" target="_blank" data-toggle="tooltip" title="Click to see Linkedin Profile">
+            <a href="https://forlap.ristekdikti.go.id/dosen/detail/NERFRTlCOEItODFGMy00NzVDLUE2NUYtOTNBREUyQjNCNzdB/0" target="_blank" data-toggle="tooltip" title="Click to see PDDIKTI Profile">
               Chico Hermanu B.A., ST., M. Eng., </a>
               <br />
               <br />

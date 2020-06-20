@@ -14,10 +14,10 @@ $(document).ready(function(){
   $('#mlantai1').change(function(){
     if($(this).prop('checked'))
     {
-      id = '1';
+      idm = '1';
       checkFeature();
       if(feature == 'on'){
-          getPreviousValue();
+        getPreviousValue();
       }else{
         $('#l1r1').bootstrapToggle('on');
         $('#l1r2').bootstrapToggle('on');
@@ -27,8 +27,8 @@ $(document).ready(function(){
         $('#l1r6').bootstrapToggle('on');
       }
       $('#hidden_mlantai1').val('on');
-      value = $('#hidden_mlantai1').val();
-      postMasterValue(id,value);
+      valuem = $('#hidden_mlantai1').val();
+      postMasterValue(idm,valuem);
     }
     else
     {
@@ -39,9 +39,9 @@ $(document).ready(function(){
       $('#l1r5').bootstrapToggle('off');
       $('#l1r6').bootstrapToggle('off');
       $('#hidden_mlantai1').val('off');
-      id = '1';
-      value = $('#hidden_mlantai1').val();
-      postMasterValue(id,value);
+      idm = '1';
+      valuem = $('#hidden_mlantai1').val();
+      postMasterValue(idm,valuem);
     }
   });
 
@@ -55,7 +55,7 @@ $(document).ready(function(){
   $('#mlantai2').change(function(){
     if($(this).prop('checked'))
     {
-      id = '2';
+      idm = '2';
       checkFeature();
       if(feature == 'on'){
         getPreviousValue()
@@ -68,9 +68,8 @@ $(document).ready(function(){
         $('#l2r6').bootstrapToggle('on');
       }
       $('#hidden_mlantai2').val('on');
-
-      value = $('#hidden_mlantai2').val();
-      postMasterValue(id,value);
+      valuem = $('#hidden_mlantai2').val();
+      postMasterValue(idm,valuem);
     }
     else
     {
@@ -81,9 +80,9 @@ $(document).ready(function(){
       $('#l2r5').bootstrapToggle('off');
       $('#l2r6').bootstrapToggle('off');
       $('#hidden_mlantai2').val('off');
-      id = '2';
-      value = $('#hidden_mlantai2').val();
-      postMasterValue(id,value);
+      idm = '2';
+      valuem = $('#hidden_mlantai2').val();
+      postMasterValue(idm,valuem);
     }
   });
 
@@ -377,11 +376,11 @@ $(document).ready(function(){
 })
 
 
-function postMasterValue(id,value){
+function postMasterValue(idm,valuem){
   $.ajax({
     type: 'POST',
     url: 'http://localhost/vuexy/public/api/postMasterValue',
-    data: {id:id,value:value},
+    data: {idm:idm,valuem:valuem},
     success: function(data){
     }
   })
@@ -405,7 +404,7 @@ function getPreviousValue(){
     type: 'GET',
     url: 'http://localhost/vuexy/public/api/getPreviousValue',
     success: function(data){
-      if(id == '1'){
+      if(idm == '1'){
         stat1 = data[0]['log_status'];
         if(stat1 == 'on'){
           $('#l1r1').bootstrapToggle('on');
@@ -447,7 +446,7 @@ function getPreviousValue(){
           $('#l1r6').bootstrapToggle('off');
         }
       }
-      else if(id == '2'){
+      else if(idm == '2'){
 
         stat7 = data[6]['log_status'];
         if(stat7 == 'on'){
