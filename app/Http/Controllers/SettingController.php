@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Settings;
+use App\User;
 use Auth;
 
 class SettingController extends Controller
@@ -30,6 +31,58 @@ class SettingController extends Controller
       'cost' => $bill
     ));
     return redirect()->route('settings');
+  }
+
+  public function userList(){
+    $data = User::select('id','name','email','created_at')
+    ->where('id','!=','1')
+    ->get();
+    return [ 'data' => $data ];
+  }
+
+  public function storeNewUser(Request $request){
+    $this->validate(request(),[
+      'name' => 'required',
+      'email' => 'required',
+      'password' => 'required'
+    ]);
+    $data = new User();
+    $data->name = $request->get('name');
+    $data->email = $request->get('email');
+    $password = $request->get('password');
+    $pas = bcrypt($password);
+    $data->password = $pas;
+    $data->role = 'admin';
+
+    $data->save();
+
+    return redirect()->back();
+  }
+
+  public function edit($id)
+  {
+    $ids = $id;
+    $data = User::findorfail($ids);
+
+    return response()->json($data);
+  }
+
+  public function update(Request $request){
+    $id = $request->get('id');
+    $name = $request->get('name');
+    $email = $request->get('email');
+
+    $data = User::where('id',$id)->update(array(
+      'name' => $name,
+      'email' => $email
+    ));
+
+    return redirect()->back();
+  }
+
+  public function delete($id){
+    $data = User::findorfail($id);
+    $data->delete();
   }
 }
 

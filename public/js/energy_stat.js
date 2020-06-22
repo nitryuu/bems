@@ -323,6 +323,7 @@ Highcharts.stockChart('energy_stat', {
           title: {
             text: null,
           },
+          min: 0,
           labels: {
             style: {
               color: 'black',
@@ -409,7 +410,9 @@ Highcharts.stockChart('energy_stat', {
         tooltip: {
           formatter: function() {
             return ''+
-            'Cost: <b>'+ this.y +'kWh </b>';
+            '<b>Energy: '+ this.y +'kWh</b><br />'+ '<strong>' +
+            Highcharts.dateFormat('%b %e, %Y %H:%S ' ,
+                                                new Date(this.x)) + '</strong>';
           },
         },
     } ,

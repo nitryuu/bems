@@ -154,17 +154,14 @@ class DashDataController extends Controller
     ->whereDate('created_at', Carbon::today())
     ->get();
 
-    // $data = Data::whereDate('created_at', Carbon::today())->get();
     return $data;
   }
 
   public function tillNow(){
     $data = DB::table('kwh')
     ->selectRaw('IFNULL(sum(power),0)/1000 p')
-    ->whereMonth('created_at', Carbon::today())
     ->get();
 
-    // $data = Data::whereDate('created_at', Carbon::today())->get();
     return $data;
   }
 
@@ -194,12 +191,12 @@ class DashDataController extends Controller
   }
 
   public function lantai1(){
-    $ruang1 = Data::L1R1()->pluck('power');
-    $ruang2 = Data::L1R2()->pluck('power');
-    $ruang3 = Data::L1R3()->pluck('power');
-    $ruang4 = Data::L1R4()->pluck('power');
-    $ruang5 = Data::L1R5()->pluck('power');
-    $ruang6 = Data::L1R6()->pluck('power');
+    $ruang1 = Data::DashL1R1()->pluck('power');
+    $ruang2 = Data::DashL1R2()->pluck('power');
+    $ruang3 = Data::DashL1R3()->pluck('power');
+    $ruang4 = Data::DashL1R4()->pluck('power');
+    $ruang5 = Data::DashL1R5()->pluck('power');
+    $ruang6 = Data::DashL1R6()->pluck('power');
 
     if($ruang1->isEmpty() || !$ruang1[0]){
       $ruang1[0] = 0;
@@ -226,12 +223,12 @@ class DashDataController extends Controller
   }
 
   public function lantai2(){
-    $ruang1 = Data::L2R1()->pluck('power');
-    $ruang2 = Data::L2R2()->pluck('power');
-    $ruang3 = Data::L2R3()->pluck('power');
-    $ruang4 = Data::L2R4()->pluck('power');
-    $ruang5 = Data::L2R5()->pluck('power');
-    $ruang6 = Data::L2R6()->pluck('power');
+    $ruang1 = Data::DashL2R1()->pluck('power');
+    $ruang2 = Data::DashL2R2()->pluck('power');
+    $ruang3 = Data::DashL2R3()->pluck('power');
+    $ruang4 = Data::DashL2R4()->pluck('power');
+    $ruang5 = Data::DashL2R5()->pluck('power');
+    $ruang6 = Data::DashL2R6()->pluck('power');
 
     if($ruang1->isEmpty() || !$ruang1[0]){
       $ruang1[0] = 0;

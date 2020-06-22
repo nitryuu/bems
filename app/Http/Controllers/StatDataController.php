@@ -9,7 +9,8 @@ class StatDataController extends Controller
 {
     public function statistic()
     {
-      $data = Data::selectRaw('UNIX_TIMESTAMP(created_at)*1000 time,power')
+      $data = Data::groupBy('created_at')
+      ->selectRaw('UNIX_TIMESTAMP(created_at)*1000 time,sum(power) power')
       ->orderBy('time')
       ->get();
 

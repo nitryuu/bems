@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers;
 use App\Data;
-use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
 class CostDataController extends Controller
 {
     public function cost(){
-      $data = Data::selectRaw('UNIX_TIMESTAMP(created_at)*1000 time,cost')
+      $data = Data::groupBy('created_at')
+      ->selectRaw('UNIX_TIMESTAMP(created_at)*1000 time,sum(cost) cost')
       ->orderBy('time')
       ->get();
 
       $e = array();
       foreach($data as $b){
-        $a = $b['time'];
-        $d = $b['cost'];
-        $e[] = collect($a)->merge($d);
+        $b['time'] = $b['time'];
+        $b['cost'] = $b['cost'];
+        $e[] = collect($b['time'])->merge($b['cost']);
       }
-
 
       return $e;
     }

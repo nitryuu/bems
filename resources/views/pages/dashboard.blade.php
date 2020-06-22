@@ -5,6 +5,7 @@
 @section('vendor-style')
 <!-- vendor css files -->
 <link rel="stylesheet" href="{{ asset(mix('vendors/css/charts/apexcharts.css')) }}">
+<link rel="stylesheet" href="cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 
 <!--
         <link rel="stylesheet" href="{{ asset('vendors/css/tables/ag-grid/ag-grid.css') }}">
@@ -94,6 +95,12 @@
       <!-- LOAD 3 -->
       <div class="col-lg-4">
         <div class="card">
+          <div class="card" id="theoverlay" style="display: none;">
+            <div class="card-body" id="theoverlay-body">
+              <i class="feather icon-alert-triangle feather-lg" style="font-size: 50px; color: #ff2929; font-weight: bold;"></i><br />
+              <h4 style="font-weight: bold; color: #ff2929; margin-top: 0.5rem">LOST CONNECTION TO HARDWARE</h4>
+            </div>
+          </div>
           <div class="card-header-chart">
             <h4>ACTIVE APPLIANCES</h4>
           </div>
@@ -160,6 +167,7 @@
 <script src="{{ asset(mix('vendors/js/charts/apexcharts.min.js')) }}"></script>
 <script src="{{ asset('vendors/js/extensions/toastr.min.js') }}"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 
 @endsection
 @section('page-script')
@@ -174,6 +182,8 @@
   })
   @endif
 </script>
+<script src="{{ asset('js/checkHardware.js') }}"></script>
+<script src="{{ asset('js/user_datatable.js') }}"></script>
 <script src="{{ asset('js/totalDaya.js') }}"></script>
 <script src="{{ asset('js/totalDaya2.js') }}"></script>
 <script src="{{ asset('js/totalCost.js') }}"></script>

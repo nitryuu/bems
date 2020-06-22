@@ -322,6 +322,7 @@ Highcharts.stockChart('cost_stat', {
           title: {
             text: null,
           },
+          min:0,
           labels: {
             style: {
               color: 'black',
@@ -410,7 +411,9 @@ Highcharts.stockChart('cost_stat', {
         tooltip: {
           formatter: function() {
             return ''+
-            'Cost: <b>'+ this.y +'k </b>';
+            '<b>Cost: Rp'+ this.y +'</b><br />'+ '<strong>' +
+            Highcharts.dateFormat('%b %e, %Y %H:%S ' ,
+                                                new Date(this.x)) + '</strong>';
           },
         },
     } ,

@@ -31,6 +31,7 @@ Highcharts.stockChart('ccost', {
           endOfTick: false,
           minPadding: 0.2,
           maxPadding: 0.2,
+          min: 0,
           title: {
             text: null,
           },
@@ -58,7 +59,10 @@ Highcharts.stockChart('ccost', {
         plotOptions: {
           area: {
             dataLabels: {
-              enabled: true
+              enabled: true,
+              formatter: function(){
+                return 'Rp' + this.y;
+              }
             },
               lineColor: '#116f9e',
               fillColor: {
@@ -120,11 +124,11 @@ Highcharts.stockChart('ccost', {
         }],
         tooltip: {
           formatter: function() {
-            return ''+
-            'Cost: <b>'+ this.y +'k </b>';
+            return '<strong>' +Highcharts.dateFormat('%b %e, %Y %H:%S ' ,
+                                                new Date(this.x)) + '</strong>';
           },
         },
-    } ,
+      },
         function(chart){
               setTimeout(function () {
               $('input.highcharts-range-selector',

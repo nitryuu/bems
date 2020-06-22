@@ -815,6 +815,56 @@ thead tr th:first-child span {
   padding: 2rem 5rem 1rem 5rem;
 }
 
+.table.dataTable thead th, table.dataTable thead td{
+  border: none;
+}
+
+#userst_paginate, #userst_info, #userst_length label, #userst_filter label{
+  font-size: 12px;
+}
+
+#userst_filter input, #userst_length select{
+  border: 1px solid #aeb0b3;
+}
+
+#userst_paginate span a{
+  background: #133a92cc;
+    border-radius: 25%;
+    border: none;
+    color: #ffe7e7 !important;
+    font-weight: bold;
+}
+
+#userst_wrapper{
+  padding-top: 1rem;
+}
+
+#userst_filter input:focus, #userst_length select:focus,#userst_length select option:focus{
+  border: 1px solid black !important;
+  outline: 1px !important;
+}
+
+#user_list:hover, #add_user:hover{
+    box-shadow: 0 8px 25px -8px #28c76f !important;
+    background-color: #28c76f !important;
+    color: white !important;
+}
+
+#theoverlay{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #0a0a3a;
+  z-index: 5;
+}
+
+#theoverlay-body{
+    padding: 20% 25% 25% 25%;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
   #usages {
     margin-top: calc(100vh - 220%) !important;

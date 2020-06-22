@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Charts;
 use App\User;
+use App\Data;
+use Carbon\Carbon;
 
 class DaController extends Controller
 {
@@ -28,6 +30,15 @@ class DaController extends Controller
         return view('pages.dashboard2', [
             'pageConfigs' => $pageConfigs
         ]);
+    }
+
+    public function getData(){
+      $data = Data::select('created_at')->orderByDesc('created_at')->first();
+      $time = Carbon::now();
+
+      $diff = $time->diffInSeconds($data['created_at']);
+
+      return $diff;
     }
 
 }

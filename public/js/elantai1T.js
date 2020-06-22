@@ -1,5 +1,11 @@
 var chart_elantai1T;
 
+Highcharts.setOptions({
+    global: {
+        timezoneOffset: (-7) * 60
+    }
+});
+
 $(document).ready(function() {
   $.ajax({
     url: 'http://localhost/vuexy/public/api/usageToday1',

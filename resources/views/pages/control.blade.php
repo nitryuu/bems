@@ -6,6 +6,7 @@
 @section('vendor-style')
         <!-- vendor css files -->
         <link rel="stylesheet" href="{{ asset(mix('vendors/css/charts/apexcharts.css')) }}">
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
         <!--
         <link rel="stylesheet" href="{{ asset('vendors/css/tables/ag-grid/ag-grid.css') }}">
         <link rel="stylesheet" href="{{ asset('vendors/css/tables/ag-grid/ag-theme-material.css') }}">
@@ -17,6 +18,7 @@
         <link rel="stylesheet" href="{{ asset(mix('css/pages/dashboard-analytics.css')) }}">
         <link rel="stylesheet" href="{{ asset(mix('css/pages/card-analytics.css')) }}">
         <link rel="stylesheet" href="{{ asset('css/pages/styles.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendors/css/extensions/toastr.css') }}">
         <!--<link rel="stylesheet" href="{{ asset('css/pages/aggrid.css') }}">-->
 
 
@@ -335,10 +337,23 @@
         <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
         <script src="{{ asset(mix('vendors/js/charts/apexcharts.min.js')) }}"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
-
+        <script src="{{ asset('vendors/js/extensions/toastr.min.js') }}"></script>
+        <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 @endsection
 @section('page-script')
         <!-- Page js files -->
+        <script>
+          @if(session() -> has('error'))
+          toastr.error('', 'Check your Email and Password !!', {
+            timeOut: 3000,
+            positionClass: 'toast-top-center',
+            showMethod: 'slideDown',
+            hideMethod: 'slideUp'
+          })
+          @endif
+        </script>
+        <script src="{{ asset('js/checkHardware.js') }}"></script>
+        <script src="{{ asset('js/user_datatable.js') }}"></script>
         <script src="{{ asset('js/checkMasterStatus.js') }}"></script>
         <script src="{{ asset('js/checkStatus.js') }}"></script>
         <script src="{{ asset('js/checkbox.js') }}"></script>

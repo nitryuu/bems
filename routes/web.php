@@ -43,3 +43,10 @@ Route::post('storeData','DashDataController@storeData');
 
 Route::get('settings','SettingController@index')->middleware('auth')->name('settings');
 Route::post('storeSettings','SettingController@storeSettings')->middleware('auth')->name('storeSettings');
+
+Route::get('addUser','SettingController@addUser')->middleware('auth')->name('addUser');
+Route::post('storeNewUser','SettingController@storeNewUser')->middleware('auth')->name('storeNewUser');
+
+Route::get('edit/{id}','SettingController@edit')->middleware('auth');
+Route::post('update','SettingController@update')->middleware('auth')->name('update');
+Route::get('delete/{id}','SettingController@delete')->middleware('auth')->name('delete');

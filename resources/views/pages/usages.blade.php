@@ -269,10 +269,11 @@
           })
           @endif
         </script>
-
+        <script src="{{ asset('js/checkHardware.js') }}"></script>
         <script src="{{ asset('js/tab-button.js') }}"></script>
 
         <!-- Today Usages -->
+        <script src="{{ asset('js/user_datatable.js') }}"></script>
         <script src="{{ asset('js/elantai1T.js') }}"></script>
         <script src="{{ asset('js/etlantai1T.js') }}"></script>
         <script src="{{ asset('js/elantai2T.js') }}"></script>

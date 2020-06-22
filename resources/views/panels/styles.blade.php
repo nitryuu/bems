@@ -1,4 +1,4 @@
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,">
         <link rel="stylesheet" href="{{ asset(mix('vendors/css/vendors.min.css')) }}">
         <link rel="stylesheet" href="{{ asset(mix('vendors/css/ui/prism.min.css')) }}">
         {{-- Vendor Styles --}}

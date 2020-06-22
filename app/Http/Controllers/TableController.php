@@ -16,20 +16,6 @@ class TableController extends Controller
     $ruang5 = Data::L1R5()->whereDate('created_at',Carbon::today())->sum('power');
     $ruang6 = Data::L1R6()->whereDate('created_at',Carbon::today())->sum('power');
 
-    if(empty($ruang1) > 0){
-      $ruang1 = 0;
-    }if(empty($ruang1) > 0){
-      $ruang2= 0;
-    }if(empty($ruang1) > 0){
-      $ruang3= 0;
-    }if(empty($ruang1) > 0){
-      $ruang4= 0;
-    }if(empty($ruang1) > 0){
-      $ruang5= 0;
-    }if(empty($ruang1) > 0){
-      $ruang6= 0;
-    }
-
     $room = [ '1st Room','2nd Room','3rd Room','4th Room','5th Room','6th Room' ];
     $ruang1 = collect($room[0])->merge($ruang1);
     $ruang2 = collect($room[1])->merge($ruang2);
@@ -49,19 +35,6 @@ class TableController extends Controller
     $ruang5 = Data::L2R5()->whereDate('created_at',Carbon::today())->sum('power');
     $ruang6 = Data::L2R6()->whereDate('created_at',Carbon::today())->sum('power');
 
-    if(empty($ruang1) > 0){
-      $ruang1 = 0;
-    }if(empty($ruang1) > 0){
-      $ruang2= 0;
-    }if(empty($ruang1) > 0){
-      $ruang3= 0;
-    }if(empty($ruang1) > 0){
-      $ruang4= 0;
-    }if(empty($ruang1) > 0){
-      $ruang5= 0;
-    }if(empty($ruang1) > 0){
-      $ruang6= 0;
-    }
 
     $room = [ '1st Room','2nd Room','3rd Room','4th Room','5th Room','6th Room' ];
     $ruang1 = collect($room[0])->merge($ruang1);
@@ -88,20 +61,6 @@ class TableController extends Controller
     $ruang6 = Data::SumL1R6()->whereMonth('created_at',Carbon::now()->format('m'))
     ->sum('power');
 
-        if(empty($ruang1) > 0){
-          $ruang1 = 0;
-        }if(empty($ruang1) > 0){
-          $ruang2= 0;
-        }if(empty($ruang1) > 0){
-          $ruang3= 0;
-        }if(empty($ruang1) > 0){
-          $ruang4= 0;
-        }if(empty($ruang1) > 0){
-          $ruang5= 0;
-        }if(empty($ruang1) > 0){
-          $ruang6= 0;
-        }
-
     $room = [ '1st Room','2nd Room','3rd Room','4th Room','5th Room','6th Room' ];
     $ruang1 = collect($room[0])->merge($ruang1);
     $ruang2 = collect($room[1])->merge($ruang2);
@@ -126,20 +85,6 @@ class TableController extends Controller
     ->sum('power');
     $ruang6 = Data::SumL2R6()->whereMonth('created_at',Carbon::now()->format('m'))
     ->sum('power');
-
-        if(empty($ruang1) > 0){
-          $ruang1 = 0;
-        }if(empty($ruang1) > 0){
-          $ruang2= 0;
-        }if(empty($ruang1) > 0){
-          $ruang3= 0;
-        }if(empty($ruang1) > 0){
-          $ruang4= 0;
-        }if(empty($ruang1) > 0){
-          $ruang5= 0;
-        }if(empty($ruang1) > 0){
-          $ruang6= 0;
-        }
 
     $room = [ '1st Room','2nd Room','3rd Room','4th Room','5th Room','6th Room' ];
     $ruang1 = collect($room[0])->merge($ruang1);
@@ -166,20 +111,6 @@ class TableController extends Controller
     $ruang6 = Data::SumL1R6()->whereYear('created_at',Carbon::now()->format('Y'))
     ->sum('power');
 
-        if(empty($ruang1) > 0){
-          $ruang1 = 0;
-        }if(empty($ruang1) > 0){
-          $ruang2= 0;
-        }if(empty($ruang1) > 0){
-          $ruang3= 0;
-        }if(empty($ruang1) > 0){
-          $ruang4= 0;
-        }if(empty($ruang1) > 0){
-          $ruang5= 0;
-        }if(empty($ruang1) > 0){
-          $ruang6= 0;
-        }
-
     $room = [ '1st Room','2nd Room','3rd Room','4th Room','5th Room','6th Room' ];
     $ruang1 = collect($room[0])->merge($ruang1);
     $ruang2 = collect($room[1])->merge($ruang2);
@@ -205,20 +136,6 @@ class TableController extends Controller
     $ruang6 = Data::SumL2R6()->whereYear('created_at',Carbon::now()->format('Y'))
     ->sum('power');
 
-        if(empty($ruang1) > 0){
-          $ruang1 = 0;
-        }if(empty($ruang1) > 0){
-          $ruang2= 0;
-        }if(empty($ruang1) > 0){
-          $ruang3= 0;
-        }if(empty($ruang1) > 0){
-          $ruang4= 0;
-        }if(empty($ruang1) > 0){
-          $ruang5= 0;
-        }if(empty($ruang1) > 0){
-          $ruang6= 0;
-        }
-
     $room = [ '1st Room','2nd Room','3rd Room','4th Room','5th Room','6th Room' ];
     $ruang1 = collect($room[0])->merge($ruang1);
     $ruang2 = collect($room[1])->merge($ruang2);
@@ -226,7 +143,6 @@ class TableController extends Controller
     $ruang4 = collect($room[3])->merge($ruang4);
     $ruang5 = collect($room[4])->merge($ruang5);
     $ruang6 = collect($room[5])->merge($ruang6);
-
     return [ 'energy' => [ $ruang1,$ruang2,$ruang3,$ruang4,$ruang5,$ruang6 ] ];
   }
 

@@ -1,12 +1,11 @@
 @extends('layouts/contentLayoutMaster')
 
-@section('title', 'Settings')
+@section('title', 'Add User')
 
 @section('vendor-style')
 <!-- vendor css files -->
 <link rel="stylesheet" href="{{ asset(mix('vendors/css/charts/apexcharts.css')) }}">
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-
 <!--
         <link rel="stylesheet" href="{{ asset('vendors/css/tables/ag-grid/ag-grid.css') }}">
         <link rel="stylesheet" href="{{ asset('vendors/css/tables/ag-grid/ag-theme-material.css') }}">
@@ -25,7 +24,7 @@
 
 @section('content')
 
-<section id="settings">
+<section id="addUser">
   <div id="guts">
     <div class="col-lg-12" id="time">
       <span id='date'></span>
@@ -37,35 +36,38 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="card-header-chart">
-            <h4>Settings</h4>
+            <h4>Add New User</h4>
           </div>
           <div class="card-settings">
-
-
-            <form action={{route('storeSettings')}} method="post" style="text-align: center; display: block;">
+            <form action="{{ route('storeNewUser') }}" method="post" style="text-align: center; display: block;">
               {{ csrf_field() }}
 
                 <div class="form-group row">
-                  <label for="bill" class="col-sm-3 col-form-label">Bill / Wh</label>
+                  <label for="name" class="col-sm-3 col-form-label">Name</label>
                   <div class="col-sm-8">
-                    <input type="text" name="bill" class="form-control" id="staticEmail" value="{{ $data[1][0] }}" style="border: 1px solid #b9b2b2; font-size: 15px">
+                    <input required type="text" placeholder="Name" name="name" class="form-control" id="staticEmail" value="{{ old('name') }}" style="border: 1px solid #b9b2b2; font-size: 15px">
                   </div>
-
                   </label>
                 </div>
                 <div class="form-group row">
-                  <label for="feature" class="col-sm-3 col-form-label" data-toggle="tooltip" title="Restore Previous Values on each Control after Master Control ON">Feature on Control</label>
-                  <div class="form-check">
-                      <input name="feature" type="checkbox" id="gridCheck" @if($data[0][0] == 'on' )checked @endif style="vertical-align: -webkit-baseline-middle;
-                      margin-top: 0.5rem;">
+                  <label for="email" class="col-sm-3 col-form-label">Email</label>
+                  <div class="col-sm-8">
+                    <input required type="email" placeholder="example@xyz.com" name="email" class="form-control" id="staticEmail" value="{{ old('email') }}" style="border: 1px solid #b9b2b2; font-size: 15px">
                   </div>
+                  </label>
+                </div>
+                <div class="form-group row">
+                  <label for="password" class="col-sm-3 col-form-label">Password</label>
+                  <div class="col-sm-8">
+                    <input required type="password" placeholder="********" name="password" class="form-control" id="staticEmail" value="{{ old('password') }}" style="border: 1px solid #b9b2b2; font-size: 15px">
+                  </div>
+                  </label>
                 </div>
                 <div class="form-group row" style="text-align: right; display: block; margin-right: 7rem;">
+                    <a href="{{route('settings')}}" type="submit" class="btn btn-danger">Back</a>
                     <button type="submit" class="btn btn-primary">Save Changes</button>
                 </div>
             </form>
-
-
           </div>
         </div>
       </div>
@@ -98,7 +100,18 @@
   })
   @endif
 </script>
-<script src="{{ asset('js/checkHardware.js') }}"></script>
+<script>
+@if(count($errors))
+    @foreach($errors->all() as $error)
+    toastr.error('',{{$error}}, {
+      timeOut: 3000,
+      positionClass: 'toast-top-center',
+      showMethod: 'slideDown',
+      hideMethod: 'slideUp'
+    })
+    @endforeach
+      @endif
+</script>
 <script src="{{ asset('js/user_datatable.js') }}"></script>
 <script src="{{ asset('js/sidenav.js') }}"></script>
 <script src="{{ asset('js/date.js') }}"></script>

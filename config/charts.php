@@ -71,120 +71,17 @@ return [
     */
 
     'assets' => [
-        'global' => [
-            'scripts' => [
-                'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
-            ],
-        ],
-
-        'canvas-gauges' => [
-            'scripts' => [
-                'https://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.2/all/gauge.min.js',
-            ],
-        ],
-
-        'chartist' => [
-            'scripts' => [
-                'https://cdnjs.cloudflare.com/ajax/libs/chartist/0.10.1/chartist.min.js',
-            ],
-            'styles' => [
-                'https://cdnjs.cloudflare.com/ajax/libs/chartist/0.10.1/chartist.min.css',
-            ],
-        ],
-
-        'chartjs' => [
-            'scripts' => [
-                'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js',
-            ],
-        ],
-
-        'fusioncharts' => [
-            'scripts' => [
-
-            ],
-        ],
-
-        'google' => [
-            'scripts' => [
-                'https://www.google.com/jsapi',
-                'https://www.gstatic.com/charts/loader.js',
-                "google.charts.load('current', {'packages':['corechart', 'gauge', 'geochart', 'bar', 'line']})",
-            ],
-        ],
-
         'highcharts' => [
             'styles' => [
                 // The following CSS is not added due to color compatibility errors.
                 // 'https://cdnjs.cloudflare.com/ajax/libs/highcharts/5.0.7/css/highcharts.css',
             ],
             'scripts' => [
-
                 'https://code.highcharts.com/stock/highstock.js',
                 'https://code.highcharts.com/highcharts-more.js',
                 'https://code.highcharts.com/stock/modules/data.js',
                 'https://code.highcharts.com/modules/exporting.js',
                 'https://code.highcharts.com/modules/export-data.js'
-            ],
-        ],
-
-        'justgage' => [
-            'scripts' => [
-                'https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.6/raphael.min.js',
-                'https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.2/justgage.min.js',
-            ],
-        ],
-
-        'morris' => [
-            'styles' => [
-                'https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css',
-            ],
-            'scripts' => [
-                'https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.6/raphael.min.js',
-                'https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js',
-            ],
-        ],
-
-        'plottablejs' => [
-            'scripts' => [
-                'https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js',
-                'https://cdnjs.cloudflare.com/ajax/libs/plottable.js/2.8.0/plottable.min.js',
-            ],
-            'styles' => [
-                'https://cdnjs.cloudflare.com/ajax/libs/plottable.js/2.2.0/plottable.css',
-            ],
-        ],
-
-        'progressbarjs' => [
-            'scripts' => [
-                'https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.0.1/progressbar.min.js',
-            ],
-        ],
-
-        'c3' => [
-            'scripts' => [
-                'https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js',
-                'https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js',
-            ],
-            'styles' => [
-                'https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css',
-            ],
-        ],
-
-        'echarts' => [
-            'scripts' => [
-                'https://cdnjs.cloudflare.com/ajax/libs/echarts/3.6.2/echarts.min.js',
-            ],
-        ],
-
-        'amcharts' => [
-            'scripts' => [
-                'https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.2/amcharts.js',
-                'https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.2/serial.js',
-                'https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.2/plugins/export/export.min.js',
-                'https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.2/themes/light.js',
-            ],
-            'styles' => [
-                'https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.21.2/plugins/export/export.css',
             ],
         ],
     ],
