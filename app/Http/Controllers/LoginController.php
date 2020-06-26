@@ -20,7 +20,7 @@ class LoginController extends Controller
         return redirect()->back();
       }
 
-      session()->flash('error','Check your Email and Password !!');
+      $request->session()->flash('error','Check your Email and Password !!');
       return redirect()->back();
     }
 

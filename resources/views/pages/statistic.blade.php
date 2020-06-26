@@ -116,13 +116,13 @@
 @section('page-script')
 <!-- Page js files -->
 <script>
-  @if(session() -> has('error'))
-  toastr.error('', 'Check your Email and Password !!', {
-    timeOut: 3000,
-    positionClass: 'toast-top-center',
-    showMethod: 'slideDown',
-    hideMethod: 'slideUp'
-  })
+toastr.options.positionClass = 'toast-top-center';
+  @if(session()-> has('status'))
+    toastr.info("{{ session('status') }}");
+    @elseif(session()->has('success'))
+      toastr.success("{{ session('success') }}")
+    @elseif(session()->has('error'))
+      toastr.error("{{ session('error') }}")
   @endif
 </script>
 <script src="{{ asset('js/checkHardware.js') }}"></script>

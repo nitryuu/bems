@@ -236,13 +236,6 @@
                 </div>
                 </label>
               </div>
-              <div class="form-group row">
-                <label for="password" class="col-sm-3 col-form-label">Password</label>
-                <div class="col-sm-8">
-                  <input required type="password" placeholder="********" name="password" class="form-control" id="staticEmail" value="{{ old('password') }}" style="border: 1px solid #b9b2b2; font-size: 15px">
-                </div>
-                </label>
-              </div>
               <div class="form-group row" style="text-align: right; display: block; margin-right: 7rem;">
                   <button type="submit" class="btn btn-primary">Save Changes</button>
               </div>
@@ -313,6 +306,25 @@
   </div>
 </div>
 
+<div class="modal fade" id="reset_confirmation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">CONFIRMATION</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <br />Are you sure you want to reset this user's password?
+    </div>
+    <br />
+    <div class="modal-footer">
+      <button id="reset_text" type="button" class="btn btn-danger">RESET</button>
+    </div>
+  </div>
+</div>
+</div>
 
 
 <!-- END: Header-->

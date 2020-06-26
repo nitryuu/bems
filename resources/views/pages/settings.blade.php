@@ -41,7 +41,8 @@
           </div>
           <div class="card-settings">
 
-
+          <div class="row">
+            <div class="col-9" style="border-right: 1px solid black">
             <form action={{route('storeSettings')}} method="post" style="text-align: center; display: block;">
               {{ csrf_field() }}
 
@@ -60,11 +61,29 @@
                       margin-top: 0.5rem;">
                   </div>
                 </div>
+                <br />
                 <div class="form-group row" style="text-align: right; display: block; margin-right: 7rem;">
                     <button type="submit" class="btn btn-primary">Save Changes</button>
                 </div>
             </form>
+            </div>
+            <div class="col-3" style="padding: 0 0 0 4rem;">
+              <form action="{{ route('changePass') }}" method="post" style="text-align: center">
+                {{ csrf_field() }}
 
+                  <input type="id" name="id" class="form-control" value="{{ Auth()->user()->id }}" id="old_pass" style="border: 1px solid #b9b2b2; font-size: 15px" hidden>
+                  <label for="old_pass">Old Password</label>
+                  <input type="password" name="old_pass" class="form-control" id="old_pass" style="border: 1px solid #b9b2b2; font-size: 15px">
+
+                  <label for="new_pass">New Password</label>
+                  <input type="password" name="new_pass" class="form-control" id="new_pass" style="border: 1px solid #b9b2b2; font-size: 15px">
+                  <br />
+                  <div class="form-group row" style="padding: 0 0 0 2.2rem">
+                      <button type="submit" class="btn btn-success">Change Password</button>
+                  </div>
+              </form>
+            </div>
+          </div>
 
           </div>
         </div>
@@ -89,13 +108,13 @@
 @section('page-script')
 <!-- Page js files -->
 <script>
-  @if(session() -> has('error'))
-  toastr.error('', 'Check your Email and Password !!', {
-    timeOut: 3000,
-    positionClass: 'toast-top-center',
-    showMethod: 'slideDown',
-    hideMethod: 'slideUp'
-  })
+toastr.options.positionClass = 'toast-top-center';
+  @if(session()-> has('status'))
+    toastr.info("{{ session('status') }}");
+    @elseif(session()->has('success'))
+      toastr.success("{{ session('success') }}")
+    @elseif(session()->has('error'))
+      toastr.error("{{ session('error') }}")
   @endif
 </script>
 <script src="{{ asset('js/checkHardware.js') }}"></script>

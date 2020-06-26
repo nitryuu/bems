@@ -50,3 +50,5 @@ Route::post('storeNewUser','SettingController@storeNewUser')->middleware('auth')
 Route::get('edit/{id}','SettingController@edit')->middleware('auth');
 Route::post('update','SettingController@update')->middleware('auth')->name('update');
 Route::get('delete/{id}','SettingController@delete')->middleware('auth')->name('delete');
+Route::get('reset/{id}','SettingController@reset')->middleware('auth')->name('reset');
+Route::post('changePass','SettingController@changePass')->middleware('auth')->name('changePass');

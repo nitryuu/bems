@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Settings;
 use App\User;
 use Auth;
+use Illuminate\Support\Facades\Hash;
 
 class SettingController extends Controller
 {
@@ -30,6 +31,7 @@ class SettingController extends Controller
       'status' => $feature,
       'cost' => $bill
     ));
+    $request->session()->flash('success','Settings successfully changed');
     return redirect()->route('settings');
   }
 
@@ -44,14 +46,11 @@ class SettingController extends Controller
     $this->validate(request(),[
       'name' => 'required',
       'email' => 'required',
-      'password' => 'required'
     ]);
     $data = new User();
     $data->name = $request->get('name');
     $data->email = $request->get('email');
-    $password = $request->get('password');
-    $pas = bcrypt($password);
-    $data->password = $pas;
+    $data->password = bcrypt('admin123');
     $data->role = 'admin';
 
     $data->save();
@@ -83,6 +82,32 @@ class SettingController extends Controller
   public function delete($id){
     $data = User::findorfail($id);
     $data->delete();
+  }
+
+  public function reset($id){
+    $data = User::where('id',$id)->update(array(
+      'password' => bcrypt('admin123')
+    ));
+  }
+
+  public function changePass(Request $request){
+    $id = $request->get('id');
+    $old_password = $request->get('old_pass');
+    $new_password = $request->get('new_pass');
+    $user = User::findorfail($id);
+
+    if (Hash::check($old_password, $user->password)) {
+         $user->fill([
+          'password' => Hash::make($new_password)
+          ])->save();
+
+         $request->session()->flash('success', 'Password changed');
+          return redirect()->back();
+
+      } else {
+          $request->session()->flash('error', 'Password does not match');
+          return redirect()->back();
+      }
   }
 }
 
