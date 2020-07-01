@@ -2,7 +2,7 @@ var chart_elantai2M;
 
 $(document).ready(function() {
   $.ajax({
-    url: 'http://localhost/vuexy/public/api/usageMonth2',
+    url: 'api/usageMonth2',
     success: function(value) {
 
         chart_elantai2M = new Highcharts.Chart({
@@ -47,7 +47,10 @@ $(document).ready(function() {
           plotOptions: {
             column: {
               dataLabels: {
-                enabled: true
+                enabled: true,
+                formatter: function () {
+                    return Highcharts.numberFormat(this.y,2);
+                }
               },
               borderColor: '#fff',
               borderWidth: 0,

@@ -71,22 +71,22 @@ class DashDataController extends Controller
       $power7 = $pesan['field7'];
       $power8 = $pesan['field8'];
 
-      $this->p1 = $power1;
-      $this->c1 = $power1 * $thecost;
-      $this->p2 = $power2;
-      $this->c2 = $power2 * $thecost;
-      $this->p3 = $power3;
-      $this->c3 = $power3 * $thecost;
-      $this->p4 = $power4;
-      $this->c4 = $power4 * $thecost;
-      $this->p5 = $power5;
-      $this->c5 = $power5 * $thecost;
-      $this->p6 = $power6;
-      $this->c6 = $power6 * $thecost;
-      $this->p7 = $power7;
-      $this->c7 = $power7 * $thecost;
-      $this->p8 = $power8;
-      $this->c8 = $power8 * $thecost;
+      $this->p1 = (double)number_format(($power1/1000),2);
+      $this->c1 = (double)number_format(($power1 * $thecost),2);
+      $this->p2 = (double)number_format(($power2/1000),2);
+      $this->c2 = (double)number_format(($power2 * $thecost),2);
+      $this->p3 = (double)number_format(($power3/1000),2);
+      $this->c3 = (double)number_format(($power3 * $thecost),2);
+      $this->p4 = (double)number_format(($power4/1000),2);
+      $this->c4 = (double)number_format(($power4 * $thecost),2);
+      $this->p5 = (double)number_format(($power5/1000),2);
+      $this->c5 = (double)number_format(($power5 * $thecost),2);
+      $this->p6 = (double)number_format(($power6/1000),2);
+      $this->c6 = (double)number_format(($power6 * $thecost),2);
+      $this->p7 = (double)number_format(($power7/1000),2);
+      $this->c7 = (double)number_format(($power7 * $thecost),2);
+      $this->p8 = (double)number_format(($power8/1000),2);
+      $this->c8 = (double)number_format(($power8 * $thecost),2);
 
       $this->storeData();
 
@@ -120,25 +120,25 @@ class DashDataController extends Controller
     $data4->save();
 
     $data5 = new Data();
-    $data5->id_device = '5';
+    $data5->id_device = '7';
     $data5->power = $this->p5;
     $data5->cost = $this->c5;
     $data5->save();
 
     $data6 = new Data();
-    $data6->id_device = '6';
+    $data6->id_device = '8';
     $data6->power = $this->p6;
     $data6->cost = $this->c6;
     $data6->save();
 
     $data7 = new Data();
-    $data7->id_device = '7';
+    $data7->id_device = '9';
     $data7->power = $this->p7;
     $data7->cost = $this->c7;
     $data7->save();
 
     $data8 = new Data();
-    $data8->id_device = '8';
+    $data8->id_device = '10';
     $data8->power = $this->p8;
     $data8->cost = $this->c8;
     $data8->save();
@@ -150,7 +150,7 @@ class DashDataController extends Controller
 
   public function valueToday(){
     $data = DB::table('kwh')
-    ->selectRaw('IFNULL(sum(power),0)/1000 p')
+    ->selectRaw('IFNULL(sum(power),0) p')
     ->whereDate('created_at', Carbon::today())
     ->get();
 
@@ -159,7 +159,8 @@ class DashDataController extends Controller
 
   public function tillNow(){
     $data = DB::table('kwh')
-    ->selectRaw('IFNULL(sum(power),0)/1000 p')
+    ->selectRaw('IFNULL(sum(power),0) p')
+    ->whereMonth('created_at',Carbon::now('Asia/Jakarta')->format('m'))
     ->get();
 
     return $data;

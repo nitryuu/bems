@@ -24,8 +24,7 @@
 
         <!--<link rel="stylesheet" href="{{ asset('css/pages/aggrid.css') }}">-->
 
-
-  @endsection
+@endsection
 
   @section('content')
 

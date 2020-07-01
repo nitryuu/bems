@@ -1,7 +1,7 @@
 $(document).ready( function () {
   var etlantai1Y = $('#etlantai1Y').DataTable({
     ajax: {
-    url: "http://localhost/vuexy/public/api/tableYear1",
+    url: "api/tableYear1",
     dataSrc: "energy"
 }});
 $('a[data-toggle="list"]').on('shown.bs.tab', function(e) {

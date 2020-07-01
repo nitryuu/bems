@@ -47,7 +47,7 @@
               {{ csrf_field() }}
 
                 <div class="form-group row">
-                  <label for="bill" class="col-sm-3 col-form-label">Bill / Wh</label>
+                  <label for="bill" class="col-sm-3 col-form-label">Bill / kWh</label>
                   <div class="col-sm-8">
                     <input type="text" name="bill" class="form-control" id="staticEmail" value="{{ $data[1][0] }}" style="border: 1px solid #b9b2b2; font-size: 15px">
                   </div>

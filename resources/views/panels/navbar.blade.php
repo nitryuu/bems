@@ -50,7 +50,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                           @if(Auth()->user()->role == 'super admin')
-                          <a class="dropdown-item" data-toggle="modal" data-target="#user-modal"><i class="feather icon-users"></i>User List</a>
+                          <a class="dropdown-item" data-toggle="modal" data-target="#user-modal"><i class="feather icon-users"></i>Admin List</a>
                           @endif
                           <a class="dropdown-item" href="{{ route('settings') }}"><i class="feather icon-settings"></i>Settings</a>
                           <a class="dropdown-item" href="{{ route('logout') }}"><i class="feather icon-power"></i> Logout</a>
@@ -180,14 +180,14 @@
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">User List</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Admin List</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="container">
-          <a data-toggle="modal" data-target="#add-user" type="button" id="add_user" class="btn btn-outline-success btn-block">Add New User</a>
+          <a data-toggle="modal" data-target="#add-user" type="button" id="add_user" class="btn btn-outline-success btn-block">Add New Admin</a>
         <table class="table table-bordered" id="userst" style="width: 100%; font-size: 11px; border: 1px solid #eaeaea; padding: 0.5rem; text-align:center; margin-bottom: 0.5rem">
           <thead>
             <tr>
@@ -211,7 +211,7 @@
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Add New User</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Add New Admin</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

@@ -2,7 +2,7 @@ $(document).ready( function () {
   var etlantai1M = $('#etlantai1M').DataTable({
 
     ajax: {
-    url: "http://localhost/vuexy/public/api/tableMonth1",
+    url: "api/tableMonth1",
     dataSrc: "energy"
 }});
 

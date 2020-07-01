@@ -111,6 +111,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="{{ asset('vendors/js/extensions/toastr.min.js') }}"></script>
 <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="{{asset('js/scripts/export-data.js')}}"></script>
 
 @endsection
 @section('page-script')

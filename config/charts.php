@@ -81,7 +81,6 @@ return [
                 'https://code.highcharts.com/highcharts-more.js',
                 'https://code.highcharts.com/stock/modules/data.js',
                 'https://code.highcharts.com/modules/exporting.js',
-                'https://code.highcharts.com/modules/export-data.js'
             ],
         ],
     ],

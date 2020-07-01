@@ -17,10 +17,9 @@ class StatDataController extends Controller
       $e = array();
       foreach($data as $b){
         $a = $b['time'];
-        $d = $b['power'];
+        $d = (double)number_format(($b['power']),2);
         $e[] = collect($a)->merge($d);
       }
-
 
       return $e;
     }

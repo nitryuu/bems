@@ -1,4 +1,4 @@
-  $.getJSON('http://localhost/vuexy/public/api/cost', function (data) {
+  $.getJSON('api/cost', function (data) {
     // Create the chart
 Highcharts.stockChart('ccost', {
       chart: {
@@ -61,7 +61,7 @@ Highcharts.stockChart('ccost', {
             dataLabels: {
               enabled: true,
               formatter: function(){
-                return 'Rp' + this.y;
+                return 'Rp' +  Highcharts.numberFormat(this.y,2);
               }
             },
               lineColor: '#116f9e',

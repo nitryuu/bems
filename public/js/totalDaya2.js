@@ -4,7 +4,7 @@ var chart_daya2;
  */
 function requestDataDaya2() {
   $.ajax({
-    url: 'http://localhost/vuexy/public/api/tillNow',
+    url: 'api/tillNow',
     success: function(value) {
       var point = chart_daya2.series[0].points[0],
       newVal = value[0].p;
@@ -31,8 +31,6 @@ $(document).ready(function() {
       }
     },
     yAxis: {
-      min: 0,
-      max: 100,
       stops: [
         [0.1, '#55BF3B'],
         [0.5, '#DDDF0D'],

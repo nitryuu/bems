@@ -6,7 +6,7 @@ var chart_lantai1;
 
 function requestDataLantai1() {
   $.ajax({
-    url: 'http://localhost/vuexy/public/api/lantai1',
+    url: 'api/lantai1',
     success: function(value) {
       var point1 = chart_lantai1.series[0].points[0],
       point2 = chart_lantai1.series[0].points[1],

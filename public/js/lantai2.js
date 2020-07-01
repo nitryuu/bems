@@ -6,7 +6,7 @@ var chart_lantai2;
 
 function requestDatalantai2() {
   $.ajax({
-    url: 'http://localhost/vuexy/public/api/lantai2',
+    url: 'api/lantai2',
     success: function(value) {
       var point1 = chart_lantai2.series[0].points[0],
       point2 = chart_lantai2.series[0].points[1],
@@ -56,7 +56,7 @@ $(document).ready(function() {
           fontSize: 9.5
         },
       },
-      categories: ['Ruang 1','Ruang 2','Ruang 3','Ruang 4','Ruang 5','Ruang 6'],
+      categories: ['1st Room','2nd Room','3rd Room','4th Room','5th Room','6th Room'],
       opposite: true
     },
     tooltip: {

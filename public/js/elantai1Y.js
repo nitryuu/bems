@@ -2,7 +2,7 @@ var chart_elantai1Y;
 
 $(document).ready(function() {
   $.ajax({
-    url: 'http://localhost/vuexy/public/api/usageYear1',
+    url: 'api/usageYear1',
     success: function(value) {
 
         chart_elantai1Y = new Highcharts.Chart({
@@ -44,7 +44,10 @@ $(document).ready(function() {
           plotOptions: {
             column: {
               dataLabels: {
-                enabled: true
+                enabled: true,
+                formatter: function () {
+                    return Highcharts.numberFormat(this.y,2);
+                }
               },
               borderColor: '#fff',
               borderWidth: 0,

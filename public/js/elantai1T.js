@@ -8,7 +8,7 @@ Highcharts.setOptions({
 
 $(document).ready(function() {
   $.ajax({
-    url: 'http://localhost/vuexy/public/api/usageToday1',
+    url: 'api/usageToday1',
     success: function(value) {
         chart_elantai1T = new Highcharts.Chart({
           chart: {
@@ -60,7 +60,10 @@ $(document).ready(function() {
         plotOptions: {
           column: {
             dataLabels: {
-              enabled: true
+              enabled: true,
+              formatter: function () {
+                  return Highcharts.numberFormat(this.y,2);
+              }
             },
             borderColor: '#fff',
             borderWidth: 0,

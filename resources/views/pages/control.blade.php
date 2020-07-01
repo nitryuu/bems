@@ -158,8 +158,8 @@
                     <div class="card-body">
                     <div class="form-group">
                       <div class="checkbox">
-                        <input type="checkbox" name="l1r5" id="l1r5" data-style="ios">
-                        <input type="hidden" name="hidden_l1r5" id="hidden_l1r5" value="on">
+                        <input type="checkbox" name="l1r5" id="l1r5" data-style="ios" disabled>
+                        <input type="hidden" name="hidden_l1r5" id="hidden_l1r5" value="off" disabled>
                       </div>
                   </div>
                   </div>
@@ -173,8 +173,8 @@
                     <div class="card-body">
                     <div class="form-group">
                       <div class="checkbox">
-                        <input type="checkbox" name="l1r6" id="l1r6" data-style="ios">
-                        <input type="hidden" name="hidden_l1r6" id="hidden_l1r6" value="on">
+                        <input type="checkbox" name="l1r6" id="l1r6" data-style="ios" disabled>
+                        <input type="hidden" name="hidden_l1r6" id="hidden_l1r6" value="on" disabled>
                       </div>
                   </div>
                   </div>
@@ -263,8 +263,8 @@
                     <div class="card-body">
                     <div class="form-group">
                       <div class="checkbox">
-                        <input type="checkbox" name="l2r5" id="l2r5" data-style="ios">
-                        <input type="hidden" name="hidden_l2r5" id="hidden_l2r5" value="on">
+                        <input type="checkbox" name="l2r5" id="l2r5" data-style="ios" disabled>
+                        <input type="hidden" name="hidden_l2r5" id="hidden_l2r5" value="off" disabled>
                       </div>
                   </div>
                   </div>
@@ -278,8 +278,8 @@
                     <div class="card-body">
                     <div class="form-group">
                       <div class="checkbox">
-                        <input type="checkbox" name="l2r6" id="l2r6" data-style="ios">
-                        <input type="hidden" name="hidden_l2r6" id="hidden_l2r6" value="on">
+                        <input type="checkbox" name="l2r6" id="l2r6" data-style="ios" disabled>
+                        <input type="hidden" name="hidden_l2r6" id="hidden_l2r6" value="off" disabled>
                       </div>
                   </div>
                   </div>

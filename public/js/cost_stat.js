@@ -6,7 +6,7 @@
       doc = win.document,
       seriesTypes = Highcharts.seriesTypes,
       downloadAttrSupported = doc.createElement('a').download !== undefined;
-
+      
     Highcharts.Chart.prototype.getDataRows = function(multiLevelHeaders) {
       var time = this.time,
         csvOptions = (this.options.exporting && this.options.exporting.csv) || {},
@@ -258,8 +258,9 @@
       return dataRows;
     };
 
-  $.getJSON('http://localhost/vuexy/public/api/cost', function (data) {
-    // Create the chart
+
+  $.getJSON('api/cost', function (data) {
+
 Highcharts.stockChart('cost_stat', {
       chart: {
         height: 480,
@@ -306,7 +307,7 @@ Highcharts.stockChart('cost_stat', {
             selected: 0,
             inputPosition: {
               align: 'left',
-              x: -40
+              x: -50
             },
             buttonPosition: {
               align: 'right',
@@ -338,6 +339,7 @@ Highcharts.stockChart('cost_stat', {
         },
         navigator: {
           series: {
+            includeInCSVExport: false,
             type: 'line'
           },
             xAxis: {
@@ -411,7 +413,7 @@ Highcharts.stockChart('cost_stat', {
         tooltip: {
           formatter: function() {
             return ''+
-            '<b>Cost: Rp'+ this.y +'</b><br />'+ '<strong>' +
+            '<b>Cost: '+  Highcharts.numberFormat(this.y,2) +'</b><br />'+ '<strong>' +
             Highcharts.dateFormat('%b %e, %Y %H:%S ' ,
                                                 new Date(this.x)) + '</strong>';
           },

@@ -4,7 +4,7 @@ var chart_daya;
  */
 function requestDataDaya() {
   $.ajax({
-    url: 'http://localhost/vuexy/public/api/valueToday',
+    url: 'api/valueToday',
     success: function(points) {
       var point = chart_daya.series[0].points[0],
       newVal = points[0].p;
@@ -30,8 +30,6 @@ $(document).ready(function() {
       }
     },
     yAxis: {
-      min: 0,
-      max: 100,
       stops: [
         [0.1, '#55BF3B'],
         [0.5, '#DDDF0D'],
@@ -90,7 +88,7 @@ $(document).ready(function() {
         dataLabels: {
           format:
             '<div style="text-align:center">' +
-            '<span style="font-size:15px">{y:.2f}</span><br/>' +
+            '<span style="font-size:15px">{y:.3f}</span><br/>' +
             '<span style="font-size:12px;opacity:0.4">KWH</span>' +
             '</div>'
         },

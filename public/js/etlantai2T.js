@@ -1,7 +1,7 @@
 $(document).ready( function () {
   var etlantai2T = $('#etlantai2T').DataTable({
     ajax: {
-    url: "http://localhost/vuexy/public/api/tableToday2",
+    url: "api/tableToday2",
     dataSrc: "energy"
 }});
 $('a[data-toggle="list"]').on('shown.bs.tab', function(e) {

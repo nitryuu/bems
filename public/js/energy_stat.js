@@ -259,7 +259,7 @@
     };
 
 
-  $.getJSON('http://localhost/vuexy/public/api/statistic', function (data) {
+  $.getJSON('api/statistic', function (data) {
 
 Highcharts.stockChart('energy_stat', {
       chart: {
@@ -410,7 +410,7 @@ Highcharts.stockChart('energy_stat', {
         tooltip: {
           formatter: function() {
             return ''+
-            '<b>Energy: '+ this.y +'kWh</b><br />'+ '<strong>' +
+            '<b>Energy: '+  Highcharts.numberFormat(this.y,2) +'kWh</b><br />'+ '<strong>' +
             Highcharts.dateFormat('%b %e, %Y %H:%S ' ,
                                                 new Date(this.x)) + '</strong>';
           },

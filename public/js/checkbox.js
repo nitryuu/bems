@@ -20,8 +20,6 @@ $(document).ready(function(){
       $('#l1r2').bootstrapToggle('enable');
       $('#l1r3').bootstrapToggle('enable');
       $('#l1r4').bootstrapToggle('enable');
-      $('#l1r5').bootstrapToggle('enable');
-      $('#l1r6').bootstrapToggle('enable');
       if(feature == 'on'){
         getPreviousValue();
       }else{
@@ -29,8 +27,6 @@ $(document).ready(function(){
         $('#l1r2').bootstrapToggle('on');
         $('#l1r3').bootstrapToggle('on');
         $('#l1r4').bootstrapToggle('on');
-        $('#l1r5').bootstrapToggle('on');
-        $('#l1r6').bootstrapToggle('on');
       }
       $('#hidden_mlantai1').val('on');
       valuem = $('#hidden_mlantai1').val();
@@ -42,14 +38,10 @@ $(document).ready(function(){
       $('#l1r2').bootstrapToggle('off');
       $('#l1r3').bootstrapToggle('off');
       $('#l1r4').bootstrapToggle('off');
-      $('#l1r5').bootstrapToggle('off');
-      $('#l1r6').bootstrapToggle('off');
       $('#l1r1').bootstrapToggle('disable');
       $('#l1r2').bootstrapToggle('disable');
       $('#l1r3').bootstrapToggle('disable');
       $('#l1r4').bootstrapToggle('disable');
-      $('#l1r5').bootstrapToggle('disable');
-      $('#l1r6').bootstrapToggle('disable');
       $('#hidden_mlantai1').val('off');
       idm = '1';
       valuem = $('#hidden_mlantai1').val();
@@ -73,8 +65,6 @@ $(document).ready(function(){
       $('#l2r2').bootstrapToggle('enable');
       $('#l2r3').bootstrapToggle('enable');
       $('#l2r4').bootstrapToggle('enable');
-      $('#l2r5').bootstrapToggle('enable');
-      $('#l2r6').bootstrapToggle('enable');
       if(feature == 'on'){
         getPreviousValue()
       }else{
@@ -82,8 +72,6 @@ $(document).ready(function(){
         $('#l2r2').bootstrapToggle('on');
         $('#l2r3').bootstrapToggle('on');
         $('#l2r4').bootstrapToggle('on');
-        $('#l2r5').bootstrapToggle('on');
-        $('#l2r6').bootstrapToggle('on');
       }
       $('#hidden_mlantai2').val('on');
       valuem = $('#hidden_mlantai2').val();
@@ -95,14 +83,10 @@ $(document).ready(function(){
       $('#l2r2').bootstrapToggle('off');
       $('#l2r3').bootstrapToggle('off');
       $('#l2r4').bootstrapToggle('off');
-      $('#l2r5').bootstrapToggle('off');
-      $('#l2r6').bootstrapToggle('off');
       $('#l2r1').bootstrapToggle('disable');
       $('#l2r2').bootstrapToggle('disable');
       $('#l2r3').bootstrapToggle('disable');
       $('#l2r4').bootstrapToggle('disable');
-      $('#l2r5').bootstrapToggle('disable');
-      $('#l2r6').bootstrapToggle('disable');
       $('#hidden_mlantai2').val('off');
       idm = '2';
       valuem = $('#hidden_mlantai2').val();
@@ -233,7 +217,7 @@ $(document).ready(function(){
     if($(this).prop('checked'))
     {
       $('#hidden_l1r5').val('on');
-      id = '5';
+
       value = $('#hidden_l1r5').val();
       checkID(id,value);
       postValueThingspeak(id_button);
@@ -242,7 +226,7 @@ $(document).ready(function(){
     else
     {
       $('#hidden_l1r5').val('off');
-      id = '5';
+
       value = $('#hidden_l1r5').val();
       checkID(id,value);
       postValueThingspeak(id_button);
@@ -261,7 +245,7 @@ $(document).ready(function(){
     if($(this).prop('checked'))
     {
       $('#hidden_l1r6').val('on');
-      id = '6';
+
       value = $('#hidden_l1r6').val();
       checkID(id,value);
       postValueThingspeak(id_button);
@@ -270,7 +254,7 @@ $(document).ready(function(){
     else
     {
       $('#hidden_l1r6').val('off');
-      id = '6';
+
       value = $('#hidden_l1r6').val();
       checkID(id,value);
       postValueThingspeak(id_button);
@@ -289,7 +273,7 @@ $(document).ready(function(){
     if($(this).prop('checked'))
     {
       $('#hidden_l2r1').val('on');
-      id = '7';
+      id = '5';
       value = $('#hidden_l2r1').val();
       checkID(id,value);
       postValueThingspeak(id_button);
@@ -298,7 +282,7 @@ $(document).ready(function(){
     else
     {
       $('#hidden_l2r1').val('off');
-      id = '7';
+      id = '5';
       value = $('#hidden_l2r1').val();
       checkID(id,value);
       postValueThingspeak(id_button);
@@ -317,7 +301,7 @@ $(document).ready(function(){
     if($(this).prop('checked'))
     {
       $('#hidden_l2r2').val('on');
-      id = '8';
+      id = '6';
       value = $('#hidden_l2r2').val();
       checkID(id,value);
       postValueThingspeak(id_button);
@@ -326,7 +310,7 @@ $(document).ready(function(){
     else
     {
       $('#hidden_l2r2').val('off');
-      id = '8';
+      id = '6';
       value = $('#hidden_l2r2').val();
       checkID(id,value);
       postValueThingspeak(id_button);
@@ -345,7 +329,7 @@ $(document).ready(function(){
     if($(this).prop('checked'))
     {
       $('#hidden_l2r3').val('on');
-      id = '9';
+      id = '7';
       value = $('#hidden_l2r3').val();
       checkID(id,value);
       postValueThingspeak(id_button);
@@ -354,7 +338,7 @@ $(document).ready(function(){
     else
     {
       $('#hidden_l2r3').val('off');
-      id = '9';
+      id = '7';
       value = $('#hidden_l2r3').val();
       checkID(id,value);
       postValueThingspeak(id_button);
@@ -373,7 +357,7 @@ $(document).ready(function(){
     if($(this).prop('checked'))
     {
       $('#hidden_l2r4').val('on');
-      id = '10';
+      id = '8';
       value = $('#hidden_l2r4').val();
       checkID(id,value);
       postValueThingspeak(id_button);
@@ -382,7 +366,7 @@ $(document).ready(function(){
     else
     {
       $('#hidden_l2r4').val('off');
-      id = '10';
+      id = '8';
       value = $('#hidden_l2r4').val();
       checkID(id,value);
       postValueThingspeak(id_button);
@@ -401,7 +385,7 @@ $(document).ready(function(){
     if($(this).prop('checked'))
     {
       $('#hidden_l2r5').val('on');
-      id = '11';
+
       value = $('#hidden_l2r5').val();
       checkID(id,value);
       postValueThingspeak(id_button);
@@ -410,7 +394,7 @@ $(document).ready(function(){
     else
     {
       $('#hidden_l2r5').val('off');
-      id = '11';
+
       value = $('#hidden_l2r5').val();
       checkID(id,value);
       postValueThingspeak(id_button);
@@ -429,7 +413,7 @@ $(document).ready(function(){
     if($(this).prop('checked'))
     {
       $('#hidden_l2r6').val('on');
-      id = '12';
+
       value = $('#hidden_l2r6').val();
       checkID(id,value);
       postValueThingspeak(id_button);
@@ -438,7 +422,7 @@ $(document).ready(function(){
     else
     {
       $('#hidden_l2r6').val('off');
-      id = '12';
+      
       value = $('#hidden_l2r6').val();
       checkID(id,value);
       postValueThingspeak(id_button);
