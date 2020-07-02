@@ -23,7 +23,6 @@
 <link rel="stylesheet" href="{{ asset('vendors/css/extensions/toastr.css') }}">
 <!--<link rel="stylesheet" href="{{ asset('css/pages/aggrid.css') }}">-->
 
-
 @endsection
 
 @section('content')
@@ -63,39 +62,10 @@
         </div>
       </div>
     </div>
-
-    <!--
-        <div class="row">
-          <div class="col-12">
-            <div class="footerbutton">
-              <button type="submit" class="btn btn-primary">save</button>
-            </div>
-          </div>
-
-        </div>
-      -->
   </div>
   <!-- END guts -->
 
   </div>
-
-
-
-  <!--
-    <div class="row-lg-12">
-      <div class="card">
-        <div class="card-content">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-12">
-              </div>
-            </div>
-            <div id="table" class="aggrid ag-theme-material"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  -->
 
 </section>
 
@@ -111,7 +81,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="{{ asset('vendors/js/extensions/toastr.min.js') }}"></script>
 <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-<script src="{{asset('js/scripts/export-data.js')}}"></script>
+<script src="{{ asset('js/scripts/export-data.js') }}"></script>
 
 @endsection
 @section('page-script')
