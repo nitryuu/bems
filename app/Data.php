@@ -14,13 +14,13 @@ class Data extends Model
 
 	public function scopeDashL1R1($query){
 		return $query->join('device','kwh.id_device','=','device.id')
-    ->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')
-    ->join('ref_lantai','ref_ruang.id_ref_lantai','=','ref_lantai.id')
-    ->select('power')
-    ->where('ref_lantai.lantai','1')
-    ->where('ref_ruang.ruang','1')
+	    ->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')
+	    ->join('ref_lantai','ref_ruang.id_ref_lantai','=','ref_lantai.id')
+	    ->select('power')
+	    ->where('ref_lantai.lantai','1')
+	    ->where('ref_ruang.ruang','1')
 		->where('device.status','on')
-    ->orderByDesc('created_at');
+	    ->orderByDesc('created_at');
 	}
 
 	public function scopeDashL1R2($query){

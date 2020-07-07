@@ -584,62 +584,33 @@ function getPreviousValue(){
         }else{
           $('#l1r4').bootstrapToggle('off');
         }
-
+      }
+    else if(idm == '2'){
         stat5 = data[4]['log_status'];
         if(stat5 == 'on'){
-          $('#l1r5').bootstrapToggle('on');
-        }else{
-          $('#l1r5').bootstrapToggle('off');
-        }
-
-        stat6 = data[5]['log_status'];
-        if(stat6 == 'on'){
-          $('#l1r6').bootstrapToggle('on');
-        }else{
-          $('#l1r6').bootstrapToggle('off');
-        }
-      }
-      else if(idm == '2'){
-
-        stat7 = data[6]['log_status'];
-        if(stat7 == 'on'){
           $('#l2r1').bootstrapToggle('on');
         }else{
           $('#l2r1').bootstrapToggle('off');
         }
-        stat8 = data[7]['log_status'];
-        if(stat8 == 'on'){
+
+        stat6 = data[5]['log_status'];
+        if(stat6 == 'on'){
           $('#l2r2').bootstrapToggle('on');
         }else{
           $('#l2r2').bootstrapToggle('off');
         }
-
-        stat9 = data[8]['log_status'];
-        if(stat9 == 'on'){
+      
+        stat7 = data[6]['log_status'];
+        if(stat7 == 'on'){
           $('#l2r3').bootstrapToggle('on');
         }else{
           $('#l2r3').bootstrapToggle('off');
         }
-
-        stat10 = data[9]['log_status'];
-        if(stat10 == 'on'){
+        stat8 = data[7]['log_status'];
+        if(stat8 == 'on'){
           $('#l2r4').bootstrapToggle('on');
         }else{
           $('#l2r4').bootstrapToggle('off');
-        }
-
-        stat11 = data[10]['log_status'];
-        if(stat11 == 'on'){
-          $('#l2r5').bootstrapToggle('on');
-        }else{
-          $('#l2r5').bootstrapToggle('off');
-        }
-
-        stat12 = data[11]['log_status'];
-        if(stat12 == 'on'){
-          $('#l2r6').bootstrapToggle('on');
-        }else{
-          $('#l2r6').bootstrapToggle('off');
         }
       }
     }

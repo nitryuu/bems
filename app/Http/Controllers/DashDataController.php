@@ -21,8 +21,8 @@ class DashDataController extends Controller
             $p5, $c5,
             $p6, $c6,
             $p7, $c7,
-            $p8, $c8;
-    private $topic2,$cost;
+            $p8, $c8=0;
+    private $topic2,$cost=0;
     public $s, $f;
     public $m, $a;
 
@@ -58,7 +58,7 @@ class DashDataController extends Controller
     $this->cost = $cost[0];
 
     $mqtt->ConnectAndSubscribe($topic, function ($topic, $msg) {
-
+      $power1=$power2=$power3=$power4=$power5=$power6=$power7=$power8=0;
       $thecost = $this->cost;
       $pesan = json_decode($msg, true);
 
@@ -71,25 +71,24 @@ class DashDataController extends Controller
       $power7 = $pesan['field7'];
       $power8 = $pesan['field8'];
 
-      $this->p1 = (double)number_format(($power1/1000),2);
+      $this->p1 = (double)number_format(($power1/1000),3);
       $this->c1 = (double)number_format(($power1 * $thecost),2);
-      $this->p2 = (double)number_format(($power2/1000),2);
+      $this->p2 = (double)number_format(($power2/1000),3);
       $this->c2 = (double)number_format(($power2 * $thecost),2);
-      $this->p3 = (double)number_format(($power3/1000),2);
+      $this->p3 = (double)number_format(($power3/1000),3);
       $this->c3 = (double)number_format(($power3 * $thecost),2);
-      $this->p4 = (double)number_format(($power4/1000),2);
+      $this->p4 = (double)number_format(($power4/1000),3);
       $this->c4 = (double)number_format(($power4 * $thecost),2);
-      $this->p5 = (double)number_format(($power5/1000),2);
+      $this->p5 = (double)number_format(($power5/1000),3);
       $this->c5 = (double)number_format(($power5 * $thecost),2);
-      $this->p6 = (double)number_format(($power6/1000),2);
+      $this->p6 = (double)number_format(($power6/1000),3);
       $this->c6 = (double)number_format(($power6 * $thecost),2);
-      $this->p7 = (double)number_format(($power7/1000),2);
+      $this->p7 = (double)number_format(($power7/1000),3);
       $this->c7 = (double)number_format(($power7 * $thecost),2);
-      $this->p8 = (double)number_format(($power8/1000),2);
+      $this->p8 = (double)number_format(($power8/1000),3);
       $this->c8 = (double)number_format(($power8 * $thecost),2);
-
+      
       $this->storeData();
-
     }, '');
   }
 
@@ -120,25 +119,25 @@ class DashDataController extends Controller
     $data4->save();
 
     $data5 = new Data();
-    $data5->id_device = '7';
+    $data5->id_device = '5';
     $data5->power = $this->p5;
     $data5->cost = $this->c5;
     $data5->save();
 
     $data6 = new Data();
-    $data6->id_device = '8';
+    $data6->id_device = '6';
     $data6->power = $this->p6;
     $data6->cost = $this->c6;
     $data6->save();
 
     $data7 = new Data();
-    $data7->id_device = '9';
+    $data7->id_device = '7';
     $data7->power = $this->p7;
     $data7->cost = $this->c7;
     $data7->save();
 
     $data8 = new Data();
-    $data8->id_device = '10';
+    $data8->id_device = '8';
     $data8->power = $this->p8;
     $data8->cost = $this->c8;
     $data8->save();
@@ -196,8 +195,6 @@ class DashDataController extends Controller
     $ruang2 = Data::DashL1R2()->pluck('power');
     $ruang3 = Data::DashL1R3()->pluck('power');
     $ruang4 = Data::DashL1R4()->pluck('power');
-    $ruang5 = Data::DashL1R5()->pluck('power');
-    $ruang6 = Data::DashL1R6()->pluck('power');
 
     if($ruang1->isEmpty() || !$ruang1[0]){
       $ruang1[0] = 0;
@@ -206,15 +203,16 @@ class DashDataController extends Controller
     }if($ruang3->isEmpty() || !$ruang3[0]){
       $ruang3[0] = 0;
     }if($ruang4->isEmpty() || !$ruang4[0]){
-      $ruang4[0] = 0;
-    }if($ruang5->isEmpty() || !$ruang5[0]){
-      $ruang5[0] = 0;
-    }if($ruang6->isEmpty() || !$ruang6[0]){
-      $ruang6[0] = 0;
-    }
+      $ruang4[0] = 0;}
+    // }if($ruang5->isEmpty() || !$ruang5[0]){
+    //   $ruang5[0] = 0;
+    // }if($ruang6->isEmpty() || !$ruang6[0]){
+    //   $ruang6[0] = 0;
+    // }
 
     $data = collect($ruang1[0])->merge($ruang2[0])->merge($ruang3[0])
-    ->merge($ruang4[0])->merge($ruang5[0])->merge($ruang6[0]);
+    ->merge($ruang4[0]);
+// ->merge($ruang5[0])->merge($ruang6[0]
     $datas = new Collection();
     foreach($data as $items){
         $datas->push($items);

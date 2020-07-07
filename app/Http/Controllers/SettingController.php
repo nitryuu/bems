@@ -37,7 +37,7 @@ class SettingController extends Controller
 
   public function userList(){
     $data = User::select('id','name','email','created_at')
-    ->where('id','!=','1')
+    ->where('role','!=','super admin')
     ->get();
     return [ 'data' => $data ];
   }

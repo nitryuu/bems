@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Data;
 use Illuminate\Support\Collection;
 

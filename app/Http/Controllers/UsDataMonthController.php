@@ -102,7 +102,7 @@ class UsDataMonthController extends Controller
   $hari3u= strtotime($hari3t) * 1000;
   $data3 = collect($hari3u)->merge($total3);
   if ($data->has('05')) {
-    $data['hari54'] = $data['05'];
+    $data['hari05'] = $data['05'];
     unset($data['05']);
 
     foreach($data['hari05'] as $a){
@@ -600,7 +600,7 @@ class UsDataMonthController extends Controller
   $hari3u= strtotime($hari3t) * 1000;
   $data3 = collect($hari3u)->merge($total3);
   if ($data->has('05')) {
-    $data['hari54'] = $data['05'];
+    $data['hari05'] = $data['05'];
     unset($data['05']);
 
     foreach($data['hari05'] as $a){

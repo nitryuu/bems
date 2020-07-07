@@ -38,6 +38,7 @@
 
                       <li class="nav-item d-none d-lg-block"><a class="nav-link" href="http://localhost/vuexy/public/cost">Cost</a></li>
                       <li class="nav-item d-none d-lg-block"><a class="nav-link" href="http://localhost/vuexy/public/statistic">Statistic</a></li>
+                      <li class="nav-item d-none d-lg-block"><a class="nav-link" data-toggle="modal" data-target="#manual-modal">User Manual</a></li>
                   </ul>
                 </div>
 
@@ -324,6 +325,27 @@
     </div>
   </div>
 </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="manual-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">User Manual</h5>
+      </div>
+      <div class="modal-body">
+        <div class="container" style="width:100%;position: relative;">
+          
+            <embed src="https://drive.google.com/file/d/1qjWVAjwn1jJXiX0B-Z9r9PlAvLh5Yu2J/preview" width="100%" height="600px"></embed>
+            <div style="width: 40px; height: 42px; position: absolute; opacity: 1; right: 26px; top: 12px;background: white">&nbsp;</div>
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
 </div>
 
 

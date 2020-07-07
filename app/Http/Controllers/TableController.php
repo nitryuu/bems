@@ -17,12 +17,12 @@ class TableController extends Controller
     $ruang6 = Data::L1R6()->whereDate('created_at',Carbon::today())->sum('power');
 
     $room = [ '1st Room','2nd Room','3rd Room','4th Room','5th Room','6th Room' ];
-    $ruang1 = collect($room[0])->merge($ruang1);
-    $ruang2 = collect($room[1])->merge($ruang2);
-    $ruang3 = collect($room[2])->merge($ruang3);
-    $ruang4 = collect($room[3])->merge($ruang4);
-    $ruang5 = collect($room[4])->merge($ruang5);
-    $ruang6 = collect($room[5])->merge($ruang6);
+    $ruang1 = collect($room[0])->merge(number_format($ruang1,2));
+    $ruang2 = collect($room[1])->merge(number_format($ruang2,2));
+    $ruang3 = collect($room[2])->merge(number_format($ruang3,2));
+    $ruang4 = collect($room[3])->merge(number_format($ruang4,2));
+    $ruang5 = collect($room[4])->merge(number_format($ruang5,2));
+    $ruang6 = collect($room[5])->merge(number_format($ruang6,2));
 
     return [ 'energy' => [ $ruang1,$ruang2,$ruang3,$ruang4,$ruang5,$ruang6 ] ];
   }
@@ -37,12 +37,12 @@ class TableController extends Controller
 
 
     $room = [ '1st Room','2nd Room','3rd Room','4th Room','5th Room','6th Room' ];
-    $ruang1 = collect($room[0])->merge($ruang1);
-    $ruang2 = collect($room[1])->merge($ruang2);
-    $ruang3 = collect($room[2])->merge($ruang3);
-    $ruang4 = collect($room[3])->merge($ruang4);
-    $ruang5 = collect($room[4])->merge($ruang5);
-    $ruang6 = collect($room[5])->merge($ruang6);
+    $ruang1 = collect($room[0])->merge(number_format($ruang1,2));
+    $ruang2 = collect($room[1])->merge(number_format($ruang2,2));
+    $ruang3 = collect($room[2])->merge(number_format($ruang3,2));
+    $ruang4 = collect($room[3])->merge(number_format($ruang4,2));
+    $ruang5 = collect($room[4])->merge(number_format($ruang5,2));
+    $ruang6 = collect($room[5])->merge(number_format($ruang6,2));
 
     return [ 'energy' => [ $ruang1,$ruang2,$ruang3,$ruang4,$ruang5,$ruang6 ] ];
   }
@@ -62,12 +62,12 @@ class TableController extends Controller
     ->sum('power');
 
     $room = [ '1st Room','2nd Room','3rd Room','4th Room','5th Room','6th Room' ];
-    $ruang1 = collect($room[0])->merge($ruang1);
-    $ruang2 = collect($room[1])->merge($ruang2);
-    $ruang3 = collect($room[2])->merge($ruang3);
-    $ruang4 = collect($room[3])->merge($ruang4);
-    $ruang5 = collect($room[4])->merge($ruang5);
-    $ruang6 = collect($room[5])->merge($ruang6);
+    $ruang1 = collect($room[0])->merge(number_format($ruang1,2));
+    $ruang2 = collect($room[1])->merge(number_format($ruang2,2));
+    $ruang3 = collect($room[2])->merge(number_format($ruang3,2));
+    $ruang4 = collect($room[3])->merge(number_format($ruang4,2));
+    $ruang5 = collect($room[4])->merge(number_format($ruang5,2));
+    $ruang6 = collect($room[5])->merge(number_format($ruang6,2));
 
     return [ 'energy' => [ $ruang1,$ruang2,$ruang3,$ruang4,$ruang5,$ruang6 ] ];
   }
@@ -87,12 +87,12 @@ class TableController extends Controller
     ->sum('power');
 
     $room = [ '1st Room','2nd Room','3rd Room','4th Room','5th Room','6th Room' ];
-    $ruang1 = collect($room[0])->merge($ruang1);
-    $ruang2 = collect($room[1])->merge($ruang2);
-    $ruang3 = collect($room[2])->merge($ruang3);
-    $ruang4 = collect($room[3])->merge($ruang4);
-    $ruang5 = collect($room[4])->merge($ruang5);
-    $ruang6 = collect($room[5])->merge($ruang6);
+    $ruang1 = collect($room[0])->merge(number_format($ruang1,2));
+    $ruang2 = collect($room[1])->merge(number_format($ruang2,2));
+    $ruang3 = collect($room[2])->merge(number_format($ruang3,2));
+    $ruang4 = collect($room[3])->merge(number_format($ruang4,2));
+    $ruang5 = collect($room[4])->merge(number_format($ruang5,2));
+    $ruang6 = collect($room[5])->merge(number_format($ruang6,2));
 
     return [ 'energy' => [ $ruang1,$ruang2,$ruang3,$ruang4,$ruang5,$ruang6 ] ];
   }
@@ -112,12 +112,12 @@ class TableController extends Controller
     ->sum('power');
 
     $room = [ '1st Room','2nd Room','3rd Room','4th Room','5th Room','6th Room' ];
-    $ruang1 = collect($room[0])->merge($ruang1);
-    $ruang2 = collect($room[1])->merge($ruang2);
-    $ruang3 = collect($room[2])->merge($ruang3);
-    $ruang4 = collect($room[3])->merge($ruang4);
-    $ruang5 = collect($room[4])->merge($ruang5);
-    $ruang6 = collect($room[5])->merge($ruang6);
+    $ruang1 = collect($room[0])->merge(number_format($ruang1,2));
+    $ruang2 = collect($room[1])->merge(number_format($ruang2,2));
+    $ruang3 = collect($room[2])->merge(number_format($ruang3,2));
+    $ruang4 = collect($room[3])->merge(number_format($ruang4,2));
+    $ruang5 = collect($room[4])->merge(number_format($ruang5,2));
+    $ruang6 = collect($room[5])->merge(number_format($ruang6,2));
 
     return [ 'energy' => [ $ruang1,$ruang2,$ruang3,$ruang4,$ruang5,$ruang6 ] ];
   }
@@ -137,12 +137,12 @@ class TableController extends Controller
     ->sum('power');
 
     $room = [ '1st Room','2nd Room','3rd Room','4th Room','5th Room','6th Room' ];
-    $ruang1 = collect($room[0])->merge($ruang1);
-    $ruang2 = collect($room[1])->merge($ruang2);
-    $ruang3 = collect($room[2])->merge($ruang3);
-    $ruang4 = collect($room[3])->merge($ruang4);
-    $ruang5 = collect($room[4])->merge($ruang5);
-    $ruang6 = collect($room[5])->merge($ruang6);
+    $ruang1 = collect($room[0])->merge(number_format($ruang1,2));
+    $ruang2 = collect($room[1])->merge(number_format($ruang2,2));
+    $ruang3 = collect($room[2])->merge(number_format($ruang3,2));
+    $ruang4 = collect($room[3])->merge(number_format($ruang4,2));
+    $ruang5 = collect($room[4])->merge(number_format($ruang5,2));
+    $ruang6 = collect($room[5])->merge(number_format($ruang6,2));
     return [ 'energy' => [ $ruang1,$ruang2,$ruang3,$ruang4,$ruang5,$ruang6 ] ];
   }
 

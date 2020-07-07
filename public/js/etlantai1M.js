@@ -1,10 +1,10 @@
 $(document).ready( function () {
   var etlantai1M = $('#etlantai1M').DataTable({
-
     ajax: {
     url: "api/tableMonth1",
-    dataSrc: "energy"
-}});
+    dataSrc: "energy",
+}
+});
 
 $('a[data-toggle="list"]').on('shown.bs.tab', function(e) {
   if (e.target.hash == '#list-month') {
