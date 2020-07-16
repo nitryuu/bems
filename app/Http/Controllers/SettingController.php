@@ -13,14 +13,20 @@ class SettingController extends Controller
   public function index(){
     $status = Settings::select('status')
     ->pluck('status');
+    $source = Settings::select('source')
+    ->pluck('source');
+    $address = Settings::select('address')
+    ->pluck('address');
     $bill = Settings::getCost();
-    return view('pages.settings',['data' => [$status,$bill]]);
+    return view('pages.settings',['data' => [$status,$bill,$source,$address]]);
   }
 
   public function storeSettings(Request $request){
     $id = '1';
     $bill = $request->get('bill');
     $featureCheck = $request->get('feature');
+    $source = $request->get('source');
+    $address = $request->get('address');
     if($featureCheck){
       $feature = $featureCheck;
     }else{
@@ -29,7 +35,9 @@ class SettingController extends Controller
     $value = Settings::where('id',$id)
     ->update(array(
       'status' => $feature,
-      'cost' => $bill
+      'cost' => $bill,
+      'source' => $source,
+      'address' => $address
     ));
     $request->session()->flash('success','Settings successfully changed');
     return redirect()->route('settings');

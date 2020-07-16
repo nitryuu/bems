@@ -47,12 +47,28 @@ class DashDataController extends Controller
     return ['x' => $data];
   }
 
-  public function SubscribetoTopic1($topic1,$topic2,$topic3,$topic4,$topic5)
+  public function mqttData()
+  {
+    $setting = Settings::select('address')->first();
+    
+    $topic = $setting['address'];
+    return redirect()->to('mqtt/publish/'.$topic);
+  }
+
+  public function httpData(Request $request)
+  {
+    $data = new Data;
+    $data->id_device = $request->get('id_device');
+    $data->power = $request->get('power');
+    $data->cost = $request->get('cost');
+
+    $data->save();
+  }
+
+  public function SubscribetoTopic($topic)
   {
     //$this->s = microtime(true);
     $mqtt = new Mqtt();
-    $topic = $topic1."/".$topic2."/".$topic3."/".$topic4."/".$topic5;
-    $this->topic2 = $topic2;
 
     $cost = Settings::getCost();
     $this->cost = $cost[0];
@@ -91,6 +107,51 @@ class DashDataController extends Controller
       $this->storeData();
     }, '');
   }
+
+  // public function SubscribetoTopic1($topic1,$topic2,$topic3,$topic4,$topic5)
+  // {
+  //   //$this->s = microtime(true);
+  //   $mqtt = new Mqtt();
+  //   $topic = $topic1."/".$topic2."/".$topic3."/".$topic4."/".$topic5;
+  //   $this->topic2 = $topic2;
+
+  //   $cost = Settings::getCost();
+  //   $this->cost = $cost[0];
+
+  //   $mqtt->ConnectAndSubscribe($topic, function ($topic, $msg) {
+  //     $power1=$power2=$power3=$power4=$power5=$power6=$power7=$power8=0;
+  //     $thecost = $this->cost;
+  //     $pesan = json_decode($msg, true);
+
+  //     $power1 = $pesan['field1'];
+  //     $power2 = $pesan['field2'];
+  //     $power3 = $pesan['field3'];
+  //     $power4 = $pesan['field4'];
+  //     $power5 = $pesan['field5'];
+  //     $power6 = $pesan['field6'];
+  //     $power7 = $pesan['field7'];
+  //     $power8 = $pesan['field8'];
+
+  //     $this->p1 = (double)number_format(($power1/1000),3);
+  //     $this->c1 = (double)number_format(($power1 * $thecost),2);
+  //     $this->p2 = (double)number_format(($power2/1000),3);
+  //     $this->c2 = (double)number_format(($power2 * $thecost),2);
+  //     $this->p3 = (double)number_format(($power3/1000),3);
+  //     $this->c3 = (double)number_format(($power3 * $thecost),2);
+  //     $this->p4 = (double)number_format(($power4/1000),3);
+  //     $this->c4 = (double)number_format(($power4 * $thecost),2);
+  //     $this->p5 = (double)number_format(($power5/1000),3);
+  //     $this->c5 = (double)number_format(($power5 * $thecost),2);
+  //     $this->p6 = (double)number_format(($power6/1000),3);
+  //     $this->c6 = (double)number_format(($power6 * $thecost),2);
+  //     $this->p7 = (double)number_format(($power7/1000),3);
+  //     $this->c7 = (double)number_format(($power7 * $thecost),2);
+  //     $this->p8 = (double)number_format(($power8/1000),3);
+  //     $this->c8 = (double)number_format(($power8 * $thecost),2);
+      
+  //     $this->storeData();
+  //   }, '');
+  // }
 
   public function storeData()
   {

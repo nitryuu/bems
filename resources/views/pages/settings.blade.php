@@ -48,11 +48,9 @@
 
                 <div class="form-group row">
                   <label for="bill" class="col-sm-3 col-form-label">Bill / kWh</label>
-                  <div class="col-sm-8">
-                    <input type="text" name="bill" class="form-control" id="staticEmail" value="{{ $data[1][0] }}" style="border: 1px solid #b9b2b2; font-size: 15px">
+                  <div class="col-sm-2">
+                    <input type="text" name="bill" class="form-control" value="{{ $data[1][0] }}" style="border: 1px solid #b9b2b2; font-size: 15px">
                   </div>
-
-                  </label>
                 </div>
                 <div class="form-group row">
                   <label for="feature" class="col-sm-3 col-form-label" data-toggle="tooltip" title="Restore Previous Values on each Control after Master Control ON">Feature on Control</label>
@@ -61,8 +59,31 @@
                       margin-top: 0.5rem;">
                   </div>
                 </div>
+                <div class="form-group row">
+                  <label for="feature" class="col-sm-3 col-form-label">Protocol</label>
+                  <div class="col-sm-2">
+                    <select class="form-control" style="border:1px solid #b9b2b2;" id="sources" name="source">
+                      <option value='0' @if($data[2][0] == '0')selected @endif>MQTT</option>
+                      <option value='1' @if($data[2][0] == '1')selected @endif>HTTP</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row" id="topic">
+                  <label for="bill" class="col-sm-3 col-form-label">Topic</label>
+                  <div class="col-sm-8">
+                    <input type="text" name="address" class="form-control" value="{{ $data[3][0] }}" style="border: 1px solid #b9b2b2; font-size: 15px" placeholder="TOPIC">
+                  </div>
+                </div>
+
+                <div class="form-group row" id="url">
+                  <label for="bill" class="col-sm-3 col-form-label">API Address</label>
+                  <div class="col-sm-8">
+                    <input type="text" name="url" class="form-control" value="https://si.ft.uns.ac.id/bems/api/httpData" style="border: 1px solid #b9b2b2; font-size: 15px" disabled>
+                  </div>
+                </div>
+
                 <br />
-                <div class="form-group row" style="text-align: right; display: block; margin-right: 7rem;">
+                <div class="form-group row" style="text-align: right; display: block; margin-right: 5rem;">
                     <button type="submit" class="btn btn-primary">Save Changes</button>
                 </div>
             </form>
@@ -116,6 +137,32 @@ toastr.options.positionClass = 'toast-top-center';
     @elseif(session()->has('error'))
       toastr.error("{{ session('error') }}")
   @endif
+</script>
+<script>
+  value = $("#sources").val();
+  topic = $("#topic");
+  url = $("#url");
+  $('#sources').change(function(){
+    console.log(value);
+    if(this.value == 0)
+    {
+      topic.css('display','');
+      url.css('display','none');
+    }else if(this.value == 1)
+    {
+      topic.css('display','none');
+      url.css('display','');
+    }
+  })
+    if(this.value == 0)
+    {
+      topic.css('display','');
+      url.css('display','none');
+    }else if(this.value == 1)
+    {
+      topic.css('display','none');
+      url.css('display','');
+    }
 </script>
 <script src="{{ asset('js/checkHardware.js') }}"></script>
 <script src="{{ asset('js/user_datatable.js') }}"></script>

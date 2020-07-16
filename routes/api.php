@@ -60,3 +60,6 @@ Route::get('checkFeature','CoController@checkFeature')->name('checkFeature');
 
 Route::get('userList','SettingController@userList')->name('userList');
 Route::get('getData','DaController@getData')->name('getData');
+
+Route::post('httpData','DashDataController@httpData')->name('httpData');
+Route::get('mqttData','DashDataController@mqttData')->name('mqttData');
