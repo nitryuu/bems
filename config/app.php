@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         ConsoleTVs\Charts\ChartsServiceProvider::class,
         Salman\Mqtt\MqttServiceProvider::class,
+        Brotzka\DotenvEditor\DotenvEditorServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -229,6 +230,7 @@ return [
         'Helper' => App\Helpers\Helper::class,
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
         'Mqtt' => \Salman\Mqtt\Facades\Mqtt::class,
+        'DotenvEditor' => Brotzka\DotenvEditor\DotenvEditorFacade::class,
     ],
 
 ];

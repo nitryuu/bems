@@ -57,10 +57,17 @@ class DashDataController extends Controller
 
   public function httpData(Request $request)
   {
+    $cost = Settings::getCost();
+    $thecost = $cost[0];
+
+    $power = $request->get('power');
+    $thispower = (double)number_format(($power/1000),3);
+    $thiscost = (double)number_format(($power * $thecost),2);
+
     $data = new Data;
     $data->id_device = $request->get('id_device');
-    $data->power = $request->get('power');
-    $data->cost = $request->get('cost');
+    $data->power = $thispower;
+    $data->cost = $thiscost;
 
     $data->save();
   }
@@ -87,21 +94,21 @@ class DashDataController extends Controller
       $power7 = $pesan['field7'];
       $power8 = $pesan['field8'];
 
-      $this->p1 = (double)number_format(($power1/1000),3);
+      $this->p1 = (double)number_format(($power1/1000),4);
       $this->c1 = (double)number_format(($power1 * $thecost),2);
-      $this->p2 = (double)number_format(($power2/1000),3);
+      $this->p2 = (double)number_format(($power2/1000),4);
       $this->c2 = (double)number_format(($power2 * $thecost),2);
-      $this->p3 = (double)number_format(($power3/1000),3);
+      $this->p3 = (double)number_format(($power3/1000),4);
       $this->c3 = (double)number_format(($power3 * $thecost),2);
-      $this->p4 = (double)number_format(($power4/1000),3);
+      $this->p4 = (double)number_format(($power4/1000),4);
       $this->c4 = (double)number_format(($power4 * $thecost),2);
-      $this->p5 = (double)number_format(($power5/1000),3);
+      $this->p5 = (double)number_format(($power5/1000),4);
       $this->c5 = (double)number_format(($power5 * $thecost),2);
-      $this->p6 = (double)number_format(($power6/1000),3);
+      $this->p6 = (double)number_format(($power6/1000),4);
       $this->c6 = (double)number_format(($power6 * $thecost),2);
-      $this->p7 = (double)number_format(($power7/1000),3);
+      $this->p7 = (double)number_format(($power7/1000),4);
       $this->c7 = (double)number_format(($power7 * $thecost),2);
-      $this->p8 = (double)number_format(($power8/1000),3);
+      $this->p8 = (double)number_format(($power8/1000),4);
       $this->c8 = (double)number_format(($power8 * $thecost),2);
       
       $this->storeData();

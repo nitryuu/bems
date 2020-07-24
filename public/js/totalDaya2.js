@@ -89,7 +89,7 @@ $(document).ready(function() {
         dataLabels: {
           format:
             '<div style="text-align:center">' +
-            '<span style="font-size:15px">{y:.2f}</span><br/>' +
+            '<span style="font-size:15px">{y:.3f}</span><br/>' +
             '<span style="font-size:12px;opacity:0.4">KWH</span>' +
             '</div>'
         },

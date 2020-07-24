@@ -42,7 +42,7 @@
           <div class="card-settings">
 
           <div class="row">
-            <div class="col-9" style="border-right: 1px solid black">
+            <div class="col-9" style="border-right: 1px solid black; height: 50vh; overflow: auto">
             <form action={{route('storeSettings')}} method="post" style="text-align: center; display: block;">
               {{ csrf_field() }}
 
@@ -60,12 +60,49 @@
                   </div>
                 </div>
                 <div class="form-group row">
+                  <label for="auto" class="col-sm-3 col-form-label">Automatic Delete</label>
+                   <div class="form-check">
+                      <input name="auto" type="checkbox" id="auto" @if($data[8][0] == 'on' )checked @endif style="vertical-align: -webkit-baseline-middle;
+                      margin-top: 0.5rem;">
+                  </div>
+                </div>
+                <div class="form-group row" id="interval">
+                  <label for="interval" class="col-sm-3 col-form-label">Interval (Month)</label>
+                  <div class="col-sm-1">
+                    <input type="text" name="interval" class="form-control" value="{{ $data[9][0] }}" style="border: 1px solid #b9b2b2; font-size: 15px">
+                  </div>
+                </div>
+                <div class="form-group row">
                   <label for="feature" class="col-sm-3 col-form-label">Protocol</label>
                   <div class="col-sm-2">
                     <select class="form-control" style="border:1px solid #b9b2b2;" id="sources" name="source">
                       <option value='0' @if($data[2][0] == '0')selected @endif>MQTT</option>
                       <option value='1' @if($data[2][0] == '1')selected @endif>HTTP</option>
                     </select>
+                  </div>
+                </div>
+                <div class="form-group row" id="host">
+                  <label for="bill" class="col-sm-3 col-form-label">Host</label>
+                  <div class="col-sm-4">
+                    <input type="text" name="host" class="form-control" value="{{ $data[4] }}" style="border: 1px solid #b9b2b2; font-size: 15px" placeholder="TOPIC">
+                  </div>
+                </div>
+                <div class="form-group row" id="port">
+                  <label for="bill" class="col-sm-3 col-form-label">Port</label>
+                  <div class="col-sm-2">
+                    <input type="text" name="port" class="form-control" value="{{ $data[7] }}" style="border: 1px solid #b9b2b2; font-size: 15px" placeholder="TOPIC">
+                  </div>
+                </div>
+                <div class="form-group row" id="username">
+                  <label for="bill" class="col-sm-3 col-form-label">Username</label>
+                  <div class="col-sm-4">
+                    <input type="text" name="username" class="form-control" value="{{ $data[5] }}" style="border: 1px solid #b9b2b2; font-size: 15px" placeholder="TOPIC">
+                  </div>
+                </div>
+                <div class="form-group row" id="password">
+                  <label for="bill" class="col-sm-3 col-form-label">Password</label>
+                  <div class="col-sm-4">
+                    <input type="text" name="password" class="form-control" value="{{ $data[6] }}" style="border: 1px solid #b9b2b2; font-size: 15px" placeholder="TOPIC">
                   </div>
                 </div>
                 <div class="form-group row" id="topic">
@@ -142,26 +179,63 @@ toastr.options.positionClass = 'toast-top-center';
   value = $("#sources").val();
   topic = $("#topic");
   url = $("#url");
+  username = $("#username");
+  password = $("#password");
+  host = $("#host");
+  port = $("#port");
+  auto = $("#auto");
+  interval = $("#interval");
+
+  $('#auto').change(function(){
+    if($(this).prop('checked') == true){
+      interval.css('display','');
+    }else if($(this).prop('checked') == false){
+      interval.css('display','none');
+    }
+  })
+
+  if(auto.prop('checked') == true){
+    interval.css('display','');
+  }else if(auto.prop('checked') == false){
+    interval.css('display','none');
+  }
+
+
   $('#sources').change(function(){
-    console.log(value);
     if(this.value == 0)
     {
       topic.css('display','');
       url.css('display','none');
+      username.css('display','');
+      password.css('display','');
+      host.css('display','');
+      port.css('display','');
     }else if(this.value == 1)
     {
       topic.css('display','none');
       url.css('display','');
+      username.css('display','none');
+      password.css('display','none');
+      host.css('display','none');
+      port.css('display','none');
     }
   })
     if(this.value == 0)
     {
       topic.css('display','');
       url.css('display','none');
+      username.css('display','');
+      password.css('display','');
+      host.css('display','');
+      port.css('display','');
     }else if(this.value == 1)
     {
       topic.css('display','none');
       url.css('display','');
+      username.css('display','none');
+      password.css('display','none');
+      host.css('display','none');
+      port.css('display','none');
     }
 </script>
 <script src="{{ asset('js/checkHardware.js') }}"></script>

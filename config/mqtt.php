@@ -7,12 +7,12 @@
  */
 
 return [
-
-    'host'     => env('mqtt_host','mqtt.thingspeak.com'),
-    'password' => env('mqtt_password','32NAZLTZBU1T9SHY'),
-    'username' => env('mqtt_username','mwa0000018043816'),
+	'dynamic' => true,
+    'host'     => env('MQTT_HOST','null'),
+    'password' => env('MQTT_PASS','null'),
+    'username' => env('MQTT_USER','null'),
     'certfile' => env('mqtt_cert_file',''),
-    'port'     => env('mqtt_port','1883'),
+    'port'     => env('MQTT_PORT','null'),
     'debug'    => env('mqtt_debug',false), //Optional Parameter to enable debugging set it to True
     'qos'      => env('mqtt_qos', 0), // set quality of service here
     'retain'   => env('mqtt_retain', 0) // it should be 0 or 1 Whether the message should be retained.- Retain Flag
