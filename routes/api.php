@@ -63,3 +63,13 @@ Route::get('getData','DaController@getData')->name('getData');
 
 Route::post('httpData','DashDataController@httpData')->name('httpData');
 Route::get('mqttData','DashDataController@mqttData')->name('mqttData');
+
+Route::get('customTopic1','CusController@customTopic1')->name('customTopic1');
+Route::get('customTopic2','CusController@customTopic2')->name('customTopic2');
+Route::get('customTopic3','CusController@customTopic3')->name('customTopic3');
+Route::get('customTopic4','CusController@customTopic4')->name('customTopic4');
+
+Route::get('custom1','CusController@custom1')->name('custom1');
+Route::get('custom2','CusController@custom2')->name('custom2');
+Route::get('custom3','CusController@custom3')->name('custom3');
+Route::get('custom4','CusController@custom4')->name('custom4');

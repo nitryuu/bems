@@ -163,7 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         ConsoleTVs\Charts\ChartsServiceProvider::class,
         Salman\Mqtt\MqttServiceProvider::class,
-        Brotzka\DotenvEditor\DotenvEditorServiceProvider::class,
+        Brotzka\DotenvEditor\DotenvEditorServiceProvider::class,        
         /*
          * Package Service Providers...
          */

@@ -102,7 +102,7 @@
 @section('page-script')
         <!-- Page js files -->
         <script>
-        toastr.options.positionClass = 'toast-top-center';
+        toastr.options.positionClass = 'toast-top-right';
           @if(session()-> has('status'))
             toastr.info("{{ session('status') }}");
             @elseif(session()->has('success'))

@@ -217,30 +217,6 @@
         </div>
         </div>
 
-        <!-- END row -->
-
-
-
-      <!-- END guts -->
-
-
-
-<!--
-    <div class="row-lg-12">
-      <div class="card">
-        <div class="card-content">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-12">
-              </div>
-            </div>
-            <div id="table" class="aggrid ag-theme-material"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  -->
-
     </section>
   {!! Charts::scripts() !!}
   @endsection
@@ -259,7 +235,7 @@
 @section('page-script')
         <!-- Page js files -->
         <script>
-        toastr.options.positionClass = 'toast-top-center';
+        toastr.options.positionClass = 'toast-top-right';
           @if(session()-> has('status'))
             toastr.info("{{ session('status') }}");
             @elseif(session()->has('success'))

@@ -39,7 +39,7 @@
 #sidenav li a.active {
   border-radius: 1.5rem;
   background-color: #190658;
-  width: 120px;
+  width: 110px;
   text-align: center;
 }
 
@@ -741,6 +741,14 @@ footer {
   margin-top: calc(100vh - 58%);
 }
 
+#custom {
+  margin-top: calc(100vh - 58%);
+}
+
+.horizontal-layout.full #custom{
+  margin-top: calc(100vh - 63%);
+}
+
 .horizontal-layout.full #cost {
   margin-top: -2rem;
 }
@@ -867,6 +875,33 @@ thead tr th:first-child span {
 
 #settings{
   margin-top: -5rem !important;
+}
+
+.settingMenu{
+  display: none;
+  position: absolute;
+  top: 3.5rem;
+  right: 2rem;
+  width: 50rem;
+  background: #efeaea;
+  z-index: 100;
+  box-shadow: 0 0 5px 0 #1a1a3a; 
+}
+
+.show{
+  display: unset;
+}
+
+.settingText{
+  padding: 1rem;
+  color: black;
+  font-size: 13px;
+}
+
+#chartTitle{
+  font-size: 1.32rem;
+  color: black;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {

@@ -28,17 +28,18 @@
                     </ul>
 
                     <ul class="nav navbar-nav float-right" id="sidenav">
-                      <li class="nav-item d-none d-lg-block"><a class="nav-link" href="http://localhost/vuexy/public/dashboard">Dashboard</a></li>
-                      <li class="nav-item d-none d-lg-block"><a class="nav-link" href="http://localhost/vuexy/public/usages">Usages</a></li>
+                      <li class="nav-item d-none d-lg-block"><a class="nav-link" href={{ url('dashboard') }}>Dashboard</a></li>
+                      <li class="nav-item d-none d-lg-block"><a class="nav-link" href={{ url('usages') }}>Usages</a></li>
 
 
                       @if(Auth::user())
-                        <li class="nav-item d-none d-lg-block"><a class="nav-link" href="http://localhost/vuexy/public/control">Control</a></li>
+                        <li class="nav-item d-none d-lg-block"><a class="nav-link" href={{ url('control') }}>Control</a></li>
                       @endif
 
-                      <li class="nav-item d-none d-lg-block"><a class="nav-link" href="http://localhost/vuexy/public/cost">Cost</a></li>
-                      <li class="nav-item d-none d-lg-block"><a class="nav-link" href="http://localhost/vuexy/public/statistic">Statistic</a></li>
-                      <li class="nav-item d-none d-lg-block"><a class="nav-link" data-toggle="modal" data-target="#manual-modal">User Manual</a></li>
+                      <li class="nav-item d-none d-lg-block"><a class="nav-link" href={{ url('cost') }}>Cost</a></li>
+                      <li class="nav-item d-none d-lg-block"><a class="nav-link" href={{ url('statistic') }}>Statistic</a></li>
+                      <li class="nav-item d-none d-lg-block"><a class="nav-link" href={{ url('custom') }}>Custom</a></li>
+                      <li class="nav-item d-none d-lg-block"><a class="nav-link" data-toggle="modal" data-target="#manual-modal">Manual</a></li>
                   </ul>
                 </div>
 
@@ -287,7 +288,7 @@
     </div>
   </div>
 
-  <div class="modal fade" id="confirmation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="confirmation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
