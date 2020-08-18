@@ -214,28 +214,18 @@ class DashDataController extends Controller
   }
 
   public function lantai1(){
-    $ruang1 = Data::DashL1R1()->pluck('power');
-    $ruang2 = Data::DashL1R2()->pluck('power');
-    $ruang3 = Data::DashL1R3()->pluck('power');
-    $ruang4 = Data::DashL1R4()->pluck('power');
+    $n = 6;
+    for ($i=1; $i <= $n ; $i++) { 
+      $ruang[$i] = Data::DashL1($i)->pluck('power');
+      if($ruang[$i]->isEmpty() || !$ruang[$i]){
+        $ruang[$i] = 0;
+      }elseif($ruang[$i]){
+        $ruang[$i] = $ruang[$i][0];
+      }
+    }
 
-    if($ruang1->isEmpty() || !$ruang1[0]){
-      $ruang1[0] = 0;
-    }if($ruang2->isEmpty() || !$ruang2[0]){
-      $ruang2[0] = 0;
-    }if($ruang3->isEmpty() || !$ruang3[0]){
-      $ruang3[0] = 0;
-    }if($ruang4->isEmpty() || !$ruang4[0]){
-      $ruang4[0] = 0;}
-    // }if($ruang5->isEmpty() || !$ruang5[0]){
-    //   $ruang5[0] = 0;
-    // }if($ruang6->isEmpty() || !$ruang6[0]){
-    //   $ruang6[0] = 0;
-    // }
+    $data = collect($ruang);
 
-    $data = collect($ruang1[0])->merge($ruang2[0])->merge($ruang3[0])
-    ->merge($ruang4[0]);
-// ->merge($ruang5[0])->merge($ruang6[0]
     $datas = new Collection();
     foreach($data as $items){
         $datas->push($items);
@@ -245,33 +235,23 @@ class DashDataController extends Controller
   }
 
   public function lantai2(){
-    $ruang1 = Data::DashL2R1()->pluck('power');
-    $ruang2 = Data::DashL2R2()->pluck('power');
-    $ruang3 = Data::DashL2R3()->pluck('power');
-    $ruang4 = Data::DashL2R4()->pluck('power');
-    $ruang5 = Data::DashL2R5()->pluck('power');
-    $ruang6 = Data::DashL2R6()->pluck('power');
-
-    if($ruang1->isEmpty() || !$ruang1[0]){
-      $ruang1[0] = 0;
-    }if($ruang2->isEmpty() || !$ruang2[0]){
-      $ruang2[0] = 0;
-    }if($ruang3->isEmpty() || !$ruang3[0]){
-      $ruang3[0] = 0;
-    }if($ruang4->isEmpty() || !$ruang4[0]){
-      $ruang4[0] = 0;
-    }if($ruang5->isEmpty() || !$ruang5[0]){
-      $ruang5[0] = 0;
-    }if($ruang6->isEmpty() || !$ruang6[0]){
-      $ruang6[0] = 0;
+    $n = 6;
+    for ($i=1; $i <= $n ; $i++) { 
+      $ruang[$i] = Data::DashL2($i)->pluck('power');
+      if($ruang[$i]->isEmpty() || !$ruang[$i]){
+        $ruang[$i] = 0;
+      }elseif($ruang[$i]){
+        $ruang[$i] = $ruang[$i][0];
+      }
     }
 
-    $data = collect($ruang1[0])->merge($ruang2[0])->merge($ruang3[0])
-    ->merge($ruang4[0])->merge($ruang5[0])->merge($ruang6[0]);
+    $data = collect($ruang);
+
     $datas = new Collection();
     foreach($data as $items){
         $datas->push($items);
     }
+
     return [ 'power' => $datas ];
   }
 }

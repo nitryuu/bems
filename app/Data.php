@@ -12,6 +12,28 @@ class Data extends Model
 	protected $guarded = [];
 	protected $table = 'kwh';
 
+	public function scopeDashL1($query,$i){
+		return $query->join('device','kwh.id_device','=','device.id')
+	    ->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')
+	    ->join('ref_lantai','ref_ruang.id_ref_lantai','=','ref_lantai.id')
+	    ->select('power')
+	    ->where('ref_lantai.lantai','1')
+	    ->where('ref_ruang.ruang',$i)
+	    ->where('device.status','on')
+	    ->orderByDesc('created_at');
+	}
+
+	public function scopeDashL2($query,$i){
+		return $query->join('device','kwh.id_device','=','device.id')
+	    ->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')
+	    ->join('ref_lantai','ref_ruang.id_ref_lantai','=','ref_lantai.id')
+	    ->select('power')
+	    ->where('ref_lantai.lantai','2')
+	    ->where('ref_ruang.ruang',$i)
+	    ->where('device.status','on')
+	    ->orderByDesc('created_at');
+	}
+
 	public function scopeDashL1R1($query){
 		return $query->join('device','kwh.id_device','=','device.id')
 	    ->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')

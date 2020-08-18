@@ -18,7 +18,7 @@ var chart1; // global
     }
 
     $(document).ready(function() {
-        var chart1 = new Highcharts.Chart({
+        chart1 = new Highcharts.Chart({
              time: {
               useUTC: false
             },
