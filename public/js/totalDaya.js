@@ -4,7 +4,7 @@ var chart_daya;
  */
 function requestDataDaya() {
   $.ajax({
-    url: 'api/valueToday',
+    url: 'api/valueToday/'+id,
     success: function(points) {
       var point = chart_daya.series[0].points[0],
       newVal = points[0].p;

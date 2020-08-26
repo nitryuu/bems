@@ -105,23 +105,13 @@
             <h4>ACTIVE APPLIANCES</h4>
           </div>
           <div class="row-card">
-            <div class="col-lg-6 col-sm-6 col-md-6 col-12" style="border-right: 1px dotted; margin-bottom: 20px; z-index: 2">
-              <div class="row-header" style="border-bottom: 1px solid">
-                <p>
-                  1ST FLOOR
-                </p>
-              </div>
+            <div class="col-lg-6 col-sm-6 col-md-6 col-12" style="border-right: 1px dotted; z-index: 2; margin: auto">
               <div class="row-chart">
                 <div id="lantai1"></div>
               </div>
 
             </div>
-            <div class="col-lg-6 col-sm-6 col-md-6 col-12">
-              <div class="row-header" style="border-bottom: 1px solid">
-                <p>
-                  2ND FLOOR
-                </p>
-              </div>
+            <div class="col-lg-6 col-sm-6 col-md-6 col-12" style="margin: auto;">
               <div class="row-chart" style="margin-left: -8px;">
                 <div id="lantai2"></div>
               </div>
@@ -137,24 +127,6 @@
   <!-- END guts -->
   </div>
   </div>
-
-
-
-  <!--
-    <div class="row-lg-12">
-      <div class="card">
-        <div class="card-content">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-12">
-              </div>
-            </div>
-            <div id="table" class="aggrid ag-theme-material"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  -->
 
 </section>
 {!! Charts::scripts() !!}
@@ -182,6 +154,13 @@ toastr.options.positionClass = 'toast-top-right';
       toastr.error("{{ session('error') }}")
   @endif
 </script>
+  
+  @if(auth()->user())
+<script>
+  var id = {!! auth()->user()->id_ref_fakultas !!};
+  var count = {!! $count !!};
+</script>
+  @endif
 <script src="{{ asset('js/checkHardware.js') }}"></script>
 <script src="{{ asset('js/user_datatable.js') }}"></script>
 <script src="{{ asset('js/totalDaya.js') }}"></script>

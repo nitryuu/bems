@@ -34,6 +34,82 @@ class Data extends Model
 	    ->orderByDesc('created_at');
 	}
 
+	public function scopeDashTillNow($query, $id){
+		return $query->join('device','kwh.id_device','=','device.id')
+	    ->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')
+	    ->join('ref_lantai','ref_ruang.id_ref_lantai','=','ref_lantai.id')
+	    ->join('gedung','ref_lantai.id_ref_gedung','=','gedung.id')
+	    ->join('fakultas','gedung.id_ref_fakultas','=','fakultas.id')
+	    ->selectRaw('IFNULL(sum(power),0) p')
+	    ->whereMonth('kwh.created_at',Carbon::now('Asia/Jakarta')->format('m'))
+	    ->where('fakultas.id',$id);
+	}
+
+	public function scopeDashToday($query, $id){
+		return $query->join('device','kwh.id_device','=','device.id')
+	    ->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')
+	    ->join('ref_lantai','ref_ruang.id_ref_lantai','=','ref_lantai.id')
+	    ->join('gedung','ref_lantai.id_ref_gedung','=','gedung.id')
+	    ->join('fakultas','gedung.id_ref_fakultas','=','fakultas.id')
+        ->selectRaw('IFNULL(sum(power),0) p')
+	    ->whereDate('kwh.created_at', Carbon::today())
+	    ->where('fakultas.id',$id);
+	}
+
+	public function scopeDashThisMonth($query, $id){
+		return $query->join('device','kwh.id_device','=','device.id')
+	    ->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')
+	    ->join('ref_lantai','ref_ruang.id_ref_lantai','=','ref_lantai.id')
+	    ->join('gedung','ref_lantai.id_ref_gedung','=','gedung.id')
+	    ->join('fakultas','gedung.id_ref_fakultas','=','fakultas.id')
+        ->selectRaw('IFNULL(sum(cost),0) c')
+	    ->whereMonth('kwh.created_at',Carbon::today())
+	    ->where('fakultas.id',$id);
+	}	
+
+	public function scopeDashPreviousMonth($query, $id){
+		return $query->join('device','kwh.id_device','=','device.id')
+	    ->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')
+	    ->join('ref_lantai','ref_ruang.id_ref_lantai','=','ref_lantai.id')
+	    ->join('gedung','ref_lantai.id_ref_gedung','=','gedung.id')
+	    ->join('fakultas','gedung.id_ref_fakultas','=','fakultas.id')
+        ->selectRaw('IFNULL(sum(cost),0) c')
+	    ->whereMonth('kwh.created_at',Carbon::now()->startOfMonth()->subMonth())
+	    ->where('fakultas.id',$id);
+	}	
+
+	public function scopeDashAppliances($query, $i, $id)
+	{
+		return $query->join('device','kwh.id_device','=','device.id')
+	    ->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')
+	    ->join('ref_lantai','ref_ruang.id_ref_lantai','=','ref_lantai.id')
+	    ->join('gedung','ref_lantai.id_ref_gedung','=','gedung.id')
+	    ->join('fakultas','gedung.id_ref_fakultas','=','fakultas.id')
+	    ->selectRaw('SUM(power) p')
+	    ->where('fakultas.id',$id)
+	    ->where('gedung',$i)
+	    ->where('device.status','on');
+	}
+
+	
+	public function scopeUsageToday1($query){
+		return $query->join('device','kwh.id_device','=','device.id')
+		->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')
+		->join('ref_lantai','ref_ruang.id_ref_lantai','=','ref_lantai.id')
+		->select('power','created_at')
+		->where('ref_lantai.lantai','1')
+		->orderByDesc('created_at');
+	}
+
+	public function scopeUsageToday2($query){
+		return $query->join('device','kwh.id_device','=','device.id')
+		->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')
+		->join('ref_lantai','ref_ruang.id_ref_lantai','=','ref_lantai.id')
+		->select('power','created_at')
+		->where('ref_lantai.lantai','2')
+		->orderByDesc('created_at');
+	}
+
 	public function scopeDashL1R1($query){
 		return $query->join('device','kwh.id_device','=','device.id')
 	    ->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')
@@ -165,8 +241,6 @@ class Data extends Model
 		->where('device.status','on')
 		->orderByDesc('created_at');
 	}
-
-
 
 	public function scopeL1R1($query){
 		return $query->join('device','kwh.id_device','=','device.id')
@@ -405,24 +479,6 @@ class Data extends Model
 		->selectRaw('sum(power) power')
 		->where('ref_lantai.lantai','2')
 		->where('ref_ruang.ruang','6')
-		->orderByDesc('created_at');
-	}
-
-	public function scopeUsageToday1($query){
-		return $query->join('device','kwh.id_device','=','device.id')
-		->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')
-		->join('ref_lantai','ref_ruang.id_ref_lantai','=','ref_lantai.id')
-		->select('power','created_at')
-		->where('ref_lantai.lantai','1')
-		->orderByDesc('created_at');
-	}
-
-	public function scopeUsageToday2($query){
-		return $query->join('device','kwh.id_device','=','device.id')
-		->join('ref_ruang','ref_ruang.id','=','device.id_ref_ruang')
-		->join('ref_lantai','ref_ruang.id_ref_lantai','=','ref_lantai.id')
-		->select('power','created_at')
-		->where('ref_lantai.lantai','2')
 		->orderByDesc('created_at');
 	}
 

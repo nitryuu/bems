@@ -2,23 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Data;
+use App\Gedung;
+use App\User;
+use Carbon\Carbon;
+use Charts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Charts;
-use App\User;
-use App\Data;
-use Carbon\Carbon;
 
 class DaController extends Controller
 {
     // Dashboard - Analytics
     public function dashboard(){
+        $count = 0;
+        if(Auth::check()){
+        $id = auth()->user()->id_ref_fakultas;
+
+        $countArr = Gedung::Count($id)->get();
+        $count = $countArr[0]['g'];
+        }
+
         $pageConfigs = [
             'pageHeader' => false
         ];
 
         return view('pages.dashboard', [
-            'pageConfigs' => $pageConfigs
+            'pageConfigs' => $pageConfigs,
+                'count' => $count
         ]);
     }
 

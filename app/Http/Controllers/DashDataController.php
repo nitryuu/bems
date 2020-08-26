@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Data;
 use App\Settings;
+use App\Gedung;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Salman\Mqtt\MqttClass\Mqtt;
@@ -170,34 +171,21 @@ class DashDataController extends Controller
     //dd($execution_time);
   }
 
-  public function valueToday(){
-    $data = DB::table('kwh')
-    ->selectRaw('IFNULL(sum(power),0) p')
-    ->whereDate('created_at', Carbon::today())
-    ->get();
+  public function valueToday($id){
+    $data = Data::DashToday($id)->get();
 
     return $data;
   }
 
-  public function tillNow(){
-    $data = DB::table('kwh')
-    ->selectRaw('IFNULL(sum(power),0) p')
-    ->whereMonth('created_at',Carbon::now('Asia/Jakarta')->format('m'))
-    ->get();
+  public function tillNow($id){
+    $data = Data::DashTillNow($id)->get();
 
     return $data;
   }
 
-  public function totalCost(){
-    $thisMonth = DB::table('kwh')
-    ->selectRaw('IFNULL(sum(cost),0) c')
-    ->whereMonth('created_at',Carbon::today())
-    ->get();
-
-    $previousMonth = DB::table('kwh')
-    ->selectRaw('IFNULL(sum(cost),0) c')
-    ->whereMonth('created_at',Carbon::now()->startOfMonth()->subMonth())
-    ->get();
+  public function totalCost($id){
+    $thisMonth = Data::DashThisMonth($id)->get();
+    $previousMonth = Data::DashPreviousMonth($id)->get();
 
     $month = Carbon::now()->format('F');
     $pmonth = Carbon::now()->startOfMonth()->subMonth()->format('F');
@@ -205,12 +193,101 @@ class DashDataController extends Controller
     $data = collect($previousMonth)->merge($thisMonth);
     $datas = new Collection();
     foreach($data as $items){
-      foreach($items as $item){
-        $datas->push($item);
+        $datas->push($items['c']);
       }
-    }
 
     return [ 'month'=> [ $pmonth,$month ] ,'cost' => $datas ];
+  }
+
+  public function getCount($id)
+  {
+    $countArr = Gedung::Count($id)->get();
+    $count = $countArr[0]['g'];
+
+    return [
+      'count' => $count
+    ];
+  }
+
+  public function appliances1($id)
+  {
+      $countArr = Gedung::Count($id)->get();
+      $count = $countArr[0]['g'];
+      
+      $div = round($count/2);
+
+      if(($count % 2) == 0){
+        for ($i=1; $i <= $div ; $i++) { 
+          $gedung[$i] = Data::DashAppliances($i,$id)->pluck('p');
+          if($gedung[$i]->isEmpty() || !$gedung[$i]){
+            $gedung[$i] = 0;
+          }elseif($gedung[$i]){
+            $gedung[$i] = $gedung[$i][0];
+          }
+        }
+      }elseif(($count % 2) != 0){
+        for ($i=1; $i <= $div ; $i++) { 
+          $gedung[$i] = Data::DashAppliances($i,$id)->pluck('p');
+          if($gedung[$i]->isEmpty() || !$gedung[$i]){
+            $gedung[$i] = 0;
+          }elseif($gedung[$i]){
+            $gedung[$i] = $gedung[$i][0];
+          }
+        }
+      }
+
+        $data = collect($gedung);
+
+        $datas = new Collection();
+        foreach($data as $items){
+            $datas->push($items);
+        }
+
+        return [ 
+          'power' => $datas,
+          'div' => $div
+         ];
+  }
+
+  public function appliances2($id)
+  {
+      $countArr = Gedung::Count($id)->get();
+      $count = $countArr[0]['g'];
+      
+      $div = round($count/2);
+      $div2 = $div+1;
+
+      if(($count % 2) == 0){
+        for ($i=$div2; $i <= $count ; $i++) { 
+          $gedung[$i] = Data::DashAppliances($i,$id)->pluck('p');
+          if($gedung[$i]->isEmpty() || !$gedung[$i]){
+            $gedung[$i] = 0;
+          }elseif($gedung[$i]){
+            $gedung[$i] = $gedung[$i][0];
+          }
+        }
+      }elseif(($count % 2) != 0){
+        for ($i=$div2; $i <= $count ; $i++) { 
+          $gedung[$i] = Data::DashAppliances($i,$id)->pluck('p');
+          if($gedung[$i]->isEmpty() || !$gedung[$i]){
+            $gedung[$i] = 0;
+          }elseif($gedung[$i]){
+            $gedung[$i] = $gedung[$i][0];
+          }
+        }
+      }
+      
+        $data = collect($gedung);
+
+        $datas = new Collection();
+        foreach($data as $items){
+            $datas->push($items);
+        }
+
+        return [ 
+          'power' => $datas,
+          'div' => $div2
+        ];
   }
 
   public function lantai1(){
@@ -253,5 +330,10 @@ class DashDataController extends Controller
     }
 
     return [ 'power' => $datas ];
+  }
+
+  public function recentData(){
+    $data = Data::orderByDesc('created_at')->get();
+    return response()->json($data);
   }
 }

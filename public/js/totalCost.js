@@ -6,7 +6,7 @@ var chart_tcost;
 
 function requestDataTcost() {
   $.ajax({
-    url: 'api/totalCost',
+    url: 'api/totalCost/'+id,
     success: function(value) {
       //chart
       var point1 = chart_tcost.series[0].points[0],

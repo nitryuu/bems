@@ -1,35 +1,31 @@
 var chart_lantai1;
-/**
- * Request data from the server, add it to the graph and set a timeout to request again
- */
+var data1= [];
+var cat2= [];
 
+for(var k = 1 ; k <= Math.round(count/2) ; k++){
+  data1.push(0);
+}
 
-function requestDataLantai1() {
+for (var l = 1; l <= Math.round(count/2); l++) {
+  cat2.push(["Building "+l]);
+}
+
+function requestDatalantai1() {
   $.ajax({
-    url: 'api/lantai1',
+    url: 'api/appliances1/'+id,
     success: function(value) {
-      var point1 = chart_lantai1.series[0].points[0],
-      point2 = chart_lantai1.series[0].points[1],
-      point3 = chart_lantai1.series[0].points[2],
-      point4 = chart_lantai1.series[0].points[3],
-      point5 = chart_lantai1.series[0].points[4],
-      point6 = chart_lantai1.series[0].points[5],
+      var div2 = Math.round(value.div/2);
+      var point = [],
+      newVal = [];
 
-      newVal1 = value.power[0],
-      newVal2 = value.power[1],
-      newVal3 = value.power[2];
-      newVal4 = value.power[3];
-      newVal5 = value.power[4];
-      newVal6 = value.power[5];
-
-      point1.update(newVal1);
-      point2.update(newVal2);
-      point3.update(newVal3);
-      point4.update(newVal4);
-      point5.update(newVal5);
-      point6.update(newVal6);
-
-      setTimeout(requestDataLantai1, 1000);
+      for (var i = 1; i <= value.div; i++) {
+        for (var j = 0; j < div2; j++) {
+        point[i] = chart_lantai1.series[0].points[j];
+        newVal[i] = value.power[j];
+        point[i].update(newVal[i]);
+        }
+      }
+        setTimeout(requestDatalantai1, 1000);
     },
   });
 }
@@ -41,7 +37,7 @@ $(document).ready(function() {
       defaultSeriesType: 'bar',
       height: 140,
       events: {
-        load: requestDataLantai1
+        load: requestDatalantai1
       }
     },
     credits:{
@@ -56,7 +52,7 @@ $(document).ready(function() {
           fontSize: 9.5
         },
       },
-      categories: ['1st Room','2nd Room','3rd Room','4th Room','5th Room','6th Room']
+      categories: cat2
     },
     tooltip: {
       formatter: function() {
@@ -114,7 +110,7 @@ $(document).ready(function() {
         [0, '#3583b8'],
         [1, 'blue']
       ]},
-      data: [0,0,0,0,0,0],
+      data: data1,
     }]
   });
 });
