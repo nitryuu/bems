@@ -14,12 +14,10 @@ class DaController extends Controller
 {
     // Dashboard - Analytics
     public function dashboard(){
-        $count = 0;
-        if(Auth::check()){
-        $id = auth()->user()->id_ref_fakultas;
-
-        $countArr = Gedung::Count($id)->get();
+        $countArr = Gedung::Count()->get();
         $count = $countArr[0]['g'];
+        if(!$count){
+            $count = 0;
         }
 
         $pageConfigs = [
@@ -28,7 +26,7 @@ class DaController extends Controller
 
         return view('pages.dashboard', [
             'pageConfigs' => $pageConfigs,
-                'count' => $count
+            'count' => $count
         ]);
     }
 

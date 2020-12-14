@@ -21,16 +21,16 @@ Route::post('data', 'DashDataController@store');
 Route::get('data', 'DashDataController@show');
 Route::post('thingspeak','DashDataController@thingspeak');
 
-Route::get('valueToday/{id}','DashDataController@valueToday')->name('valueToday');
-Route::get('tillNow/{id}','DashDataController@tillNow')->name('tillNow');
-Route::get('totalCost/{id}','DashDataController@totalCost')->name('totalCost');
+Route::get('valueToday','DashDataController@valueToday')->name('valueToday');
+Route::get('tillNow','DashDataController@tillNow')->name('tillNow');
+Route::get('totalCost','DashDataController@totalCost')->name('totalCost');
 
 Route::get('lantai1','DashDataController@lantai1')->name('lantai1');
 Route::get('lantai2','DashDataController@lantai2')->name('lantai2');
 
 Route::get('getCount/{id}','DashDataController@getCount')->name('getCount');
-Route::get('appliances1/{id}','DashDataController@appliances1')->name('appliances1');
-Route::get('appliances2/{id}','DashDataController@appliances2')->name('appliances2');
+Route::get('appliances1','DashDataController@appliances1')->name('appliances1');
+Route::get('appliances2','DashDataController@appliances2')->name('appliances2');
 
 Route::get('tableToday1','TableController@tableToday1')->name('tableToday1');
 Route::get('tableToday2','TableController@tableToday2')->name('tableToday2');

@@ -1,28 +1,28 @@
 var chart_lantai1;
 var data1= [];
-var cat2= [];
+var cat1= [];
 
-for(var k = 1 ; k <= Math.round(count/2) ; k++){
-  data1.push(0);
+for(var k = 1 ; k <= Math.round(count/2); k++){
+  data1.push(0);  
 }
 
 for (var l = 1; l <= Math.round(count/2); l++) {
-  cat2.push(["Building "+l]);
+  cat1.push(["Building "+l]);
 }
 
 function requestDatalantai1() {
   $.ajax({
-    url: 'api/appliances1/'+id,
+    url: 'api/appliances1',
     success: function(value) {
-      var div2 = Math.round(value.div/2);
-      var point = [],
+      var div2 = Math.round(value.div/2),
+      point = [],
       newVal = [];
-
+      
       for (var i = 1; i <= value.div; i++) {
         for (var j = 0; j < div2; j++) {
-        point[i] = chart_lantai1.series[0].points[j];
-        newVal[i] = value.power[j];
-        point[i].update(newVal[i]);
+        this["point"+i] = chart_lantai1.series[0].points[j];
+        this["newVal"+i] = value.power[j];
+        this["point"+i].update(this["newVal"+i]);
         }
       }
         setTimeout(requestDatalantai1, 1000);
@@ -52,7 +52,7 @@ $(document).ready(function() {
           fontSize: 9.5
         },
       },
-      categories: cat2
+      categories: cat1
     },
     tooltip: {
       formatter: function() {

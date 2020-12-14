@@ -155,12 +155,10 @@ toastr.options.positionClass = 'toast-top-right';
   @endif
 </script>
   
-  @if(auth()->user())
 <script>
-  var id = {!! auth()->user()->id_ref_fakultas !!};
   var count = {!! $count !!};
 </script>
-  @endif
+
 <script src="{{ asset('js/checkHardware.js') }}"></script>
 <script src="{{ asset('js/user_datatable.js') }}"></script>
 <script src="{{ asset('js/totalDaya.js') }}"></script>

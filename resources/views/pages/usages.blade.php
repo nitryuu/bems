@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="{{ asset(mix('css/pages/card-analytics.css')) }}">
         <link rel="stylesheet" href="{{ asset('css/pages/styles.css') }}">
         <link rel="stylesheet" href="{{ asset('vendors/css/extensions/toastr.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
         <!--<link rel="stylesheet" href="{{ asset('css/pages/aggrid.css') }}">-->
 
 
@@ -28,6 +29,34 @@
 
     <section id="usages">
       <div id="guts">
+      <div class="gear">
+        <a href="javascript:void(0)">
+          <i class="fas fa-cog fa-spin"></i>
+        </a>
+      </div>
+      <div class="gearMenu">
+        <div class="gearContainer">
+          <div class="row">
+            <div class="col-lg-12">
+              <button type="button" class="close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <label for="gedung" style="color: black; font-weight: 500;">Gedung</label>
+            </div>
+            <div class="col-lg-9">
+              <select id="gedung" style="color: black; font-weight: 500;">
+                @foreach($gedung as $row)
+                  <option value="{{ $row->id }}">{{ $row->gedung }}</option>
+                @endforeach
+              </select>
+            </div>
+        </div>
+        </div>
+      </div>
       <div id="tab-button">
         <div class="row">
         <div class="col-lg-9" id="time">
@@ -243,6 +272,17 @@
             @elseif(session()->has('error'))
               toastr.error("{{ session('error') }}")
           @endif
+        </script>
+        <script>
+          $('.gear').click(function(){
+            $('.gearMenu').css('transform','translateX(0)');
+          })
+          $('.close').click(function(){
+            $('.gearMenu').css('transform','translateX(500px)');
+          })
+        </script>
+        <script>
+          
         </script>
         <script src="{{ asset('js/checkHardware.js') }}"></script>
         <script src="{{ asset('js/tab-button.js') }}"></script>

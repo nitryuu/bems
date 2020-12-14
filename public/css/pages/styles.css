@@ -904,6 +904,55 @@ thead tr th:first-child span {
   font-weight: 500;
 }
 
+.gear{
+  position: fixed;
+  top: 25%;
+  right: 0;
+  background: #c5d8d6;
+  z-index: 9;
+  padding: 5px 5px 5px 13px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.gear a{
+  font-size: 18px;
+  color: #3a3737;
+}
+
+.gear a .fa-spin{
+  animation: fa-spin 5s linear infinite;
+}
+
+.gear a .fa-spin:hover{
+  animation: none;
+}
+
+.gearMenu{
+  position: fixed;
+  top: 25%;
+  right: 0;
+  z-index: 9;
+  background: #c5d8d6;
+  box-shadow: inset 0px 0px 1px 1px #b8b7b9;
+  height: 15rem;
+  width: 20rem;
+  transform: translateX(500px);
+  transition: .5s ease;
+}
+
+.close{
+  padding: 5px !important;
+  font-size: 2rem;
+  color: black;
+}
+
+.gearContainer{
+  height: 100%;
+  width: 100%;
+  padding: 0 0.5rem 1rem 1rem;
+}
+
 @media (max-width: 768px) {
   #usages {
     margin-top: calc(100vh - 220%) !important;

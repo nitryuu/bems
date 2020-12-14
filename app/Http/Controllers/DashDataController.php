@@ -171,21 +171,21 @@ class DashDataController extends Controller
     //dd($execution_time);
   }
 
-  public function valueToday($id){
-    $data = Data::DashToday($id)->get();
+  public function valueToday(){
+    $data = Data::DashToday()->get();
 
     return $data;
   }
 
-  public function tillNow($id){
-    $data = Data::DashTillNow($id)->get();
+  public function tillNow(){
+    $data = Data::DashTillNow()->get();
 
     return $data;
   }
 
-  public function totalCost($id){
-    $thisMonth = Data::DashThisMonth($id)->get();
-    $previousMonth = Data::DashPreviousMonth($id)->get();
+  public function totalCost(){
+    $thisMonth = Data::DashThisMonth()->get();
+    $previousMonth = Data::DashPreviousMonth()->get();
 
     $month = Carbon::now()->format('F');
     $pmonth = Carbon::now()->startOfMonth()->subMonth()->format('F');
@@ -209,16 +209,16 @@ class DashDataController extends Controller
     ];
   }
 
-  public function appliances1($id)
+  public function appliances1()
   {
-      $countArr = Gedung::Count($id)->get();
+      $countArr = Gedung::Count()->get();
       $count = $countArr[0]['g'];
       
       $div = round($count/2);
 
       if(($count % 2) == 0){
         for ($i=1; $i <= $div ; $i++) { 
-          $gedung[$i] = Data::DashAppliances($i,$id)->pluck('p');
+          $gedung[$i] = Data::DashAppliances($i)->pluck('p');
           if($gedung[$i]->isEmpty() || !$gedung[$i]){
             $gedung[$i] = 0;
           }elseif($gedung[$i]){
@@ -227,7 +227,7 @@ class DashDataController extends Controller
         }
       }elseif(($count % 2) != 0){
         for ($i=1; $i <= $div ; $i++) { 
-          $gedung[$i] = Data::DashAppliances($i,$id)->pluck('p');
+          $gedung[$i] = Data::DashAppliances($i)->pluck('p');
           if($gedung[$i]->isEmpty() || !$gedung[$i]){
             $gedung[$i] = 0;
           }elseif($gedung[$i]){
@@ -249,9 +249,9 @@ class DashDataController extends Controller
          ];
   }
 
-  public function appliances2($id)
+  public function appliances2()
   {
-      $countArr = Gedung::Count($id)->get();
+      $countArr = Gedung::Count()->get();
       $count = $countArr[0]['g'];
       
       $div = round($count/2);
@@ -259,7 +259,7 @@ class DashDataController extends Controller
 
       if(($count % 2) == 0){
         for ($i=$div2; $i <= $count ; $i++) { 
-          $gedung[$i] = Data::DashAppliances($i,$id)->pluck('p');
+          $gedung[$i] = Data::DashAppliances($i)->pluck('p');
           if($gedung[$i]->isEmpty() || !$gedung[$i]){
             $gedung[$i] = 0;
           }elseif($gedung[$i]){
@@ -268,7 +268,7 @@ class DashDataController extends Controller
         }
       }elseif(($count % 2) != 0){
         for ($i=$div2; $i <= $count ; $i++) { 
-          $gedung[$i] = Data::DashAppliances($i,$id)->pluck('p');
+          $gedung[$i] = Data::DashAppliances($i)->pluck('p');
           if($gedung[$i]->isEmpty() || !$gedung[$i]){
             $gedung[$i] = 0;
           }elseif($gedung[$i]){

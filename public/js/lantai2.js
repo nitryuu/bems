@@ -1,6 +1,6 @@
 var chart_lantai2;
 var data2=[];
-var cat1=[];
+var cat2=[];
 var div = count - Math.floor(count/2);
 
 for(var k = 1 ; k <= count/2 ; k++){
@@ -8,16 +8,17 @@ for(var k = 1 ; k <= count/2 ; k++){
 }
 
 for (var l = div + 1; l <= count ; l++) {
-  cat1.push(["Building "+l]);
+  cat2.push(["Building "+l]);
 }
 
 function requestDatalantai2() {
   $.ajax({
-    url: 'api/appliances2/'+id,
+    url: 'api/appliances2',
     success: function(value) {
       var div2 = Math.round(value.div/2);
       var point = [],
       newVal = [];
+
       for (var i = 1; i <= value.div; i++) {
         for (var j = 0; j < div2; j++) {
         point[i] = chart_lantai2.series[0].points[j];
@@ -52,7 +53,7 @@ $(document).ready(function() {
           fontSize: 9.5
         },
       },
-      categories: cat1,
+      categories: cat2,
       opposite: true
     },
     tooltip: {
